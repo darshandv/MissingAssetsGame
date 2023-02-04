@@ -86,7 +86,6 @@ public class playerScript : MonoBehaviour
             force = (Vector2)(Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position).normalized;
             playerBody.velocity = Vector2.zero;
             playerBody.AddForce(force * (playerMass * planetMass)*power, ForceMode2D.Impulse);
-
         }
         else{
             distance1 = Vector3.Distance(centerOfPlanet1.position, transform.position);

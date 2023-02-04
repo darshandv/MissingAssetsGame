@@ -7,7 +7,7 @@ public class PlayerWeapon : MonoBehaviour
 
     public GameObject bulletPrefab;
     public Transform firePoint;
-    public float fireForce = 100f;
+    public float fireForce = 50f;
 
 
     public void Fire() 
