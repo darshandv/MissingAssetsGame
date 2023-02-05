@@ -17,8 +17,9 @@ public class EnemyController : MonoBehaviour
     }
 
     void Shoot()
-    {
-        // weapon.Fire(target);
+    {   
+        if(target)
+            weapon.Fire(target);
     }
 
     private void OnCollisionEnter2D(Collision2D collision) 
@@ -28,9 +29,11 @@ public class EnemyController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        Vector3 aimDirection =  new Vector2(target.position.x, target.position.y) - rb.position;
-        float aimAngle = Mathf.Atan2(aimDirection.y, aimDirection.x) * Mathf.Rad2Deg + 90f;
+        if (target) {
+            Vector3 aimDirection =  new Vector2(target.position.x, target.position.y) - rb.position;
+            float aimAngle = Mathf.Atan2(aimDirection.y, aimDirection.x) * Mathf.Rad2Deg + 90f;
+            rb.rotation = aimAngle;
+        }
 
-        rb.rotation = aimAngle;
     }
 }
