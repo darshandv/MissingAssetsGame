@@ -21,21 +21,33 @@ public class playerScript : MonoBehaviour
     float distance1, distance2, distance3;
     float forceVal1, forceVal2, forceVal3;
     Vector3 forceDirection1, forceDirection2, forceDirection3, totalForce;
-    //bool pressed = false;
 
     Vector3 startPoint, endPoint;
     Vector2 force;
     public int rotateSpeed = 120;
+    private static long health = 50;
+    public bool isDead = false;
 
 
     public PlayerWeapon weapon;
 
-    //public BezierFollow logic;
-    // public CollideFollow collideDetected;
-    // public CollideDetect2 collideDetect2;
+    public long getHealth()
+    {
+        return health;
+    }
+    
+    public void reduceHealth()
+    {
+        health = health - 5;
+        if(health == 0) isDead = true;
+    }
 
+    private void OnCollisionEnter2D(Collision2D collision) 
+    {
+        reduceHealth();
+        if(health == 0) Destroy(gameObject);
+    }
 
-    // Start is called before the first frame update
     void Start()
     {
         playerBody = GetComponent<Rigidbody2D>();
