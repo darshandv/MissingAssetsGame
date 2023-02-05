@@ -4,7 +4,10 @@ using UnityEngine;
 
 public class playerScript : MonoBehaviour
 {
-    public float planetMass;
+    float vertical, horizontal;
+    public float moveSpeed, healthValue, planetMass;
+
+    public bool isInvulnerable, isSpedUp;
     // public float planetMass2;
     public float G = 1;
     public Transform centerOfPlanet1;
@@ -40,6 +43,10 @@ public class playerScript : MonoBehaviour
     {
         playerBody = GetComponent<Rigidbody2D>();
         playerMass = playerBody.mass; 
+        moveSpeed = 7;
+        healthValue = 100;
+        isInvulnerable = false;
+        isSpedUp = false;
     }
 
     void enableRotate(Vector3 point) {
@@ -86,6 +93,7 @@ public class playerScript : MonoBehaviour
             force = (Vector2)(Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position).normalized;
             playerBody.velocity = Vector2.zero;
             playerBody.AddForce(force * (playerMass * planetMass)*power, ForceMode2D.Impulse);
+           
         }
         else{
             distance1 = Vector3.Distance(centerOfPlanet1.position, transform.position);
@@ -125,8 +133,15 @@ public class playerScript : MonoBehaviour
             else{
                 totalForce = (forceVal1*forceDirection1) + (forceVal2*forceDirection2) + (forceVal3*forceDirection3);  
                 playerBody.AddForce(totalForce);
+                MoveBall();
             }
 
         }    
+    }
+
+    void MoveBall() {
+        horizontal = Input.GetAxis("Horizontal");
+        vertical = Input.GetAxis("Vertical");
+        playerBody.velocity = new Vector2(horizontal * moveSpeed, vertical * moveSpeed);
     }
 }
