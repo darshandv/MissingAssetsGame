@@ -91,6 +91,10 @@ public class playerScript : MonoBehaviour
         }
     }
 
+    bool withinOrbit(float distance) {
+        return distance >= 3.0f && distance <= 3.01f;
+    }
+
     // Update is called once per frame
     void Update()
     {   
@@ -117,14 +121,14 @@ public class playerScript : MonoBehaviour
             bool isOrbitting = false;
             Vector3 point = centerOfPlanet1.position;
 
-            if (distance1 < orbitDistance){
+            if (withinOrbit(distance1)){
                 isOrbitting = true;
                 point = centerOfPlanet1.position;
             }
-            else if (distance2 < orbitDistance){
+            else if (withinOrbit(distance2)){
                 isOrbitting = true;
                 point = centerOfPlanet2.position;
-            } else if (distance3 < orbitDistance){
+            } else if (withinOrbit(distance3)){
                 isOrbitting = true;
                 point = centerOfPlanet3.position;
             }
