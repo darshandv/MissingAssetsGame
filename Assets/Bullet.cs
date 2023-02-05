@@ -6,7 +6,7 @@ public class Bullet : MonoBehaviour
 {
    private void Start() {
       //after 20 sec destroy the bullet
-      // InvokeRepeating("Destruct", 20.0f, 20.0f);
+      InvokeRepeating("Destruct", 20.0f, 20.0f);
    }
    private void OnCollisionEnter2D(Collision2D collision) 
    {
