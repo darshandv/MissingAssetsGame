@@ -767,7 +767,7 @@ MonoBehaviour:
   centerOfPlanet3: {fileID: 1578787740}
   minPower: {x: -3, y: -3}
   maxPower: {x: 3, y: 3}
-  power: 0.5
+  power: 0.7
   orbitDistance: 3
   rotateSpeed: 100
   isDead: 0

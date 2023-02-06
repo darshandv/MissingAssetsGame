@@ -92,7 +92,7 @@ public class playerScript : MonoBehaviour
     }
 
     bool withinOrbit(float distance) {
-        return distance >= 3.0f && distance <= 3.01f;
+        return distance >= 2.0f && distance <= 3.0f;
     }
 
     // Update is called once per frame
