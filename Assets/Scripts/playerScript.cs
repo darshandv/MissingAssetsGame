@@ -39,7 +39,10 @@ public class playerScript : MonoBehaviour
     public void reduceHealth()
     {
         health = health - 5;
-        if(health == 0) isDead = true;
+        if(health == 0) {
+            isDead = true;
+            StatisticsManager.buildAnaltyicsDataObjAndPush();
+        }
     }
 
     private void OnCollisionEnter2D(Collision2D collision) 
