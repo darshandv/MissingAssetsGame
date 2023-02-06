@@ -762,13 +762,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   planetMass: 10
-  G: 0.1
+  G: 1
   centerOfPlanet1: {fileID: 2136204614}
   centerOfPlanet2: {fileID: 945416506}
   centerOfPlanet3: {fileID: 1578787740}
   minPower: {x: -3, y: -3}
   maxPower: {x: 3, y: 3}
-  power: 1
+  power: 2
   orbitDistance: 3
   rotateSpeed: 100
   isDead: 0

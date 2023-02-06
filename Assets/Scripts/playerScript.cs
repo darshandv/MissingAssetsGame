@@ -14,7 +14,7 @@ public class playerScript : MonoBehaviour
     public Vector2 minPower = new Vector2(-3,3);
     public Vector2 maxPower = new Vector2(-3,3);
     public float power = 10f;
-    public float orbitDistance = 3;
+    public float orbitDistance = 3f;
 
     Rigidbody2D playerBody;
     float playerMass;
@@ -27,9 +27,18 @@ public class playerScript : MonoBehaviour
     public int rotateSpeed = 120;
     private static long health = 50;
     public bool isDead = false;
+    private bool isCannonRotationEnabled, isShootingEnabled;
 
 
     public PlayerWeapon weapon;
+
+    void Start()
+    {
+        playerBody = GetComponent<Rigidbody2D>();
+        playerMass = playerBody.mass; 
+        isCannonRotationEnabled = true;
+        isShootingEnabled = false;
+    }
 
     public long getHealth()
     {
@@ -49,12 +58,6 @@ public class playerScript : MonoBehaviour
     {
         reduceHealth();
         if(health == 0) Destroy(gameObject);
-    }
-
-    void Start()
-    {
-        playerBody = GetComponent<Rigidbody2D>();
-        playerMass = playerBody.mass; 
     }
 
     void enableRotate(Vector3 point) {
@@ -86,7 +89,7 @@ public class playerScript : MonoBehaviour
 
 
     void enableShooting() {
-        enableCannonRotation();
+        // enableCannonRotation();
 
         if(Input.GetKeyDown(KeyCode.Space)) 
         {
@@ -95,7 +98,7 @@ public class playerScript : MonoBehaviour
     }
 
     bool withinOrbit(float distance) {
-        return distance >= 2.0f && distance <= 3.0f;
+        return distance > orbitDistance && distance < orbitDistance + 0.05;
     }
 
     // Update is called once per frame
@@ -119,7 +122,7 @@ public class playerScript : MonoBehaviour
             distance3 = Vector3.Distance(centerOfPlanet3.position, transform.position);
             forceVal3 = G * (playerMass * planetMass)/(distance3*distance3);
             forceDirection3 = (centerOfPlanet3.position - transform.position).normalized;
-
+            
 
             bool isOrbitting = false;
             Vector3 point = centerOfPlanet1.position;
@@ -138,13 +141,22 @@ public class playerScript : MonoBehaviour
             
             if(isOrbitting) {
                 playerBody.velocity = Vector2.zero;
+                isCannonRotationEnabled = true;
                 enableRotate(point);
-                enableShooting();
+                isShootingEnabled = true; // no need now since it is enabled always
             }
             else{
                 totalForce = (forceVal1*forceDirection1) + (forceVal2*forceDirection2) + (forceVal3*forceDirection3);  
                 playerBody.AddForce(totalForce);
             }
+            if (isCannonRotationEnabled){
+                enableCannonRotation();
+            }
+
+            if (isShootingEnabled){
+                enableShooting(); 
+            }
+
 
         }    
     }
