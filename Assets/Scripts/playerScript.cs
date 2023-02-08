@@ -15,6 +15,7 @@ public class playerScript : MonoBehaviour
     public Vector2 maxPower = new Vector2(-3,3);
     public float power = 10f;
     public float orbitDistance = 3f;
+    public bool isInvulnerable;
 
     Rigidbody2D playerBody;
     float playerMass;
@@ -25,10 +26,9 @@ public class playerScript : MonoBehaviour
     Vector3 startPoint, endPoint;
     Vector2 force;
     public int rotateSpeed = 120;
-    private static long health = 50;
+    public long health = 50;
     public bool isDead = false;
     private bool isCannonRotationEnabled, isShootingEnabled;
-
 
     public PlayerWeapon weapon;
 
@@ -36,6 +36,7 @@ public class playerScript : MonoBehaviour
     {
         playerBody = GetComponent<Rigidbody2D>();
         playerMass = playerBody.mass; 
+        isInvulnerable = false;
         isCannonRotationEnabled = true;
         isShootingEnabled = false;
     }
@@ -56,7 +57,7 @@ public class playerScript : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision) 
     {
-        reduceHealth();
+        if (!isInvulnerable) reduceHealth();
         if(health == 0) Destroy(gameObject);
     }
 
@@ -156,8 +157,6 @@ public class playerScript : MonoBehaviour
             if (isShootingEnabled){
                 enableShooting(); 
             }
-
-
-        }    
+        }
     }
 }
