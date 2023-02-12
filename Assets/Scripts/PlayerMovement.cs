@@ -12,6 +12,9 @@ public class PlayerMovement : MonoBehaviour
     public Rigidbody2D player_rigid_body;
     private float thrustPower = 1; 
 
+    public PlayerWeapon weapon;
+
+
     void enableRotation() {
         Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition); 
         Vector2 aimDirection = mousePosition - player_rigid_body.position;
@@ -40,6 +43,11 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetMouseButton(0)) {
             Vector2 force = new Vector2(-thrustPower * Mathf.Sin(Mathf.Deg2Rad * orientation), thrustPower * Mathf.Cos(Mathf.Deg2Rad * orientation)); 
             player_rigid_body.AddForce(force);
+        }
+
+        if(Input.GetKeyDown(KeyCode.Space)) 
+        {
+            weapon.Fire();
         }
     }
 }
