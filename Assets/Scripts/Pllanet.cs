@@ -26,6 +26,7 @@ public class Planet : MonoBehaviour
         
         ship.attachedRigidbody.AddForce(unit_vector);
         Debug.Log(force_of_push * unit_vector);
+        StatisticsManager.buildAnaltyicsDataObjAndPush()
     }
 
 }
