@@ -103,10 +103,10 @@ public class PlayerMovement : MonoBehaviour
         }
 
 
-        if (Input.GetKey("up") || Input.GetKey(KeyCode.W)) {
-            Vector2 force = new Vector2(-thrustPower * Mathf.Sin(Mathf.Deg2Rad * orientation), thrustPower * Mathf.Cos(Mathf.Deg2Rad * orientation)); 
-            player_rigid_body.AddForce(force);
-        }
+        // if (Input.GetKey("up") || Input.GetKey(KeyCode.W)) {
+        //     Vector2 force = new Vector2(-thrustPower * Mathf.Sin(Mathf.Deg2Rad * orientation), thrustPower * Mathf.Cos(Mathf.Deg2Rad * orientation)); 
+        //     player_rigid_body.AddForce(force);
+        // }
 
         // if (Input.GetKey("down")) {
 
@@ -122,11 +122,11 @@ public class PlayerMovement : MonoBehaviour
         //     player_rigid_body.AddForce(force);
         // }
         
-        // if (Input.GetMouseButton(0)) {
-        //     Vector2 force = new Vector2(-thrustPower * Mathf.Sin(Mathf.Deg2Rad * orientation), thrustPower * Mathf.Cos(Mathf.Deg2Rad * orientation)); 
-        //     player_rigid_body.AddForce(force);
-        //     // StatisticsManager.buildAnaltyicsDataObjAndPush(level:0, type:"ThrustPress")
-        // }
+        if (Input.GetMouseButton(0)) {
+            Vector2 force = new Vector2(-thrustPower * Mathf.Sin(Mathf.Deg2Rad * orientation), thrustPower * Mathf.Cos(Mathf.Deg2Rad * orientation)); 
+            player_rigid_body.AddForce(force);
+            // StatisticsManager.buildAnaltyicsDataObjAndPush(level:0, type:"ThrustPress")
+        }
 
         if(Input.GetKeyDown(KeyCode.Space)) 
         {
