@@ -13,7 +13,7 @@ public class PlayerMovement : MonoBehaviour
     public Rigidbody2D player_rigid_body;
     private float thrustPower = 0.9f; 
 
-    public int limit = 2;
+    public int limit = 3;
 
     public PlayerWeapon weapon;
 
