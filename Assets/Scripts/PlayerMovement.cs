@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -12,12 +13,19 @@ public class PlayerMovement : MonoBehaviour
     public Rigidbody2D player_rigid_body;
     private float thrustPower = 0.9f; 
 
+    public int limit = 2;
+
     public PlayerWeapon weapon;
 
     private static long health = 100;
     public bool isDead = false;
     public int numberOfEnemiesKilled = 0;
     public bool isInvulnerable = false;
+
+    public void resetHealth()
+    {
+        health = 100;
+    }
 
     public long getHealth()
     {
@@ -61,11 +69,24 @@ public class PlayerMovement : MonoBehaviour
         orientation = aimAngle; 
     }
 
+    public void restart()
+   {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        resetHealth();
+   }
+
+    void gameOver()
+    {
+        Invoke ("restart", 5);
+    }
+
 
     
     void Start(){
         player_rigid_body = this.GetComponent<Rigidbody2D>();
         // player_rigid_body.velocity = Vector3.right * 2;
+        
+        
     }
 
 
@@ -75,6 +96,12 @@ public class PlayerMovement : MonoBehaviour
         //Debug.Log(orientation);
 
         enableRotation(); 
+
+        if(numberOfEnemiesKilled == limit)
+        {
+            gameOver();
+        }
+
 
         if (Input.GetKey("up") || Input.GetKey(KeyCode.W)) {
             Vector2 force = new Vector2(-thrustPower * Mathf.Sin(Mathf.Deg2Rad * orientation), thrustPower * Mathf.Cos(Mathf.Deg2Rad * orientation)); 
