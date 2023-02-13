@@ -14,7 +14,30 @@ public class PlayerMovement : MonoBehaviour
 
     public PlayerWeapon weapon;
 
+    private static long health = 50;
+    public bool isDead = false;
 
+    public long getHealth()
+    {
+        return health;
+    }
+    
+    public void reduceHealth()
+    {
+        health = health - 5;
+        if(health == 0) {
+            isDead = true;
+            // Analytics to be sent here
+        }
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision) 
+    {
+        reduceHealth();
+        Debug.Log(health);
+        if(health == 0) Destroy(gameObject);
+    }
+    
     void enableRotation() {
         Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition); 
         Vector2 aimDirection = mousePosition - player_rigid_body.position;
