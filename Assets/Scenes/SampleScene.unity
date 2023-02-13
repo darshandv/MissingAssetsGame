@@ -786,7 +786,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca2910debf72ed8459274f7e9b51e76a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  force_of_push: 20
+  force_of_push: 12
 --- !u!212 &731922834
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1122,7 +1122,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca2910debf72ed8459274f7e9b51e76a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  force_of_push: 20
+  force_of_push: 12
 --- !u!212 &1018416151
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1221,7 +1221,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca2910debf72ed8459274f7e9b51e76a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  force_of_push: 20
+  force_of_push: 12
 --- !u!212 &1023022512
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1443,7 +1443,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 1131446406}
-  weapon: {fileID: 1406890125}
+  weapon: {fileID: 9255753}
   pm: {fileID: 1758943072}
   target: {fileID: 1758943074}
   startInterval: 2

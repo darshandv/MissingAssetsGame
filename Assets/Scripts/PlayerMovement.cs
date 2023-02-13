@@ -10,11 +10,11 @@ public class PlayerMovement : MonoBehaviour
     
 
     public Rigidbody2D player_rigid_body;
-    private float thrustPower = 1; 
+    private float thrustPower = 0.9f; 
 
     public PlayerWeapon weapon;
 
-    private static long health = 50;
+    private static long health = 100;
     public bool isDead = false;
     public int numberOfEnemiesKilled = 0;
     public bool isInvulnerable = false;
@@ -60,6 +60,8 @@ public class PlayerMovement : MonoBehaviour
         transform.rotation = rotation;
         orientation = aimAngle; 
     }
+
+
     
     void Start(){
         player_rigid_body = this.GetComponent<Rigidbody2D>();
@@ -73,12 +75,31 @@ public class PlayerMovement : MonoBehaviour
         //Debug.Log(orientation);
 
         enableRotation(); 
-        
-        if (Input.GetMouseButton(0)) {
+
+        if (Input.GetKey("up") || Input.GetKey(KeyCode.W)) {
             Vector2 force = new Vector2(-thrustPower * Mathf.Sin(Mathf.Deg2Rad * orientation), thrustPower * Mathf.Cos(Mathf.Deg2Rad * orientation)); 
             player_rigid_body.AddForce(force);
-            // StatisticsManager.buildAnaltyicsDataObjAndPush(level:0, type:"ThrustPress")
         }
+
+        // if (Input.GetKey("down")) {
+
+        // }
+
+        // if (Input.GetKey("right") || Input.GetKey(KeyCode.D)) {
+        //     Vector2 force = new Vector2(thrustPower * Mathf.Cos(Mathf.Deg2Rad * orientation), thrustPower * Mathf.Sin(Mathf.Deg2Rad * orientation)); 
+        //     player_rigid_body.AddForce(force);
+        // }
+
+        // if (Input.GetKey("down") || Input.GetKey(KeyCode.S)) {
+        //     Vector2 force = new Vector2(thrustPower * Mathf.Sin(Mathf.Deg2Rad * orientation), -thrustPower * Mathf.Cos(Mathf.Deg2Rad * orientation)); 
+        //     player_rigid_body.AddForce(force);
+        // }
+        
+        // if (Input.GetMouseButton(0)) {
+        //     Vector2 force = new Vector2(-thrustPower * Mathf.Sin(Mathf.Deg2Rad * orientation), thrustPower * Mathf.Cos(Mathf.Deg2Rad * orientation)); 
+        //     player_rigid_body.AddForce(force);
+        //     // StatisticsManager.buildAnaltyicsDataObjAndPush(level:0, type:"ThrustPress")
+        // }
 
         if(Input.GetKeyDown(KeyCode.Space)) 
         {
