@@ -17,6 +17,7 @@ public class PlayerMovement : MonoBehaviour
     private static long health = 50;
     public bool isDead = false;
     public int numberOfEnemiesKilled = 0;
+    public bool isInvulnerable = false;
 
     public long getHealth()
     {
@@ -38,7 +39,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision) 
     {
-        reduceHealth();
+        if (!isInvulnerable) reduceHealth();
         Debug.Log(health);
         if(health == 0) {
             Destroy(gameObject);
