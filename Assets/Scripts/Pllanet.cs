@@ -25,8 +25,7 @@ public class Planet : MonoBehaviour
         Vector2 unit_vector = new Vector2((force_of_push*x_error/magnitude), (force_of_push*y_error/magnitude));
         
         ship.attachedRigidbody.AddForce(unit_vector);
-        Debug.Log(force_of_push * unit_vector);
-        StatisticsManager.buildAnaltyicsDataObjAndPush()
+        // Debug.Log(force_of_push * unit_vector); 
     }
 
 }

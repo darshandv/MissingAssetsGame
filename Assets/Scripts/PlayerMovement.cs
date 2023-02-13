@@ -16,6 +16,7 @@ public class PlayerMovement : MonoBehaviour
 
     private static long health = 50;
     public bool isDead = false;
+    public int numberOfEnemiesKilled = 0;
 
     public long getHealth()
     {
@@ -31,11 +32,19 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
+    public void increaseEnemyKills(){
+        numberOfEnemiesKilled+=1;
+    }
+
     private void OnCollisionEnter2D(Collision2D collision) 
     {
         reduceHealth();
         Debug.Log(health);
-        if(health == 0) Destroy(gameObject);
+        if(health == 0) {
+            Destroy(gameObject);
+            StatisticsManager.buildAnaltyicsDataObjAndPush(0,1,"DeathByEnemy","0%",0,"player_termination","enemy");
+            StatisticsManager.buildAnaltyicsDataObjAndPush(numberOfEnemiesKilled,1,"NumEnemiesKilled","0%",0,"numEnemiesKilled","enemy");
+        }
     }
     
     void enableRotation() {
@@ -53,6 +62,7 @@ public class PlayerMovement : MonoBehaviour
     
     void Start(){
         player_rigid_body = this.GetComponent<Rigidbody2D>();
+        // player_rigid_body.velocity = Vector3.right * 2;
     }
 
 

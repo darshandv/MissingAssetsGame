@@ -6,6 +6,7 @@ public class EnemyController : MonoBehaviour
 {
     public Rigidbody2D rb;
     public EnemyWeapon weapon;
+    public PlayerMovement pm;
     public Transform target;
     public float startInterval = 2.0f;
     public float deltaInterval = 2.0f;
@@ -27,6 +28,7 @@ public class EnemyController : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision) 
     {
         Destroy(gameObject);
+        pm.increaseEnemyKills();
     }
 
     private void FixedUpdate()

@@ -304,7 +304,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 505188827}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -8.8655, y: -8.0093, z: 0}
+  m_LocalPosition: {x: 19.24, y: 7.44, z: 0}
   m_LocalScale: {x: 0.40976825, y: 0.8339386, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -347,6 +347,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 505188831}
   weapon: {fileID: 1406890125}
+  pm: {fileID: 1758943072}
   target: {fileID: 1758943074}
   startInterval: 1
   deltaInterval: 2
@@ -614,7 +615,7 @@ GameObject:
   - component: {fileID: 731922833}
   - component: {fileID: 731922832}
   m_Layer: 0
-  m_Name: Circle (4)
+  m_Name: Planet3 Collider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -709,7 +710,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 731922831}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.34, y: 12.1, z: 0}
+  m_LocalPosition: {x: 27.18, y: -0.14, z: 0}
   m_LocalScale: {x: 1.6577321, y: 1.5288265, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -795,7 +796,7 @@ GameObject:
   - component: {fileID: 924086300}
   - component: {fileID: 924086299}
   m_Layer: 0
-  m_Name: Circle (5)
+  m_Name: Planet3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -861,7 +862,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 924086298}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.37, y: 12.03, z: 0}
+  m_LocalPosition: {x: 27.150002, y: -0.21000099, z: 0}
   m_LocalScale: {x: 13.501707, y: 13.512774, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -881,7 +882,7 @@ GameObject:
   - component: {fileID: 1018416150}
   - component: {fileID: 1018416149}
   m_Layer: 0
-  m_Name: Circle (3)
+  m_Name: Planet 2 Collider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -976,7 +977,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1018416148}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 13.39, y: -7.18, z: 0}
+  m_LocalPosition: {x: 10.43, y: -0.21, z: 0}
   m_LocalScale: {x: 1.6577321, y: 1.5288265, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -996,7 +997,7 @@ GameObject:
   - component: {fileID: 1023022511}
   - component: {fileID: 1023022514}
   m_Layer: 0
-  m_Name: Circle (1)
+  m_Name: Planet1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1075,7 +1076,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1023022510}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.36, y: -7.24, z: 0}
+  m_LocalPosition: {x: -2.57, y: -0.77, z: 0}
   m_LocalScale: {x: 1.6577321, y: 1.5288265, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1109,7 +1110,7 @@ GameObject:
   - component: {fileID: 1033009390}
   - component: {fileID: 1033009389}
   m_Layer: 0
-  m_Name: Circle (2)
+  m_Name: Planet 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1175,7 +1176,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1033009388}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 13.36, y: -7.25, z: 0}
+  m_LocalPosition: {x: 10.4, y: -0.2800002, z: 0}
   m_LocalScale: {x: 13.501707, y: 13.512774, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1237,6 +1238,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 1131446406}
   weapon: {fileID: 1406890125}
+  pm: {fileID: 1758943072}
   target: {fileID: 1758943074}
   startInterval: 2
   deltaInterval: 2
@@ -1300,7 +1302,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1131446404}
   m_LocalRotation: {x: -0, y: -0, z: 0.99999785, w: -0.0020726612}
-  m_LocalPosition: {x: 22.31, y: -10.93, z: 0}
+  m_LocalPosition: {x: 20.2, y: -7.05, z: 0}
   m_LocalScale: {x: 0.48592794, y: 0.94139314, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1446,7 +1448,7 @@ GameObject:
   - component: {fileID: 1427609790}
   - component: {fileID: 1427609789}
   m_Layer: 0
-  m_Name: Circle
+  m_Name: Planet1 Collider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1512,7 +1514,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1427609788}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.33, y: -7.31, z: 0}
+  m_LocalPosition: {x: -2.6, y: -0.84, z: 0}
   m_LocalScale: {x: 13.501707, y: 13.512774, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1779,6 +1781,7 @@ MonoBehaviour:
   player_rigid_body: {fileID: 0}
   weapon: {fileID: 1459277787}
   isDead: 0
+  numberOfEnemiesKilled: 0
 --- !u!212 &1758943073
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1839,7 +1842,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1758943070}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -11.76, y: -6.17, z: 0}
+  m_LocalPosition: {x: -10.46, y: 4.04, z: 0}
   m_LocalScale: {x: 0.7703368, y: 0.7455492, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
