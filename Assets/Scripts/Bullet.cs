@@ -4,14 +4,24 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
+   Vector2 initialPosition;
+   public float distanceRange = 10.0f;
+
    private void Start() {
-      InvokeRepeating("Destruct", 20.0f, 20.0f);
+      initialPosition = transform.position;
    }
+
    private void OnCollisionEnter2D(Collision2D collision) 
    {    
-        Destruct();
-    }
+      Destruct();
+   }
 
+   void FixedUpdate() {
+      float distance = Vector2.Distance(initialPosition,transform.position);
+      if(distance > distanceRange) {
+         Destruct();
+      }
+   }
 
    private void Destruct() 
    {
