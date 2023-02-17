@@ -11,13 +11,14 @@ public class PlayerMovement : MonoBehaviour
     
 
     public Rigidbody2D player_rigid_body;
-    private float thrustPower = 1.8f; 
+    private float thrustPower = 0.9f; // 0.9f for local testing, 1.8f otherwise
 
     public int limit = 3;
 
     public PlayerWeapon weapon;
 
     private static long health = 100;
+    private static int regHealthReduction = 5;
     public bool isDead = false;
     public int numberOfEnemiesKilled = 0;
     public bool isInvulnerable = false;
@@ -32,9 +33,9 @@ public class PlayerMovement : MonoBehaviour
         return health;
     }
     
-    public void reduceHealth()
+    public void reduceHealth(int value)
     {
-        health = health - 5;
+        health = health - value;
         if(health == 0) {
             isDead = true;
             // Analytics to be sent here
@@ -47,9 +48,14 @@ public class PlayerMovement : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision) 
     {
-        if (!isInvulnerable) reduceHealth();
+        if (!isInvulnerable) {
+            reduceHealth(regHealthReduction);
+            if (collision.gameObject.name.Contains("Asteroid")) {
+                reduceHealth((int) (collision.relativeVelocity.magnitude));
+            }
+        }
         Debug.Log(health);
-        if(health == 0) {
+        if(health <= 0) {
             Destroy(gameObject);
             StatisticsManager.buildAnaltyicsDataObjAndPush(0,1,"DeathByEnemy","0%",0,"player_termination","enemy");
             StatisticsManager.buildAnaltyicsDataObjAndPush(numberOfEnemiesKilled,1,"NumEnemiesKilled","0%",0,"numEnemiesKilled","enemy");
