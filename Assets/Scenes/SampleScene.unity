@@ -795,7 +795,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -387.2, y: 396.5}
+  m_AnchoredPosition: {x: -311, y: 152.06}
   m_SizeDelta: {x: 213.2559, y: 70.1407}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &698091076
@@ -2211,8 +2211,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 676, y: 384}
-  m_SizeDelta: {x: 501.3475, y: 128.2567}
+  m_AnchoredPosition: {x: 219.9, y: 123}
+  m_SizeDelta: {x: 439.8, y: 128.26}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1437186277
 MonoBehaviour:
@@ -2247,7 +2247,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Mouse left Click: Thrust towards mouse
+  m_Text: 'W: Thrust in mouse direction
 
     Spacebar: Shoot'
 --- !u!222 &1437186278
@@ -2427,8 +2427,8 @@ Canvas:
   m_GameObject: {fileID: 1555966222}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 0
-  m_Camera: {fileID: 0}
+  m_RenderMode: 1
+  m_Camera: {fileID: 519420031}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
@@ -2666,7 +2666,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1758943070}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -10.46, y: 4.04, z: 0}
+  m_LocalPosition: {x: 17.97, y: -1.79, z: 0}
   m_LocalScale: {x: 0.7703368, y: 0.7455492, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
