@@ -13,15 +13,22 @@ public class PlayerMovement : MonoBehaviour
     public Rigidbody2D player_rigid_body;
     private float thrustPower = 0.9f; // 0.9f for local testing, 1.8f otherwise
 
-    public int limit = 3;
+    public int maxEnemiesLimit = 3;
 
     public PlayerWeapon weapon;
 
-    private static long health = 100;
-    private static int regHealthReduction = 5;
     public bool isDead = false;
     public int numberOfEnemiesKilled = 0;
     public bool isInvulnerable = false;
+
+    private static long health = 100;
+    private static int regHealthReduction = 5;
+
+    // Thrust
+    public ThrustController tc;
+    private bool isReducingThrust = false;
+    private float thrustReductionStartTime = 0f;
+    private bool isThrustKeyReleased = true;
 
     public void resetHealth()
     {
@@ -86,13 +93,15 @@ public class PlayerMovement : MonoBehaviour
         Invoke ("restart", 5);
     }
 
-
+    public void applyForceOnPlayer(){
+        Vector2 force = new Vector2(-thrustPower * Mathf.Sin(Mathf.Deg2Rad * orientation), thrustPower * Mathf.Cos(Mathf.Deg2Rad * orientation)); 
+        player_rigid_body.AddForce(force);
+    }
     
     void Start(){
         player_rigid_body = this.GetComponent<Rigidbody2D>();
         // player_rigid_body.velocity = Vector3.right * 2;
-        
-        
+        tc = new ThrustController();      
     }
 
 
@@ -103,15 +112,35 @@ public class PlayerMovement : MonoBehaviour
 
         enableRotation(); 
 
-        if(numberOfEnemiesKilled == limit)
+        if(numberOfEnemiesKilled == maxEnemiesLimit)
         {
             gameOver();
         }
 
-
-        if (Input.GetKey("up") || Input.GetKey(KeyCode.W)) {
-            Vector2 force = new Vector2(-thrustPower * Mathf.Sin(Mathf.Deg2Rad * orientation), thrustPower * Mathf.Cos(Mathf.Deg2Rad * orientation)); 
-            player_rigid_body.AddForce(force);
+        // Now you can continuously press W key and keep applying force to 
+        // change direction and movement. After every second the thrust reduces
+        // if you long press W
+        if (Input.GetKeyDown(KeyCode.W)) {
+            // Reduce thrust instantly
+            applyForceOnPlayer();
+            tc.reduceThrust(Config.thrustReductionAmount);
+            isThrustKeyReleased = false;
+        } else if (Input.GetKey(KeyCode.W)) {
+            // Reduce thrust continuously if key is held down
+            if (!isReducingThrust) {
+                isReducingThrust = true;
+                thrustReductionStartTime = Time.time;
+            }
+            if (Time.time - thrustReductionStartTime >= Config.thrustReductionDelay) {
+                applyForceOnPlayer();
+                tc.reduceThrust(Config.thrustReductionAmount*Time.deltaTime);
+            }
+            isThrustKeyReleased = false;
+        } else if(!isThrustKeyReleased){
+            // Reset variables when key is released
+            isReducingThrust = false;
+            thrustReductionStartTime = 0f;
+            isThrustKeyReleased = true;
         }
 
         // if (Input.GetKey("down")) {

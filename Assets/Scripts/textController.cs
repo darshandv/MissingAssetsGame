@@ -12,7 +12,7 @@ public class textController : MonoBehaviour
     
     string getHealthText() {
         if(!player) return "Wasted";
-        else return "Health: " + player.getHealth().ToString();
+        else return "Health: " + player.getHealth().ToString() + "\nThrust: "+ player.tc.getThrust();
     }
 
     void Update(){
