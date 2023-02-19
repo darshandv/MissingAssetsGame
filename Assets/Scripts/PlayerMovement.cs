@@ -120,27 +120,29 @@ public class PlayerMovement : MonoBehaviour
         // Now you can continuously press W key and keep applying force to 
         // change direction and movement. After every second the thrust reduces
         // if you long press W
-        if (Input.GetKeyDown(KeyCode.W)) {
-            // Reduce thrust instantly
-            applyForceOnPlayer();
-            tc.reduceThrust(Config.thrustReductionAmount);
-            isThrustKeyReleased = false;
-        } else if (Input.GetKey(KeyCode.W)) {
-            // Reduce thrust continuously if key is held down
-            if (!isReducingThrust) {
-                isReducingThrust = true;
-                thrustReductionStartTime = Time.time;
-            }
-            if (Time.time - thrustReductionStartTime >= Config.thrustReductionDelay) {
+        if (tc.getThrust() > 0.1){
+            if (Input.GetKeyDown(KeyCode.W)) {
+                // Reduce thrust instantly
                 applyForceOnPlayer();
-                tc.reduceThrust(Config.thrustReductionAmount*Time.deltaTime);
+                tc.reduceThrust(Config.thrustReductionAmount);
+                isThrustKeyReleased = false;
+            } else if (Input.GetKey(KeyCode.W)) {
+                // Reduce thrust continuously if key is held down
+                if (!isReducingThrust) {
+                    isReducingThrust = true;
+                    thrustReductionStartTime = Time.time;
+                }
+                if (Time.time - thrustReductionStartTime >= Config.thrustReductionDelay) {
+                    applyForceOnPlayer();
+                    tc.reduceThrust(Config.thrustReductionAmount*Time.deltaTime);
+                }
+                isThrustKeyReleased = false;
+            } else if(!isThrustKeyReleased){
+                // Reset variables when key is released
+                isReducingThrust = false;
+                thrustReductionStartTime = 0f;
+                isThrustKeyReleased = true;
             }
-            isThrustKeyReleased = false;
-        } else if(!isThrustKeyReleased){
-            // Reset variables when key is released
-            isReducingThrust = false;
-            thrustReductionStartTime = 0f;
-            isThrustKeyReleased = true;
         }
 
         // if (Input.GetKey("down")) {
