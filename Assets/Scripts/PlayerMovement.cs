@@ -11,7 +11,7 @@ public class PlayerMovement : MonoBehaviour
     
 
     public Rigidbody2D player_rigid_body;
-    private float thrustPower = 0.9f; // 0.9f for local testing, 1.8f otherwise
+    private float thrustPower = 1f; // 0.9f for local testing, 1.8f otherwise
 
     public int maxEnemiesLimit = 3;
 
@@ -93,30 +93,12 @@ public class PlayerMovement : MonoBehaviour
         Invoke ("restart", 5);
     }
 
-    public void applyForceOnPlayer(){
+    private void applyForceOnPlayer(){
         Vector2 force = new Vector2(-thrustPower * Mathf.Sin(Mathf.Deg2Rad * orientation), thrustPower * Mathf.Cos(Mathf.Deg2Rad * orientation)); 
         player_rigid_body.AddForce(force);
     }
-    
-    void Start(){
-        player_rigid_body = this.GetComponent<Rigidbody2D>();
-        // player_rigid_body.velocity = Vector3.right * 2;
-        tc = new ThrustController();      
-    }
 
-
-    // Update is called once per frame
-    void Update()
-    {
-        //Debug.Log(orientation);
-
-        enableRotation(); 
-
-        if(numberOfEnemiesKilled == maxEnemiesLimit)
-        {
-            gameOver();
-        }
-
+    private void allowLimitedThrust(){
         // Now you can continuously press W key and keep applying force to 
         // change direction and movement. After every second the thrust reduces
         // if you long press W
@@ -144,6 +126,34 @@ public class PlayerMovement : MonoBehaviour
                 isThrustKeyReleased = true;
             }
         }
+    }
+    
+    void Start(){
+        player_rigid_body = this.GetComponent<Rigidbody2D>();
+        // player_rigid_body.velocity = Vector3.right * 2;
+        tc = new ThrustController();      
+    }
+
+
+    // Update is called once per frame
+    void Update()
+    {
+        //Debug.Log(orientation);
+
+        enableRotation(); 
+
+        if(numberOfEnemiesKilled == maxEnemiesLimit)
+        {
+            gameOver();
+        }
+
+        if (Config.useThrustControl){
+            allowLimitedThrust();
+        }
+        else {
+            applyForceOnPlayer();
+        }
+        
 
         // if (Input.GetKey("down")) {
 
