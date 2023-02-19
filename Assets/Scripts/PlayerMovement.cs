@@ -151,9 +151,13 @@ public class PlayerMovement : MonoBehaviour
             allowLimitedThrust();
         }
         else {
+<<<<<<< HEAD
             if(Input.GetKeyDown(KeyCode.W)) {
                 applyForceOnPlayer();
             }
+=======
+            applyForceOnPlayer();
+>>>>>>> 46f10f6 (thrust: complete MA-9 task)
         }
         
 
