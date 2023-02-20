@@ -147,12 +147,13 @@ public class PlayerMovement : MonoBehaviour
             gameOver();
         }
 
-        // if (Config.useThrustControl){
-        //     allowLimitedThrust();
-        // }
-        // else {
-        if(Input.GetKey(KeyCode.W)) {
-            applyForceOnPlayer();
+        if (Config.useThrustControl){
+            allowLimitedThrust();
+        }
+        else {
+            if(Input.GetKey(KeyCode.W)) {
+                applyForceOnPlayer();
+            }
         }
         // }
         
