@@ -14,6 +14,12 @@ public class ThrustController
         }  
     }
 
+    public void increaseThrust(float increaseValue){
+        if (thrust <= Config.maxThrust - increaseValue){
+            thrust += increaseValue;
+        }
+    }
+
     public float getThrust(){
         return thrust;
     }

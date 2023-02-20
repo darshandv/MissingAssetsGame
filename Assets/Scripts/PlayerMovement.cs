@@ -11,7 +11,7 @@ public class PlayerMovement : MonoBehaviour
     
 
     public Rigidbody2D player_rigid_body;
-    private float thrustPower = 1f; // 0.9f for local testing, 1.8f otherwise
+    float thrustPower = 0.1f; // 0.1f for local testing, build yet to be decided
 
     public int maxEnemiesLimit = 3;
 
@@ -95,7 +95,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void applyForceOnPlayer(){
         Vector2 force = new Vector2(-thrustPower * Mathf.Sin(Mathf.Deg2Rad * orientation), thrustPower * Mathf.Cos(Mathf.Deg2Rad * orientation)); 
-        player_rigid_body.AddForce(force);
+        player_rigid_body.AddForce(force, ForceMode2D.Impulse);
     }
 
     private void allowLimitedThrust(){
@@ -106,16 +106,16 @@ public class PlayerMovement : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.W)) {
                 // Reduce thrust instantly
                 applyForceOnPlayer();
-                tc.reduceThrust(Config.thrustReductionAmount);
+                tc.reduceThrust(Config.thrustReductionAmount*0.1f);
                 isThrustKeyReleased = false;
             } else if (Input.GetKey(KeyCode.W)) {
                 // Reduce thrust continuously if key is held down
+                applyForceOnPlayer();
                 if (!isReducingThrust) {
                     isReducingThrust = true;
                     thrustReductionStartTime = Time.time;
                 }
                 if (Time.time - thrustReductionStartTime >= Config.thrustReductionDelay) {
-                    applyForceOnPlayer();
                     tc.reduceThrust(Config.thrustReductionAmount*Time.deltaTime);
                 }
                 isThrustKeyReleased = false;
@@ -125,6 +125,9 @@ public class PlayerMovement : MonoBehaviour
                 thrustReductionStartTime = 0f;
                 isThrustKeyReleased = true;
             }
+        }
+        if (isThrustKeyReleased){
+            tc.increaseThrust(Config.thrustIncrementAmount*Time.deltaTime);
         }
     }
     
