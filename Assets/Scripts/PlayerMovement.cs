@@ -102,7 +102,7 @@ public class PlayerMovement : MonoBehaviour
         // Now you can continuously press W key and keep applying force to 
         // change direction and movement. After every second the thrust reduces
         // if you long press W
-        if (tc.getThrust() > 0.1){
+        if (tc.getThrust() > 0.04){
             if (Input.GetKeyDown(KeyCode.W)) {
                 // Reduce thrust instantly
                 applyForceOnPlayer();
