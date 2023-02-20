@@ -151,7 +151,7 @@ public class PlayerMovement : MonoBehaviour
             allowLimitedThrust();
         }
         else {
-            if(Input.GetKeyDown(KeyCode.W)) {
+            if(Input.GetKey(KeyCode.W)) {
                 applyForceOnPlayer();
             }
         }
