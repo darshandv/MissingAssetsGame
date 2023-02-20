@@ -390,8 +390,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18ba2f9ff2fd2664c970142dfc4deb1c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  textElement: {fileID: 0}
-  player: {fileID: 0}
+  textElement: {fileID: 1419576247}
+  player: {fileID: 2112177125}
 --- !u!114 &86850849
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -413,7 +413,7 @@ AudioListener:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 86850847}
-  m_Enabled: 1
+  m_Enabled: 0
 --- !u!20 &86850851
 Camera:
   m_ObjectHideFlags: 0
@@ -554,14 +554,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 222184166}
   weapon: {fileID: 1448929389}
-  pm: {fileID: 0}
-  target: {fileID: 0}
+  pm: {fileID: 2112177125}
+  target: {fileID: 2112177127}
   startInterval: 2
   deltaInterval: 2
   range: 10
-  increment: 0.05
-  shouldMove: 0
-  moveY: 1
+  increment: 0.01
+  shouldMove: 1
+  moveY: 0
 --- !u!212 &222184168
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1022,13 +1022,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 374040982}
   weapon: {fileID: 506190054}
-  pm: {fileID: 0}
-  target: {fileID: 0}
+  pm: {fileID: 2112177125}
+  target: {fileID: 2112177127}
   startInterval: 2
   deltaInterval: 2
   range: 10
-  increment: 0.05
-  shouldMove: 0
+  increment: 0.01
+  shouldMove: 1
   moveY: 1
 --- !u!212 &374040984
 SpriteRenderer:
@@ -1180,14 +1180,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 389995763}
   weapon: {fileID: 1993426731}
-  pm: {fileID: 0}
-  target: {fileID: 0}
+  pm: {fileID: 2112177125}
+  target: {fileID: 2112177127}
   startInterval: 2
   deltaInterval: 2
   range: 10
-  increment: 0.05
-  shouldMove: 0
-  moveY: 1
+  increment: 0.01
+  shouldMove: 1
+  moveY: 0
 --- !u!212 &389995765
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1828,13 +1828,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 666951350}
   weapon: {fileID: 487901503}
-  pm: {fileID: 0}
-  target: {fileID: 0}
+  pm: {fileID: 2112177125}
+  target: {fileID: 2112177127}
   startInterval: 2
   deltaInterval: 2
   range: 10
-  increment: 0.05
-  shouldMove: 0
+  increment: 0.01
+  shouldMove: 1
   moveY: 1
 --- !u!212 &666951352
 SpriteRenderer:
@@ -2335,7 +2335,7 @@ Canvas:
   m_Enabled: 1
   serializedVersion: 3
   m_RenderMode: 1
-  m_Camera: {fileID: 0}
+  m_Camera: {fileID: 86850851}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
@@ -2481,14 +2481,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 932695081}
   weapon: {fileID: 681100185}
-  pm: {fileID: 0}
-  target: {fileID: 0}
+  pm: {fileID: 2112177125}
+  target: {fileID: 2112177127}
   startInterval: 2
   deltaInterval: 2
   range: 10
-  increment: 0.05
-  shouldMove: 0
-  moveY: 1
+  increment: 0.01
+  shouldMove: 1
+  moveY: 0
 --- !u!212 &932695083
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3418,13 +3418,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 1351313117}
   weapon: {fileID: 368299746}
-  pm: {fileID: 0}
-  target: {fileID: 0}
+  pm: {fileID: 2112177125}
+  target: {fileID: 2112177127}
   startInterval: 2
   deltaInterval: 2
   range: 10
-  increment: 0.05
-  shouldMove: 0
+  increment: 0.01
+  shouldMove: 1
   moveY: 1
 --- !u!212 &1351313119
 SpriteRenderer:
@@ -3706,7 +3706,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -612, y: 322}
+  m_AnchoredPosition: {x: -305, y: 192}
   m_SizeDelta: {x: 213.2559, y: 70.1407}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1419576247
@@ -5583,6 +5583,7 @@ MonoBehaviour:
   playerSpeed: 0
   orientation: 0
   player_rigid_body: {fileID: 2112177124}
+  thrustPower: 0.01
   maxEnemiesLimit: 3
   weapon: {fileID: 1462080379}
   isDead: 0

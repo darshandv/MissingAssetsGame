@@ -1853,6 +1853,7 @@ MonoBehaviour:
   playerSpeed: 0
   orientation: 0
   player_rigid_body: {fileID: 1273239423}
+  thrustPower: 0.02
   maxEnemiesLimit: 3
   weapon: {fileID: 1681283677}
   isDead: 0
@@ -2383,7 +2384,7 @@ AudioListener:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1442210885}
-  m_Enabled: 1
+  m_Enabled: 0
 --- !u!20 &1442210890
 Camera:
   m_ObjectHideFlags: 0
@@ -3342,7 +3343,7 @@ AudioListener:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2000773839}
-  m_Enabled: 1
+  m_Enabled: 0
 --- !u!4 &2000773844
 Transform:
   m_ObjectHideFlags: 0
