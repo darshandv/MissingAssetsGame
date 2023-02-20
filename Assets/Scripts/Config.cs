@@ -6,7 +6,7 @@ public static class Config
 
     // Thrust related variables
     public static bool useThrustControl = true;
-    public static float maxThrust = 50f;
+    public static float maxThrust = 75f;
     public static float thrustReductionAmount = 2f;
     public static float thrustReductionDelay = 1f; // in seconds 
 }
