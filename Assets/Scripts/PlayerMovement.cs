@@ -5,30 +5,28 @@ using UnityEngine.SceneManagement;
 
 public class PlayerMovement : MonoBehaviour
 {
-
     public float playerSpeed = 0f; 
     public float orientation; 
-    
 
     public Rigidbody2D player_rigid_body;
     private float thrustPower = 0.9f; // 0.9f for local testing, 1.8f otherwise
 
-    public int limit = 3;
+    public static int limit = 3;
 
     public PlayerWeapon weapon;
 
     private static long health = 100;
     private static int regHealthReduction = 5;
     public bool isDead = false;
-    public int numberOfEnemiesKilled = 0;
+    public static int numberOfEnemiesKilled = 0;
     public bool isInvulnerable = false;
 
-    public void resetHealth()
+    public static void resetHealth()
     {
         health = 100;
     }
 
-    public long getHealth()
+    public static long getHealth()
     {
         return health;
     }
@@ -76,18 +74,16 @@ public class PlayerMovement : MonoBehaviour
     }
 
     public void restart()
-   {
+    {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         resetHealth();
-   }
+    }
 
     void gameOver()
     {
         Invoke ("restart", 5);
     }
 
-
-    
     void Start(){
         player_rigid_body = this.GetComponent<Rigidbody2D>();
         // player_rigid_body.velocity = Vector3.right * 2;
@@ -95,48 +91,48 @@ public class PlayerMovement : MonoBehaviour
         
     }
 
-
     // Update is called once per frame
     void Update()
     {
-        //Debug.Log(orientation);
+        if (!PauseMenu.IsGamePaused) {
+            //Debug.Log(orientation);
 
-        enableRotation(); 
+            enableRotation(); 
 
-        if(numberOfEnemiesKilled == limit)
-        {
-            gameOver();
-        }
+            if(numberOfEnemiesKilled == limit)
+            {
+                gameOver();
+            }
 
+            if (Input.GetKey("up") || Input.GetKey(KeyCode.W)) {
+                Vector2 force = new Vector2(-thrustPower * Mathf.Sin(Mathf.Deg2Rad * orientation), thrustPower * Mathf.Cos(Mathf.Deg2Rad * orientation)); 
+                player_rigid_body.AddForce(force);
+            }
 
-        if (Input.GetKey("up") || Input.GetKey(KeyCode.W)) {
-            Vector2 force = new Vector2(-thrustPower * Mathf.Sin(Mathf.Deg2Rad * orientation), thrustPower * Mathf.Cos(Mathf.Deg2Rad * orientation)); 
-            player_rigid_body.AddForce(force);
-        }
+            // if (Input.GetKey("down")) {
 
-        // if (Input.GetKey("down")) {
+            // }
 
-        // }
+            // if (Input.GetKey("right") || Input.GetKey(KeyCode.D)) {
+            //     Vector2 force = new Vector2(thrustPower * Mathf.Cos(Mathf.Deg2Rad * orientation), thrustPower * Mathf.Sin(Mathf.Deg2Rad * orientation)); 
+            //     player_rigid_body.AddForce(force);
+            // }
 
-        // if (Input.GetKey("right") || Input.GetKey(KeyCode.D)) {
-        //     Vector2 force = new Vector2(thrustPower * Mathf.Cos(Mathf.Deg2Rad * orientation), thrustPower * Mathf.Sin(Mathf.Deg2Rad * orientation)); 
-        //     player_rigid_body.AddForce(force);
-        // }
+            // if (Input.GetKey("down") || Input.GetKey(KeyCode.S)) {
+            //     Vector2 force = new Vector2(thrustPower * Mathf.Sin(Mathf.Deg2Rad * orientation), -thrustPower * Mathf.Cos(Mathf.Deg2Rad * orientation)); 
+            //     player_rigid_body.AddForce(force);
+            // }
+            
+            // if (Input.GetMouseButton(0)) {
+            //     Vector2 force = new Vector2(-thrustPower * Mathf.Sin(Mathf.Deg2Rad * orientation), thrustPower * Mathf.Cos(Mathf.Deg2Rad * orientation)); 
+            //     player_rigid_body.AddForce(force);
+            //     // StatisticsManager.buildAnaltyicsDataObjAndPush(level:0, type:"ThrustPress")
+            // }
 
-        // if (Input.GetKey("down") || Input.GetKey(KeyCode.S)) {
-        //     Vector2 force = new Vector2(thrustPower * Mathf.Sin(Mathf.Deg2Rad * orientation), -thrustPower * Mathf.Cos(Mathf.Deg2Rad * orientation)); 
-        //     player_rigid_body.AddForce(force);
-        // }
-        
-        // if (Input.GetMouseButton(0)) {
-        //     Vector2 force = new Vector2(-thrustPower * Mathf.Sin(Mathf.Deg2Rad * orientation), thrustPower * Mathf.Cos(Mathf.Deg2Rad * orientation)); 
-        //     player_rigid_body.AddForce(force);
-        //     // StatisticsManager.buildAnaltyicsDataObjAndPush(level:0, type:"ThrustPress")
-        // }
-
-        if(Input.GetKeyDown(KeyCode.Space)) 
-        {
-            weapon.Fire();
-        }
+            if(Input.GetKeyDown(KeyCode.Space)) 
+            {
+                weapon.Fire();
+            }
+        } 
     }
 }
