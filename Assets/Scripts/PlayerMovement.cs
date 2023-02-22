@@ -13,12 +13,12 @@ public class PlayerMovement : MonoBehaviour
     public Rigidbody2D player_rigid_body;
     public float thrustPower = 0.05f;  // 0.05f for local testing, build yet to be decided
 
-    public int maxEnemiesLimit = 3;
+    public static int maxEnemiesLimit = 3;
 
     public PlayerWeapon weapon;
 
     public bool isDead = false;
-    public int numberOfEnemiesKilled = 0;
+    public static int numberOfEnemiesKilled = 0;
     public bool isInvulnerable = false;
 
     private static long health = 100;
@@ -30,12 +30,12 @@ public class PlayerMovement : MonoBehaviour
     private float thrustReductionStartTime = 0f;
     private bool isThrustKeyReleased = true;
 
-    public void resetHealth()
+    public static void resetHealth()
     {
         health = 100;
     }
 
-    public long getHealth()
+    public static long getHealth()
     {
         return health;
     }
@@ -141,49 +141,51 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //Debug.Log(orientation);
+        if (!MenuBehavior.IsGamePaused) {
+            //Debug.Log(orientation);
 
-        enableRotation(); 
+            enableRotation(); 
 
-        if(numberOfEnemiesKilled == maxEnemiesLimit)
-        {
-            gameOver();
-        }
-
-        if (Config.useThrustControl){
-            allowLimitedThrust();
-        }
-        else {
-            if(Input.GetKey(KeyCode.W)) {
-                applyForceOnPlayer();
+            if(numberOfEnemiesKilled == maxEnemiesLimit)
+            {
+                gameOver();
             }
-        }
-        // }
-        
 
-        // if (Input.GetKey("down")) {
+            if (Config.useThrustControl){
+                allowLimitedThrust();
+            }
+            else {
+                if(Input.GetKey(KeyCode.W)) {
+                    applyForceOnPlayer();
+                }
+            }
+            // }
+            
 
-        // }
+            // if (Input.GetKey("down")) {
 
-        // if (Input.GetKey("right") || Input.GetKey(KeyCode.D)) {
-        //     Vector2 force = new Vector2(thrustPower * Mathf.Cos(Mathf.Deg2Rad * orientation), thrustPower * Mathf.Sin(Mathf.Deg2Rad * orientation)); 
-        //     player_rigid_body.AddForce(force);
-        // }
+            // }
 
-        // if (Input.GetKey("down") || Input.GetKey(KeyCode.S)) {
-        //     Vector2 force = new Vector2(thrustPower * Mathf.Sin(Mathf.Deg2Rad * orientation), -thrustPower * Mathf.Cos(Mathf.Deg2Rad * orientation)); 
-        //     player_rigid_body.AddForce(force);
-        // }
-        
-        // if (Input.GetMouseButton(0)) {
-        //     Vector2 force = new Vector2(-thrustPower * Mathf.Sin(Mathf.Deg2Rad * orientation), thrustPower * Mathf.Cos(Mathf.Deg2Rad * orientation)); 
-        //     player_rigid_body.AddForce(force);
-        //     // StatisticsManager.buildAnaltyicsDataObjAndPush(level:0, type:"ThrustPress")
-        // }
+            // if (Input.GetKey("right") || Input.GetKey(KeyCode.D)) {
+            //     Vector2 force = new Vector2(thrustPower * Mathf.Cos(Mathf.Deg2Rad * orientation), thrustPower * Mathf.Sin(Mathf.Deg2Rad * orientation)); 
+            //     player_rigid_body.AddForce(force);
+            // }
 
-        if(Input.GetKeyDown(KeyCode.Space)) 
-        {
-            weapon.Fire();
+            // if (Input.GetKey("down") || Input.GetKey(KeyCode.S)) {
+            //     Vector2 force = new Vector2(thrustPower * Mathf.Sin(Mathf.Deg2Rad * orientation), -thrustPower * Mathf.Cos(Mathf.Deg2Rad * orientation)); 
+            //     player_rigid_body.AddForce(force);
+            // }
+            
+            // if (Input.GetMouseButton(0)) {
+            //     Vector2 force = new Vector2(-thrustPower * Mathf.Sin(Mathf.Deg2Rad * orientation), thrustPower * Mathf.Cos(Mathf.Deg2Rad * orientation)); 
+            //     player_rigid_body.AddForce(force);
+            //     // StatisticsManager.buildAnaltyicsDataObjAndPush(level:0, type:"ThrustPress")
+            // }
+
+            if(Input.GetKeyDown(KeyCode.Space)) 
+            {
+                weapon.Fire();
+            }
         }
     }
 }
