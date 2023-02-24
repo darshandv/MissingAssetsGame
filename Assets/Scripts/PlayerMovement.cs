@@ -8,7 +8,6 @@ public class PlayerMovement : MonoBehaviour
 
     public float playerSpeed = 0f; 
     public float orientation; 
-    
 
     public Rigidbody2D player_rigid_body;
     public float thrustPower = 0.05f;  // 0.05f for local testing, build yet to be decided
@@ -17,7 +16,7 @@ public class PlayerMovement : MonoBehaviour
 
     public PlayerWeapon weapon;
 
-    public bool isDead = false;
+    public static bool isDead = false;
     public static int numberOfEnemiesKilled = 0;
     public bool isInvulnerable = false;
 
@@ -43,7 +42,7 @@ public class PlayerMovement : MonoBehaviour
     public void reduceHealth(int value)
     {
         health = health - value;
-        if(health == 0) {
+        if(health <= 0) {
             isDead = true;
             // Analytics to be sent here
         }
@@ -80,17 +79,6 @@ public class PlayerMovement : MonoBehaviour
         Quaternion rotation= Quaternion.AngleAxis(angle - 90, Vector3.forward);
         transform.rotation = rotation;
         orientation = aimAngle; 
-    }
-
-    public void restart()
-   {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-        resetHealth();
-   }
-
-    void gameOver()
-    {
-        Invoke ("restart", 5);
     }
 
     private void applyForceOnPlayer(){
@@ -137,19 +125,13 @@ public class PlayerMovement : MonoBehaviour
         tc = new ThrustController();      
     }
 
-
     // Update is called once per frame
     void Update()
     {
         if (!MenuBehavior.IsGamePaused) {
             //Debug.Log(orientation);
 
-            enableRotation(); 
-
-            if(numberOfEnemiesKilled == maxEnemiesLimit)
-            {
-                gameOver();
-            }
+            enableRotation();
 
             if (Config.useThrustControl){
                 allowLimitedThrust();

@@ -11,6 +11,7 @@ public class MenuBehavior : MonoBehaviour
     public void ResetGame() {
         Time.timeScale = 1f;
         IsGamePaused = false;
+        PlayerMovement.isDead = false;
     }
 
     public void Pause() {

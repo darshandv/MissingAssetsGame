@@ -18,16 +18,16 @@ public class EndLevelMenu : MenuBehavior
     void Update()
     {
         Scene scene = SceneManager.GetActiveScene();
-        bool level1Done = (scene.name == "Level1") && (PlayerMovement.numberOfEnemiesKilled == 1);
-        bool level2Done = (scene.name == "Level2") && (PlayerMovement.numberOfEnemiesKilled == 6);
+        bool level2Done = (scene.name == "Level2") && (PlayerMovement.numberOfEnemiesKilled == 1);
+        bool level3Done = (scene.name == "Level3") && (PlayerMovement.numberOfEnemiesKilled == 1);
+        bool level4Done = (scene.name == "Level4") && (PlayerMovement.numberOfEnemiesKilled == 6);
+        bool sampleSceneDone = (scene.name == "SampleScene") && (PlayerMovement.numberOfEnemiesKilled == 3);
 
-        if (PlayerMovement.getHealth() <= 0) {
+        if (PlayerMovement.isDead || PlayerMovement.getHealth() <= 0) {
             Pause();
             losingText.SetActive(true);
             winningText.SetActive(false);
-        } else if (level1Done ||
-                   level2Done ||
-                   (PlayerMovement.numberOfEnemiesKilled == PlayerMovement.maxEnemiesLimit)) {
+        } else if (level2Done || level3Done || level4Done || sampleSceneDone) {
             Pause();
             losingText.SetActive(false);
             winningText.SetActive(true);

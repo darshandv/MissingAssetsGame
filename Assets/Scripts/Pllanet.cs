@@ -28,7 +28,10 @@ public class Planet : MonoBehaviour
 
             if(isBlackHole) {
                 float distance = Vector2.Distance(transform.position,ship.transform.position);
-                if(distance <= eventHorizon) Destroy(ship.gameObject);
+                if(distance <= eventHorizon) {
+                    PlayerMovement.isDead = true;
+                    Destroy(ship.gameObject);
+                }
             }
 
             Vector2 unit_vector = new Vector2((force_of_push*x_error/magnitude), (force_of_push*y_error/magnitude));
