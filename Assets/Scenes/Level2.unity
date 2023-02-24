@@ -721,8 +721,10 @@ MonoBehaviour:
   deltaInterval: 2
   range: 10
   increment: 0.2
-  shouldMove: 1
-  moveY: 0
+  movementType: 1
+  moveY: 1
+  speed: 1
+  followStopDistance: 2.5
 --- !u!212 &222184168
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1189,8 +1191,10 @@ MonoBehaviour:
   deltaInterval: 2
   range: 10
   increment: 0.2
-  shouldMove: 1
+  movementType: 1
   moveY: 1
+  speed: 1
+  followStopDistance: 2.5
 --- !u!212 &374040984
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1347,8 +1351,10 @@ MonoBehaviour:
   deltaInterval: 2
   range: 10
   increment: 0.2
-  shouldMove: 1
+  movementType: 1
   moveY: 1
+  speed: 1
+  followStopDistance: 2.5
 --- !u!212 &389995765
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2209,8 +2215,10 @@ MonoBehaviour:
   deltaInterval: 2
   range: 10
   increment: 0.2
-  shouldMove: 1
+  movementType: 1
   moveY: 0
+  speed: 1
+  followStopDistance: 2.5
 --- !u!212 &666951352
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3022,8 +3030,10 @@ MonoBehaviour:
   deltaInterval: 2
   range: 10
   increment: 0.2
-  shouldMove: 1
+  movementType: 1
   moveY: 0
+  speed: 1
+  followStopDistance: 2.5
 --- !u!212 &932695083
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -4790,8 +4800,10 @@ MonoBehaviour:
   deltaInterval: 2
   range: 10
   increment: 0.2
-  shouldMove: 1
-  moveY: 1
+  movementType: 1
+  moveY: 0
+  speed: 1
+  followStopDistance: 2.5
 --- !u!212 &1351313119
 SpriteRenderer:
   m_ObjectHideFlags: 0
