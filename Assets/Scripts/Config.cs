@@ -1,8 +1,14 @@
+public enum MovementType {
+    None,
+    FixedAxis,
+    Follow
+}
+
 public static class Config
 {
     public static int  numberofEnemies = 0;
     public static bool isDead = false;
-    public static bool shouldEnemiesMove = false;
+    public static MovementType movementType = MovementType.None;
 
     // Thrust related variables
     public static bool useThrustControl = true;

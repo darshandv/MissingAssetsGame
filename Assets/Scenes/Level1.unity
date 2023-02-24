@@ -3546,8 +3546,10 @@ MonoBehaviour:
   deltaInterval: 2
   range: 10
   increment: 0.05
-  shouldMove: 0
+  movementType: 0
   moveY: 1
+  speed: 1
+  followStopDistance: 2.5
 --- !u!212 &1367014792
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3608,7 +3610,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1367014788}
   m_LocalRotation: {x: -0, y: -0, z: 0.99999785, w: -0.0020726612}
-  m_LocalPosition: {x: 22.21, y: 10.34, z: 0}
+  m_LocalPosition: {x: 19.52, y: -3.39, z: 0}
   m_LocalScale: {x: 0.48592794, y: 0.94139314, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:

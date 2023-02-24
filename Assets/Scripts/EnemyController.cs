@@ -13,10 +13,12 @@ public class EnemyController : MonoBehaviour
     public float range = 10.0f;
     public float increment = 0.05f;
     private Vector2 initialPosition;
-    public bool shouldMove = false;
+    public MovementType movementType = MovementType.None;
     public bool moveY = true;
     private int UP = 1;
     private int direction = 1;
+    public float speed = 1.0f;
+    public float followStopDistance = 2.5f;
 
 
 
@@ -81,10 +83,15 @@ public class EnemyController : MonoBehaviour
         }
     }
 
-    void Update() {
-        // Local config takes precedence
-        if(shouldMove || Config.shouldEnemiesMove)
-            addDelta();
+    private void follow() {
+        if(Vector2.Distance(transform.position,target.position) >= followStopDistance){        
+            var step =  speed * Time.deltaTime;
+            transform.position = Vector3.MoveTowards(transform.position, target.position, step);
+        }
+    }
+
+    private void moveFixedAxis() {
+        addDelta();
     }
 
     private void FixedUpdate()
@@ -95,5 +102,17 @@ public class EnemyController : MonoBehaviour
             rb.rotation = aimAngle;
         }
 
+        switch (movementType)
+        {
+            case MovementType.Follow:
+                follow();
+                break;
+            case MovementType.FixedAxis:
+                moveFixedAxis();
+                break;
+            default:
+                break;
+        } 
+            
     }
 }
