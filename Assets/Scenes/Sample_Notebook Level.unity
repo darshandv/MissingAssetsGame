@@ -1414,6 +1414,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1314466603}
     - target: {fileID: 3607417459590073720, guid: 43aabf3e24f9c47b98876da404ee6da2, type: 3}
+      propertyPath: backupGoal
+      value: 
+      objectReference: {fileID: 645973588}
+    - target: {fileID: 3607417459590073720, guid: 43aabf3e24f9c47b98876da404ee6da2, type: 3}
       propertyPath: goalPlanet
       value: 
       objectReference: {fileID: 753807672}
