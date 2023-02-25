@@ -9,7 +9,7 @@ using UnityEngine;
 public class StatisticsManager
 {
 
-    public string database_url = "https://missing-assets-default-rtdb.firebaseio.com/analytics_data.json";
+    public string database_url = "https://missing-assets-default-rtdb.firebaseio.com/analytics_data_prod.json";
 
     public void pushDataToAnalyticsDb(AnalyticsData analyticsData) {
         RestClient.Post(database_url, analyticsData);
