@@ -13,4 +13,7 @@ public static class Config
 
     // Metrics
     public static int metricVersion = 1;
+
+    //Levels
+    public static string[] levels = {"SampleScene","Level1","Level2","Level3","Level4"};
 }

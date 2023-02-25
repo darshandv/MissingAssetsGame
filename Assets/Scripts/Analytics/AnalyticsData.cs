@@ -9,5 +9,4 @@ public class AnalyticsData
     public long timestampLong;
     public string eventName;
     public string eventValue;
-    public string eventOutcome;   
 }

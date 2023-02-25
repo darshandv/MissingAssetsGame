@@ -4,6 +4,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Proyecto26;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 
 public class StatisticsManager
@@ -15,15 +16,22 @@ public class StatisticsManager
         RestClient.Post(database_url, analyticsData);
     }
 
-    public static void buildAnaltyicsDataObjAndPush(string eventName, string eventValue, string eventOutcome){
+    // TODO: A better place to put this
+    private static int getLevel() {
+        Scene scene = SceneManager.GetActiveScene();
+        int level = Array.IndexOf(Config.levels,scene.name);
+        // TODO: How do we handle level = -1
+        return level;
+    } 
+
+    public static void buildAnaltyicsDataObjAndPush(string eventName, string eventValue){
         AnalyticsData analytics_data = new AnalyticsData();
         
         analytics_data.metricVersion = Config.metricVersion;
-        analytics_data.level = 1; //TODO get level by some global value
+        analytics_data.level = getLevel(); //TODO get level by some global value
         analytics_data.timestampLong = new DateTimeOffset(DateTime.UtcNow).ToUnixTimeMilliseconds();
         analytics_data.eventName = eventName;
         analytics_data.eventValue = eventValue;
-        analytics_data.eventOutcome = eventOutcome;
 
         StatisticsManager statisticsManager = new StatisticsManager();
         statisticsManager.pushDataToAnalyticsDb(analytics_data);
