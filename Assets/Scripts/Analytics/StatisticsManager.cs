@@ -15,22 +15,35 @@ public class StatisticsManager
         RestClient.Post(database_url, analyticsData);
     }
 
-    // if type is dummy then it is a dummy object
-    public static void buildAnaltyicsDataObjAndPush(int enemiesKilledTotalCount = 0, int level = 0, string reason = "dummy", string remEnergy = "dummy", int totalSuccessfulJumpsCount = 0, string type = "dummy", string sourceOfDeath = "dummy"){
+    public static void buildAnaltyicsDataObjAndPush(string eventName, string eventValue){
         AnalyticsData analytics_data = new AnalyticsData();
         
-        analytics_data.enemiesKilledTotalCount = enemiesKilledTotalCount;
-        analytics_data.level = level;
-        analytics_data.reason = reason;
-        analytics_data.remEnergy = remEnergy;
+        analytics_data.metricVersion = Config.metricVersion;
+        analytics_data.level = 1; //TODO get level by some global value
         analytics_data.timestampLong = new DateTimeOffset(DateTime.UtcNow).ToUnixTimeMilliseconds();
-        analytics_data.type = type;
-        analytics_data.totalSuccessfulJumpsCount = totalSuccessfulJumpsCount;
-        analytics_data.sourceOfDeath = sourceOfDeath;
+        analytics_data.eventName = eventName;
+        analytics_data.eventValue = eventValue;
 
         StatisticsManager statisticsManager = new StatisticsManager();
         statisticsManager.pushDataToAnalyticsDb(analytics_data);
     }
+
+    // // if type is dummy then it is a dummy object
+    // public static void buildAnaltyicsDataObjAndPush(int enemiesKilledTotalCount = 0, int level = 0, string reason = "dummy", string remEnergy = "dummy", int totalSuccessfulJumpsCount = 0, string type = "dummy", string sourceOfDeath = "dummy"){
+    //     AnalyticsData analytics_data = new AnalyticsData();
+        
+    //     analytics_data.enemiesKilledTotalCount = enemiesKilledTotalCount;
+    //     analytics_data.level = level;
+    //     analytics_data.reason = reason;
+    //     analytics_data.remEnergy = remEnergy;
+    //     analytics_data.timestampLong = new DateTimeOffset(DateTime.UtcNow).ToUnixTimeMilliseconds();
+    //     analytics_data.type = type;
+    //     analytics_data.totalSuccessfulJumpsCount = totalSuccessfulJumpsCount;
+    //     analytics_data.sourceOfDeath = sourceOfDeath;
+
+    //     StatisticsManager statisticsManager = new StatisticsManager();
+    //     statisticsManager.pushDataToAnalyticsDb(analytics_data);
+    // }
 
     // public static void buildAnaltyicsDataObjAndPush() {
     //     AnalyticsData analytics_data = new AnalyticsData();

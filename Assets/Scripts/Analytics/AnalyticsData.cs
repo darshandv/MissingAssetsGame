@@ -4,14 +4,22 @@ using UnityEngine;
 
 public class AnalyticsData
 {
-    public int enemiesKilledTotalCount;
+    // public int enemiesKilledTotalCount;
+    // public int level;
+    // public string reason;
+    // public string remEnergy;
+    // public long timestampLong;
+    // public int totalSuccessfulJumpsCount;
+    // public string type;
+    // public string sourceOfDeath;
+
+    public int metricVersion; // later will help us to filter based on versions of data collection
     public int level;
-    public string reason;
-    public string remEnergy;
     public long timestampLong;
-    public int totalSuccessfulJumpsCount;
-    public string type;
-    public string sourceOfDeath;
+    public string eventName;
+    public string eventValue;
+
+
     // public float velocity;
 
     // public void setLevel(int level) {
