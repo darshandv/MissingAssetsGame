@@ -113,6 +113,7 @@ public class PlayerMovement : MonoBehaviour
                 applyForceOnPlayer();
                 tc.reduceThrust(Config.thrustReductionAmount*0.1f);
                 isThrustKeyReleased = false;
+                Debug.Log("thrust " + tc.getThrust());
             } else if (Input.GetKey(KeyCode.W)) {
                 // Reduce thrust continuously if key is held down
                 applyForceOnPlayer();
@@ -121,7 +122,7 @@ public class PlayerMovement : MonoBehaviour
                     thrustReductionStartTime = Time.time;
                 }
                 if (Time.time - thrustReductionStartTime >= Config.thrustReductionDelay) {
-                    tc.reduceThrust(Config.thrustReductionAmount*Time.deltaTime);
+                    tc.reduceThrust(Config.thrustReductionAmount * Time.deltaTime);
                 }
                 isThrustKeyReleased = false;
             } else if(!isThrustKeyReleased){

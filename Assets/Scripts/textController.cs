@@ -8,12 +8,16 @@ public class textController : MonoBehaviour
     public Text thrust;
     public Text health;
     public PlayerMovement player;
+    public ThrustBar thrustBar;
     GameObject playerGameObj;
 
     
     string getThrustText() {
-        if(!player) return "Wasted";
-        else return "Thrust: "+ player.tc.getThrust().ToString("F1");
+        if (!player) return "Wasted";
+        else {
+            thrustBar.SetThrust(player.tc.getThrust());
+            return player.tc.getThrust().ToString("F1");
+        }
     }
 
     string getHealthText()
