@@ -113,7 +113,6 @@ public class PlayerMovement : MonoBehaviour
                 applyForceOnPlayer();
                 tc.reduceThrust(Config.thrustReductionAmount*0.1f);
                 isThrustKeyReleased = false;
-                Debug.Log("thrust " + tc.getThrust());
             } else if (Input.GetKey(KeyCode.W)) {
                 // Reduce thrust continuously if key is held down
                 applyForceOnPlayer();
