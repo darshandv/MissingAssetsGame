@@ -29,19 +29,28 @@ public class OutOfBounds : MonoBehaviour
                 counter++;
                 time = 0.0f;
                 playerMovement.reduceHealth(5);
+                playerMovement.healthBar.SetHealth(PlayerMovement.getHealth());
                 Debug.Log("Health reduce: " + PlayerMovement.getHealth());
             }
         }
     }
     private void OnTriggerExit2D(Collider2D collision)
-    { 
-        Debug.Log("exitttt: ");
-        outOfBounds = true;
+    {
+        if (collision.GetType() == typeof(UnityEngine.BoxCollider2D))
+        {
+            Debug.Log("exitttt: "+ collision.name);
+            outOfBounds = true;
+        }
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        counter = 0;
-        outOfBounds = false;
-        Debug.Log("enter: ");
+        if (collision.GetType() == typeof(UnityEngine.BoxCollider2D))
+        {
+            counter = 0;
+            outOfBounds = false;
+            Debug.Log("enter: "+ collision.name);
+        }
     }
+
+   
 }

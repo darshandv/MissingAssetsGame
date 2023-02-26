@@ -5,12 +5,11 @@ using UnityEngine.SceneManagement;
 
 public class PlayerMovement : MonoBehaviour
 {
-    private bool outOfBounds=false;
-    private float time = 0.0f;
-    private float interpolationPeriod = 3.5f;
 
     public float playerSpeed = 0f; 
-    public float orientation; 
+    public float orientation;
+
+    public HealthBar healthBar;
     
 
     public Rigidbody2D player_rigid_body;
@@ -60,6 +59,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if (!isInvulnerable) {
             reduceHealth(regHealthReduction);
+            healthBar.SetHealth(getHealth());
             if (collision.gameObject.name.Contains("Asteroid")) {
                 reduceHealth((int) (collision.relativeVelocity.magnitude));
             }
@@ -90,6 +90,7 @@ public class PlayerMovement : MonoBehaviour
    {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         resetHealth();
+        healthBar.SetHealth(100);
    }
 
     void gameOver()
@@ -138,7 +139,7 @@ public class PlayerMovement : MonoBehaviour
     void Start(){
         player_rigid_body = this.GetComponent<Rigidbody2D>();
         // player_rigid_body.velocity = Vector3.right * 2;
-        tc = new ThrustController();      
+        tc = new ThrustController();
     }
 
 
