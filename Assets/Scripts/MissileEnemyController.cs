@@ -12,6 +12,7 @@ public class MissileEnemyController : MonoBehaviour
     public float maxMissileSpeed = 50f;
     public float accelerationTime = 1f;
     public float fireRate = 2.0f;
+
     // public float pauseTime = 0.5f;
 
     private float currentMissileSpeed;
@@ -42,13 +43,13 @@ public class MissileEnemyController : MonoBehaviour
         GameObject missile = Instantiate(
             missilePrefab,
             missileSpawnPoint.position,
-            missileSpawnPoint.rotation
+            Quaternion.LookRotation(Vector3.forward, target.position - missileSpawnPoint.position)
         );
 
-
-
         Rigidbody2D missileRigidbody = missile.GetComponent<Rigidbody2D>();
-        missileRigidbody.velocity = missileSpawnPoint.right;
+        missileRigidbody.velocity =
+            (target.position - missileSpawnPoint.position).normalized * initialMissileSpeed;
+
         await Task.Delay(500);
         AccelerateMissile();
         Debug.Log("BEFORE:::::: AccelerateMissile invoked " + currentMissileSpeed);
