@@ -14,7 +14,7 @@ public class WindowPointer : MonoBehaviour
     public Transform goalPlanet;
     public Transform player;
     private Image pointerImage;
-    public Transform backupGoal;
+    public List<Transform> backupGoals;
     private void Awake()
     {
         targetPosition = goalPlanet.position;
@@ -60,8 +60,15 @@ public class WindowPointer : MonoBehaviour
         }
         else
         {
-            goalPlanet = backupGoal;
-            targetPosition = backupGoal.position;
+            if (backupGoals.Count > 0)
+            {
+                if (backupGoals[0] != null)
+                {
+                    goalPlanet = backupGoals[0];
+                    targetPosition = backupGoals[0].position;
+                }
+                backupGoals.RemoveAt(0);
+            }
         }
     }
 
