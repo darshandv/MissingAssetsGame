@@ -27,7 +27,7 @@ public class StatisticsManager
     public static void buildAnaltyicsDataObjAndPush(string eventName, string eventValue){
         AnalyticsData analytics_data = new AnalyticsData();
         
-        analytics_data.metricVersion = Config.metricVersion;
+        analytics_data.metricVersion = AnalyticsTracker.metricVersion;
         analytics_data.level = getLevel(); //TODO get level by some global value
         analytics_data.timestampLong = new DateTimeOffset(DateTime.UtcNow).ToUnixTimeMilliseconds();
         analytics_data.eventName = eventName;

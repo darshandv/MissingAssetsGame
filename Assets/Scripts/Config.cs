@@ -11,9 +11,6 @@ public static class Config
     public static float thrustIncrementAmount = thrustReductionAmount/16;
     public static float thrustReductionDelay = 1f; // in seconds 
 
-    // Metrics
-    public static int metricVersion = 1;
-
     //Levels
     public static string[] levels = {"SampleScene","Level1","Level2","Level3","Level4"};
 }
