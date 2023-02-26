@@ -9,6 +9,7 @@ public class OutOfBounds : MonoBehaviour
     PlayerMovement playerMovement;
     private float time = 0.0f;
     private float interpolationPeriod = 5f;
+    private int counter = 0;
 
     private void Start()
     {
@@ -23,8 +24,9 @@ public class OutOfBounds : MonoBehaviour
         {
             time += Time.deltaTime;
 
-            if (time >= interpolationPeriod)
+            if (time >= interpolationPeriod || counter==0)
             {
+                counter++;
                 time = 0.0f;
                 playerMovement.reduceHealth(5);
                 Debug.Log("Health reduce: " + PlayerMovement.getHealth());
@@ -38,6 +40,7 @@ public class OutOfBounds : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        counter = 0;
         outOfBounds = false;
         Debug.Log("enter: ");
     }
