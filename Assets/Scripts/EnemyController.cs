@@ -18,7 +18,7 @@ public class EnemyController : MonoBehaviour
     }
 
     void Shoot()
-    {   
+    {
         if(weapon && target)
         {
             weapon.Fire(target);

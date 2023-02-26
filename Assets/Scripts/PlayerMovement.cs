@@ -36,7 +36,7 @@ public class PlayerMovement : MonoBehaviour
     public void reduceHealth(int value)
     {
         health = health - value;
-        if(health == 0) {
+        if(health <= 0) {
             isDead = true;
             // Analytics to be sent here
         }
@@ -54,7 +54,7 @@ public class PlayerMovement : MonoBehaviour
                 reduceHealth((int) (collision.relativeVelocity.magnitude));
             }
         }
-        Debug.Log(health);
+        // Debug.Log(health);
         if(health <= 0) {
             Destroy(gameObject);
             StatisticsManager.buildAnaltyicsDataObjAndPush(0,1,"DeathByEnemy","0%",0,"player_termination","enemy");
