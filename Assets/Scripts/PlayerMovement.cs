@@ -72,17 +72,6 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-        outOfBounds = true;
-        Debug.Log("exitttt: ");
-    }
-
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        outOfBounds = false;
-        Debug.Log("enter: ");
-    }
 
     void enableRotation() {
         Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition); 
@@ -200,19 +189,6 @@ public class PlayerMovement : MonoBehaviour
             if(Input.GetKeyDown(KeyCode.Space)) 
             {
                 weapon.Fire();
-            }
-
-            if (outOfBounds)
-            {
-                time += Time.deltaTime;
-
-                if (time >= interpolationPeriod)
-                {
-                    time = 0.0f;
-                    reduceHealth(regHealthReduction);
-                    Debug.Log("Health reduce: "+health);
-                    
-                }
             }
         }
     }

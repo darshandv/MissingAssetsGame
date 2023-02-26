@@ -5,40 +5,40 @@ using UnityEngine;
 public class OutOfBounds : MonoBehaviour
 {
     // Start is called before the first frame update
-    bool reduceHealth = false;
+    bool outOfBounds = false;
     PlayerMovement playerMovement;
     private float time = 0.0f;
-    public float interpolationPeriod = 5f;
+    private float interpolationPeriod = 5f;
 
-    void Start()
+    private void Start()
     {
         playerMovement = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>();
     }
 
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        time += Time.deltaTime;
-
-        if (time >= interpolationPeriod)
+        
+        if (outOfBounds)
         {
-            time = 0.0f;
+            time += Time.deltaTime;
 
-            if (reduceHealth)
+            if (time >= interpolationPeriod)
             {
+                time = 0.0f;
                 playerMovement.reduceHealth(5);
-                Debug.Log("Health reduce: ");
+                Debug.Log("Health reduce: " + PlayerMovement.getHealth());
             }
         }
     }
     private void OnTriggerExit2D(Collider2D collision)
     { 
         Debug.Log("exitttt: ");
-        reduceHealth = true;
+        outOfBounds = true;
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        reduceHealth = false;
+        outOfBounds = false;
         Debug.Log("enter: ");
     }
 }
