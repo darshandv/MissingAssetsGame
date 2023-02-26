@@ -63,8 +63,8 @@ public class PlayerMovement : MonoBehaviour
         Debug.Log(health);
         if(health <= 0) {
             Destroy(gameObject);
-            StatisticsManager.buildAnaltyicsDataObjAndPush("CauseOfDeath","DeathByEnemy");
-            StatisticsManager.buildAnaltyicsDataObjAndPush("EnemiesKilled",numberOfEnemiesKilled.ToString());
+            // StatisticsManager.buildAnaltyicsDataObjAndPush("causeOfDeath","deathByEnemy");
+            // StatisticsManager.buildAnaltyicsDataObjAndPush("enemiesKilled",numberOfEnemiesKilled.ToString());
         }
     }
     
