@@ -23,7 +23,7 @@ public class WindowPointer : MonoBehaviour
     }
     private void Update()
     {
-        Debug.Log("target Pos " + targetPosition);
+        //Debug.Log("target Pos " + targetPosition);
         Vector3 toPosition = targetPosition;
         Vector3 fromPosition = player.position;
         fromPosition.z = 0f;
@@ -35,7 +35,7 @@ public class WindowPointer : MonoBehaviour
         float borderSize = 70f;
         Vector3 targetPositionScreenPoint = Camera.main.WorldToScreenPoint(targetPosition);
         bool isOffScreen = targetPositionScreenPoint.x <= borderSize || targetPositionScreenPoint.x >= Screen.width - borderSize || targetPositionScreenPoint.y <= borderSize || targetPositionScreenPoint.y >= Screen.height - borderSize;
-        Debug.Log("IsOffScreen "+isOffScreen);
+        //Debug.Log("IsOffScreen "+isOffScreen);
         if (goalPlanet != null)
         {
             if (isOffScreen)
@@ -64,4 +64,7 @@ public class WindowPointer : MonoBehaviour
             targetPosition = backupGoal.position;
         }
     }
+
 }
+
+

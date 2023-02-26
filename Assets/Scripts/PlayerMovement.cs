@@ -5,6 +5,9 @@ using UnityEngine.SceneManagement;
 
 public class PlayerMovement : MonoBehaviour
 {
+    private bool outOfBounds=false;
+    private float time = 0.0f;
+    private float interpolationPeriod = 3.5f;
 
     public float playerSpeed = 0f; 
     public float orientation; 
@@ -21,7 +24,7 @@ public class PlayerMovement : MonoBehaviour
     public static int numberOfEnemiesKilled = 0;
     public bool isInvulnerable = false;
 
-    private static long health = 100;
+    public static long health = 100;
     private static int regHealthReduction = 5;
 
     // Thrust
@@ -68,7 +71,19 @@ public class PlayerMovement : MonoBehaviour
             StatisticsManager.buildAnaltyicsDataObjAndPush(numberOfEnemiesKilled,1,"NumEnemiesKilled","0%",0,"numEnemiesKilled","enemy");
         }
     }
-    
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        outOfBounds = true;
+        Debug.Log("exitttt: ");
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        outOfBounds = false;
+        Debug.Log("enter: ");
+    }
+
     void enableRotation() {
         Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition); 
         Vector2 aimDirection = mousePosition - player_rigid_body.position;
@@ -185,6 +200,19 @@ public class PlayerMovement : MonoBehaviour
             if(Input.GetKeyDown(KeyCode.Space)) 
             {
                 weapon.Fire();
+            }
+
+            if (outOfBounds)
+            {
+                time += Time.deltaTime;
+
+                if (time >= interpolationPeriod)
+                {
+                    time = 0.0f;
+                    reduceHealth(regHealthReduction);
+                    Debug.Log("Health reduce: "+health);
+                    
+                }
             }
         }
     }
