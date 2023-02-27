@@ -49,8 +49,9 @@ public class MissileEnemyController : MonoBehaviour
         timeUntilNextFire = fireRate;
         GameObject missile = Instantiate(
             missilePrefab,
-            missileSpawnPoint.position,
-            missileSpawnPoint.rotation);
+            missileSpawnPoint.position + new Vector3(0, 1, 0), // add an offset to the spawn position
+            missileSpawnPoint.rotation
+        );
 
         Rigidbody2D missileRigidbody = missile.GetComponent<Rigidbody2D>();
         missileRigidbody.velocity =

@@ -4137,8 +4137,8 @@ MonoBehaviour:
   menuUI: {fileID: 898014331}
   losingText: {fileID: 1001976500}
   winningText: {fileID: 1300085598}
-  nextLevelButton: {fileID: 0}
-  restartButton: {fileID: 0}
+  nextLevelButton: {fileID: 569396989}
+  restartButton: {fileID: 569396989}
 --- !u!114 &922934130
 MonoBehaviour:
   m_ObjectHideFlags: 0
