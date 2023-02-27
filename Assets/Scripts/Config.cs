@@ -10,4 +10,8 @@ public static class Config
     public static float thrustReductionAmount = 2f;
     public static float thrustIncrementAmount = thrustReductionAmount/16;
     public static float thrustReductionDelay = 1f; // in seconds 
+
+    //Levels
+    public static string[] levels = {"SampleScene","Level1","Level2","Level3","Level4"};
 }
+
