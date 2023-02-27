@@ -31,6 +31,10 @@ public class OutOfBounds : MonoBehaviour
                 playerMovement.healthBar.SetHealth(PlayerMovement.getHealth());
                 Debug.Log("Health reduce: " + PlayerMovement.getHealth());
             }
+
+            if(PlayerMovement.getHealth() <= 0) {
+                AnalyticsTracker.sendMetric1("bounds");
+            }
         }
     }
     private void OnTriggerExit2D(Collider2D collision)

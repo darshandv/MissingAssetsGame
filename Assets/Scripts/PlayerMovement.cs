@@ -56,7 +56,7 @@ public class PlayerMovement : MonoBehaviour
     }
 
     private void OnCollisionEnter2D(Collision2D collision) 
-    {
+    {   
         if (!isInvulnerable) {
             reduceHealth(regHealthReduction);
             healthBar.SetHealth(getHealth());
@@ -67,6 +67,12 @@ public class PlayerMovement : MonoBehaviour
         Debug.Log(health);
         if(health <= 0) {
             Destroy(gameObject);
+            if (collision.collider.CompareTag("EnemyBullet")){
+                AnalyticsTracker.sendMetric1("enemy");
+            }
+            AnalyticsTracker.sendMetric2();
+            AnalyticsTracker.sendMetric3();
+            AnalyticsTracker.sendMetric4();
             // StatisticsManager.buildAnaltyicsDataObjAndPush(0,1,"DeathByEnemy","0%",0,"player_termination","enemy");
             // StatisticsManager.buildAnaltyicsDataObjAndPush(numberOfEnemiesKilled,1,"NumEnemiesKilled","0%",0,"numEnemiesKilled","enemy");
         }

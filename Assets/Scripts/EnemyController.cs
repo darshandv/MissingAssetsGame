@@ -46,6 +46,7 @@ public class EnemyController : MonoBehaviour
 
         if(collision.collider.CompareTag("PlayerBullet")) {
             AnalyticsTracker.playerBulletsHit += 1;
+            AnalyticsTracker.enemiesKilled += 1;
         }
     }
 
