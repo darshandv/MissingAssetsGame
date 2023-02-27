@@ -13,7 +13,7 @@ public class PlayerMovement : MonoBehaviour
     
 
     public Rigidbody2D player_rigid_body;
-    public float thrustPower = 0.05f;  // 0.05f for local testing, build yet to be decided
+    public float thrustPower = 0.1f;  // 0.05f for local testing, build yet to be decided
 
     public static int maxEnemiesLimit = 3;
 
