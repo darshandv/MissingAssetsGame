@@ -21,7 +21,7 @@ public class PlayerMovement : MonoBehaviour
     public static int numberOfEnemiesKilled = 0;
     public bool isInvulnerable = false;
 
-    private static long health = 100;
+    private static long health = 50;
     private static int regHealthReduction = 5;
 
     // Thrust
@@ -146,10 +146,10 @@ public class PlayerMovement : MonoBehaviour
 
             enableRotation(); 
 
-            if(numberOfEnemiesKilled == maxEnemiesLimit)
-            {
-                gameOver();
-            }
+            // if(numberOfEnemiesKilled == maxEnemiesLimit)
+            // {
+            //     gameOver();
+            // }
 
             if (Config.useThrustControl){
                 allowLimitedThrust();

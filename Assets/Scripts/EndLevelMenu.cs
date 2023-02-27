@@ -25,12 +25,13 @@ public class EndLevelMenu : MenuBehavior
             Pause();
             losingText.SetActive(true);
             winningText.SetActive(false);
-        } else if (level1Done ||
-                   level2Done ||
-                   (PlayerMovement.numberOfEnemiesKilled == PlayerMovement.maxEnemiesLimit)) {
-            Pause();
-            losingText.SetActive(false);
-            winningText.SetActive(true);
-        }
+        } 
+        // else if (level1Done ||
+        //            level2Done ||
+        //            (PlayerMovement.numberOfEnemiesKilled == PlayerMovement.maxEnemiesLimit)) {
+        //     Pause();
+        //     losingText.SetActive(false);
+        //     winningText.SetActive(true);
+        // }
     }
 }
