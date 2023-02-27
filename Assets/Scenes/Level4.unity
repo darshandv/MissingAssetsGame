@@ -645,7 +645,7 @@ MonoBehaviour:
   deltaInterval: 2
   range: 10
   increment: 0.05
-  shouldMove: 0
+  shouldMove: 1
   moveY: 1
 --- !u!212 &67203550
 SpriteRenderer:
@@ -6575,7 +6575,7 @@ MonoBehaviour:
   deltaInterval: 2
   range: 10
   increment: 0.05
-  shouldMove: 0
+  shouldMove: 1
   moveY: 1
 --- !u!212 &1367014792
 SpriteRenderer:
@@ -7780,7 +7780,7 @@ MonoBehaviour:
   range: 10
   increment: 0.05
   shouldMove: 0
-  moveY: 1
+  moveY: 0
 --- !u!212 &1570113377
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -9324,8 +9324,8 @@ MonoBehaviour:
   deltaInterval: 2
   range: 10
   increment: 0.05
-  shouldMove: 0
-  moveY: 1
+  shouldMove: 1
+  moveY: 0
 --- !u!212 &1823775650
 SpriteRenderer:
   m_ObjectHideFlags: 0
