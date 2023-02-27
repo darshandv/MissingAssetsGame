@@ -27,5 +27,5 @@ public static class Config
         "Level6",
         "Level7"
     };
-    public static int currentLevel = 3;
+    public static int currentLevel = 1;
 }
