@@ -174,7 +174,7 @@ public class PlayerMovement : MonoBehaviour
         player_rigid_body = this.GetComponent<Rigidbody2D>();
         // player_rigid_body.velocity = Vector3.right * 2;
         tc = new ThrustController();
-        thrustPower = 0.1f; // 0.05f for local testing, build yet to be decided
+        thrustPower = 0.5f; // 0.05f for local testing, build yet to be decided
     }
 
     // Update is called once per frame
