@@ -21,7 +21,10 @@ public class CollectibleComponent : MonoBehaviour
             Destroy(gameObject);
             if (CollectedComponents >= TotalComponents)
             {
-                StartCoroutine(EndLevel());
+                // StartCoroutine(EndLevel());
+                LevelChange levelChange = Camera.main.GetComponent<LevelChange>();
+
+                levelChange.LoadNextLevel(); //change location for calling this
                 // Debug.Log("end level");
             }
         }
