@@ -7,7 +7,9 @@ public class PlayerMovement : MonoBehaviour
 {
 
     public float playerSpeed = 0f; 
-    public float orientation; 
+    public float orientation;
+
+    public HealthBar healthBar;
     
 
     public Rigidbody2D player_rigid_body;
@@ -57,6 +59,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if (!isInvulnerable) {
             reduceHealth(regHealthReduction);
+            healthBar.SetHealth(getHealth());
             if (collision.gameObject.name.Contains("Asteroid")) {
                 reduceHealth((int) (collision.relativeVelocity.magnitude));
             }
@@ -68,7 +71,8 @@ public class PlayerMovement : MonoBehaviour
             StatisticsManager.buildAnaltyicsDataObjAndPush(numberOfEnemiesKilled,1,"NumEnemiesKilled","0%",0,"numEnemiesKilled","enemy");
         }
     }
-    
+
+
     void enableRotation() {
         Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition); 
         Vector2 aimDirection = mousePosition - player_rigid_body.position;
@@ -86,6 +90,7 @@ public class PlayerMovement : MonoBehaviour
    {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         resetHealth();
+        healthBar.SetHealth(100);
    }
 
     void gameOver()
@@ -116,7 +121,7 @@ public class PlayerMovement : MonoBehaviour
                     thrustReductionStartTime = Time.time;
                 }
                 if (Time.time - thrustReductionStartTime >= Config.thrustReductionDelay) {
-                    tc.reduceThrust(Config.thrustReductionAmount*Time.deltaTime);
+                    tc.reduceThrust(Config.thrustReductionAmount * Time.deltaTime);
                 }
                 isThrustKeyReleased = false;
             } else if(!isThrustKeyReleased){
@@ -134,7 +139,7 @@ public class PlayerMovement : MonoBehaviour
     void Start(){
         player_rigid_body = this.GetComponent<Rigidbody2D>();
         // player_rigid_body.velocity = Vector3.right * 2;
-        tc = new ThrustController();      
+        tc = new ThrustController();
     }
 
 

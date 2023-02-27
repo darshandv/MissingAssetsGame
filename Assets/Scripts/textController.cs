@@ -5,17 +5,29 @@ using UnityEngine.UI;
 
 public class textController : MonoBehaviour
 {
-    public Text textElement;
+    public Text thrust;
+    public Text health;
     public PlayerMovement player;
+    public ThrustBar thrustBar;
     GameObject playerGameObj;
 
     
-    string getHealthText() {
-        if(!player) return "Wasted";
-        else return "Health: " + PlayerMovement.getHealth().ToString() + "\nThrust: "+ player.tc.getThrust().ToString("F1");
+    string getThrustText() {
+        if (!player) return "Wasted";
+        else {
+            thrustBar.SetThrust(player.tc.getThrust());
+            return player.tc.getThrust().ToString("F1");
+        }
+    }
+
+    string getHealthText()
+    {
+        if (!player) return "Wasted";
+        else return " "+PlayerMovement.getHealth().ToString();
     }
 
     void Update(){
-        textElement.text = getHealthText();
+        thrust.text = getThrustText();
+        health.text = getHealthText();
     }
 }
