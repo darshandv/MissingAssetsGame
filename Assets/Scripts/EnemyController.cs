@@ -43,6 +43,10 @@ public class EnemyController : MonoBehaviour
             Destroy(gameObject);
             pm.increaseEnemyKills();
         }
+
+        if(collision.collider.CompareTag("PlayerBullet")) {
+            AnalyticsTracker.playerBulletsHit += 1;
+        }
     }
 
     float getPosition(Vector2 current) {

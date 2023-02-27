@@ -5,7 +5,6 @@ using UnityEngine;
 public class OutOfBounds : MonoBehaviour
 {
     // Start is called before the first frame update
-    bool outOfBounds = false;
     PlayerMovement playerMovement;
     private float time = 0.0f;
     private float interpolationPeriod = 5f;
@@ -20,7 +19,7 @@ public class OutOfBounds : MonoBehaviour
     private void Update()
     {
         
-        if (outOfBounds)
+        if (AnalyticsTracker.isOutOfBounds)
         {
             time += Time.deltaTime;
 
@@ -39,7 +38,7 @@ public class OutOfBounds : MonoBehaviour
         if (collision.GetType() == typeof(UnityEngine.BoxCollider2D))
         {
             Debug.Log("exitttt: "+ collision.name);
-            outOfBounds = true;
+            AnalyticsTracker.isOutOfBounds = true;
         }
     }
     private void OnTriggerEnter2D(Collider2D collision)
@@ -47,7 +46,7 @@ public class OutOfBounds : MonoBehaviour
         if (collision.GetType() == typeof(UnityEngine.BoxCollider2D))
         {
             counter = 0;
-            outOfBounds = false;
+            AnalyticsTracker.isOutOfBounds = false;
             Debug.Log("enter: "+ collision.name);
         }
     }

@@ -12,6 +12,6 @@ public static class Config
     public static float thrustReductionDelay = 1f; // in seconds 
 
     //Levels
-    public static string[] levels = {"SampleScene","Level1","Level2","Level3","Level4"};
+    public static string[] levels = {"SampleScene","Level1","Level2","Level3","Level4","Level5","Level6","Level7"};
 }
 

@@ -12,6 +12,7 @@ public class PlayerWeapon : MonoBehaviour
 
     public void Fire() 
     {
+        AnalyticsTracker.playerBullets += 1;
         GameObject bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
         bullet.GetComponent<Rigidbody2D>().velocity = firePoint.up*fireForce;
     }

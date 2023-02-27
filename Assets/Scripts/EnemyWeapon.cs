@@ -12,6 +12,7 @@ public class EnemyWeapon : MonoBehaviour
     public void Fire(Transform target) 
     {
         if (target) {
+            AnalyticsTracker.totalEnemyBullets += 1;
             
             GameObject bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
 
