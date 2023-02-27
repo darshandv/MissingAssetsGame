@@ -8,25 +8,44 @@ public class MenuBehavior : MonoBehaviour
     public static bool IsGamePaused = false;
     public GameObject menuUI;
 
-    public void ResetGame() {
+    public void ResetGame()
+    {
         Time.timeScale = 1f;
         IsGamePaused = false;
     }
 
-    public void Pause() {
+    public void Pause()
+    {
         menuUI.SetActive(true);
         Time.timeScale = 0f;
         IsGamePaused = true;
     }
 
-    public void RestartGame() {
+    public void RestartGame()
+    {
         ResetGame();
         PlayerMovement.numberOfEnemiesKilled = 0;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         PlayerMovement.resetHealth();
     }
 
-    public void MainMenu() {
+    public void NextLevel()
+    {
+        ResetGame();
+        PlayerMovement.numberOfEnemiesKilled = 0;
+
+        LevelChange levelChange = Camera.main.GetComponent<LevelChange>();
+
+        levelChange.LoadNextLevel(); //change location for calling this
+        // SceneManager.LoadScene("Level2");
+        // SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        // Debug.Log("HAPPENING");
+        PlayerMovement.resetHealth();
+        // CollectibleComponent.ResetCollectedComponents();
+    }
+
+    public void MainMenu()
+    {
         ResetGame();
         PlayerMovement.numberOfEnemiesKilled = 0;
         SceneManager.LoadScene("LandingScreen");
@@ -34,11 +53,12 @@ public class MenuBehavior : MonoBehaviour
     }
 
     // can be changed later
-    public void QuitGame() {
+    public void QuitGame()
+    {
         ResetGame();
-        #if UNITY_EDITOR
+#if UNITY_EDITOR
         UnityEditor.EditorApplication.isPlaying = false;
-        #endif
+#endif
         Application.Quit();
 
         Debug.Log("Quitting Game");
