@@ -17,11 +17,20 @@ public static class AnalyticsTracker
         playerBulletsHit = 0;
     }
 
-    public static void sendMetric4 () {
-        StatisticsManager.buildAnaltyicsDataObjAndPush("enemyBulletsHit",AnalyticsTracker.enemyBulletsHit.ToString());
-        StatisticsManager.buildAnaltyicsDataObjAndPush("totalEnemyBullets",AnalyticsTracker.totalEnemyBullets.ToString());
-        enemyBulletsHit = 0;
-        totalEnemyBullets = 0;
+    public static void sendMetric1(string value){
+        if (value.Contains("enemy")){
+            StatisticsManager.buildAnaltyicsDataObjAndPush("causeOfDeath","deathByEnemy");
+        }
+        else if (value.Contains("bounds"))
+        {
+            StatisticsManager.buildAnaltyicsDataObjAndPush("causeOfDeath","outOfBounds");
+        }
+        isOutOfBounds = false;
+    }
+
+    public static void sendMetric2(){
+        StatisticsManager.buildAnaltyicsDataObjAndPush("enemiesKilled",AnalyticsTracker.enemiesKilled.ToString());
+        enemiesKilled = 0;
     }
 
     public static void sendMetric3() {
@@ -30,4 +39,12 @@ public static class AnalyticsTracker
         playerBulletsHit = 0;
         playerBullets = 0;
     }
+
+    public static void sendMetric4 () {
+        StatisticsManager.buildAnaltyicsDataObjAndPush("enemyBulletsHit",AnalyticsTracker.enemyBulletsHit.ToString());
+        StatisticsManager.buildAnaltyicsDataObjAndPush("totalEnemyBullets",AnalyticsTracker.totalEnemyBullets.ToString());
+        enemyBulletsHit = 0;
+        totalEnemyBullets = 0;
+    }
+
 }
