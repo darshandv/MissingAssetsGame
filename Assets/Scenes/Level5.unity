@@ -471,8 +471,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18ba2f9ff2fd2664c970142dfc4deb1c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  textElement: {fileID: 1419576247}
+  thrust: {fileID: 0}
+  health: {fileID: 0}
   player: {fileID: 2112177125}
+  thrustBar: {fileID: 0}
 --- !u!114 &86850849
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1651,7 +1653,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &433785256
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5904,6 +5906,8 @@ MonoBehaviour:
   menuUI: {fileID: 34435244}
   losingText: {fileID: 2001340475}
   winningText: {fileID: 997155110}
+  nextLevelButton: {fileID: 0}
+  restartButton: {fileID: 0}
 --- !u!114 &1637058426
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6539,7 +6543,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1897918049
 Transform:
   m_ObjectHideFlags: 0
@@ -6567,8 +6571,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18ba2f9ff2fd2664c970142dfc4deb1c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  textElement: {fileID: 0}
+  thrust: {fileID: 0}
+  health: {fileID: 0}
   player: {fileID: 0}
+  thrustBar: {fileID: 0}
 --- !u!114 &1897918051
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7731,8 +7737,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerSpeed: 0
   orientation: 0
+  healthBar: {fileID: 0}
   player_rigid_body: {fileID: 2112177124}
-  thrustPower: 0.01
+  thrustPower: 0.03
   weapon: {fileID: 1462080379}
   isDead: 0
   isInvulnerable: 0

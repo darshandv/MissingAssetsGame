@@ -25,7 +25,7 @@ public class CollectibleComponent : MonoBehaviour
                 LevelChange levelChange = Camera.main.GetComponent<LevelChange>();
 
                 levelChange.LoadNextLevel(); //change location for calling this
-                // Debug.Log("end level");
+                Debug.Log("end level");
             }
         }
         // Debug.Log("Collected items: " + CollectedComponents+" $$$ "+TotalComponents);
