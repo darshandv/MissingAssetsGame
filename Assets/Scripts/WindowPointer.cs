@@ -56,38 +56,44 @@ public class WindowPointer : MonoBehaviour
         {
             if (isOffScreen)
             {
-                pointerImage.sprite = arrow;
-                Vector3 cappedTargetScreenPosition = targetPositionScreenPoint;
-                if (cappedTargetScreenPosition.x <= borderSize)
-                    cappedTargetScreenPosition.x = borderSize;
-                if (cappedTargetScreenPosition.x >= Screen.width - borderSize)
-                    cappedTargetScreenPosition.x = Screen.width - borderSize;
-                if (cappedTargetScreenPosition.y <= borderSize)
-                    cappedTargetScreenPosition.y = borderSize;
-                if (cappedTargetScreenPosition.y >= Screen.height - borderSize)
-                    cappedTargetScreenPosition.y = Screen.height - borderSize;
-                Vector3 pointerWorldPosition = uiCamera.ScreenToWorldPoint(
-                    cappedTargetScreenPosition
-                );
-                pointerRectTransform.position = pointerWorldPosition;
-                pointerRectTransform.localPosition = new Vector3(
-                    pointerRectTransform.localPosition.x,
-                    pointerRectTransform.localPosition.y,
-                    0f
-                );
+                if (pointerImage != null)
+                {
+                    pointerImage.sprite = arrow;
+                    Vector3 cappedTargetScreenPosition = targetPositionScreenPoint;
+                    if (cappedTargetScreenPosition.x <= borderSize)
+                        cappedTargetScreenPosition.x = borderSize;
+                    if (cappedTargetScreenPosition.x >= Screen.width - borderSize)
+                        cappedTargetScreenPosition.x = Screen.width - borderSize;
+                    if (cappedTargetScreenPosition.y <= borderSize)
+                        cappedTargetScreenPosition.y = borderSize;
+                    if (cappedTargetScreenPosition.y >= Screen.height - borderSize)
+                        cappedTargetScreenPosition.y = Screen.height - borderSize;
+                    Vector3 pointerWorldPosition = uiCamera.ScreenToWorldPoint(
+                        cappedTargetScreenPosition
+                    );
+                    pointerRectTransform.position = pointerWorldPosition;
+                    pointerRectTransform.localPosition = new Vector3(
+                        pointerRectTransform.localPosition.x,
+                        pointerRectTransform.localPosition.y,
+                        0f
+                    );
+                }
             }
             else
             {
-                pointerImage.sprite = cross;
-                Vector3 pointerWorldPosition = uiCamera.ScreenToWorldPoint(
-                    targetPositionScreenPoint
-                );
-                pointerRectTransform.position = pointerWorldPosition;
-                pointerRectTransform.localPosition = new Vector3(
-                    pointerRectTransform.localPosition.x,
-                    pointerRectTransform.localPosition.y,
-                    0f
-                );
+                if (pointerImage != null)
+                {
+                    pointerImage.sprite = cross;
+                    Vector3 pointerWorldPosition = uiCamera.ScreenToWorldPoint(
+                        targetPositionScreenPoint
+                    );
+                    pointerRectTransform.position = pointerWorldPosition;
+                    pointerRectTransform.localPosition = new Vector3(
+                        pointerRectTransform.localPosition.x,
+                        pointerRectTransform.localPosition.y,
+                        0f
+                    );
+                }
             }
         }
         else
