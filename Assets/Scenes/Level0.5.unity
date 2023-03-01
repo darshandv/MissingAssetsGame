@@ -4845,7 +4845,7 @@ MonoBehaviour:
   followSpeed: 10
   target: {fileID: 1762540031}
   godViewOrthographicSize: 35
-  levelTransform: {fileID: 0}
+  levelTransform: {fileID: 1749713931}
   toggleGodViewKey: 113
   godViewZoomSpeed: 2.5
   playerZoomSpeed: 5
