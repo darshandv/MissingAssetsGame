@@ -13,7 +13,7 @@ public class StatisticsManager
 
     // PROD LINK - use this at time of building
     public string database_url =
-        "https://console.firebase.google.com/u/0/project/missing-assets-prod/database/missing-assets-prod-default-rtdb/data";
+        "https://missing-assets-default-rtdb.firebaseio.com/analytics_data_prod.json";
 
     public void pushDataToAnalyticsDb(AnalyticsData analyticsData)
     {

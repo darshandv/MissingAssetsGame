@@ -1,3 +1,16 @@
+using System;
+using Newtonsoft.Json;
+
+public class Metric3 {
+    public int playerBulletHits;
+    public int totalPlayerBullets;
+}
+
+public class Metric4 {
+    public int enemyBulletsHit;
+    public int totalEnemyBullets;
+}
+
 public static class AnalyticsTracker
 {
     public static int metricVersion = 1;
@@ -34,15 +47,26 @@ public static class AnalyticsTracker
     }
 
     public static void sendMetric3() {
-        StatisticsManager.buildAnaltyicsDataObjAndPush("playerBulletHits",AnalyticsTracker.playerBulletsHit.ToString());
-        StatisticsManager.buildAnaltyicsDataObjAndPush("totalPlayerBullets",AnalyticsTracker.playerBullets.ToString());
+        Metric3 data = new Metric3();
+        data.playerBulletHits = playerBulletsHit;
+        data.totalPlayerBullets = playerBullets;
+
+        StatisticsManager.buildAnaltyicsDataObjAndPush("playerFiringAccuracy",JsonConvert.SerializeObject(data));
+        // StatisticsManager.buildAnaltyicsDataObjAndPush("playerBulletHits",AnalyticsTracker.playerBulletsHit.ToString());
+        // StatisticsManager.buildAnaltyicsDataObjAndPush("totalPlayerBullets",AnalyticsTracker.playerBullets.ToString());
         playerBulletsHit = 0;
         playerBullets = 0;
     }
 
     public static void sendMetric4 () {
-        StatisticsManager.buildAnaltyicsDataObjAndPush("enemyBulletsHit",AnalyticsTracker.enemyBulletsHit.ToString());
-        StatisticsManager.buildAnaltyicsDataObjAndPush("totalEnemyBullets",AnalyticsTracker.totalEnemyBullets.ToString());
+        Metric4 data = new Metric4();
+        data.enemyBulletsHit = enemyBulletsHit;
+        data.totalEnemyBullets = totalEnemyBullets;
+
+        StatisticsManager.buildAnaltyicsDataObjAndPush("playerBulletAvoidance",JsonConvert.SerializeObject(data));
+
+        // StatisticsManager.buildAnaltyicsDataObjAndPush("enemyBulletsHit",AnalyticsTracker.enemyBulletsHit.ToString());
+        // StatisticsManager.buildAnaltyicsDataObjAndPush("totalEnemyBullets",AnalyticsTracker.totalEnemyBullets.ToString());
         enemyBulletsHit = 0;
         totalEnemyBullets = 0;
     }
