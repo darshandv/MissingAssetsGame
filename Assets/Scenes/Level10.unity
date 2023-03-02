@@ -7745,7 +7745,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d4e1918fb0af8e4e8bab846f1a62037, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerSpeed: 0
+  playerSpeed: 30
   orientation: 0
   healthBar: {fileID: 0}
   player_rigid_body: {fileID: 2112177124}
