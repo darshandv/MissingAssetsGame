@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class PlayerMovement : MonoBehaviour
 {
-    public float playerSpeed = 0f;
+    public float playerSpeed = 2f;
     public float orientation;
 
     public HealthBar healthBar;
@@ -234,6 +234,11 @@ public class PlayerMovement : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.Space))
             {
                 weapon.Fire();
+            }
+
+            if (player_rigid_body.velocity.magnitude > playerSpeed)
+            {
+                player_rigid_body.velocity = player_rigid_body.velocity.normalized * playerSpeed;
             }
         }
     }
