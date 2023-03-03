@@ -28,9 +28,7 @@ public class textController : MonoBehaviour
     }
 
     void Update(){
-        if (Config.healthbarNeeded && Config.thrustbarNeeded) {
-            thrust.text = getThrustText();
-            health.text = getHealthText();
-        } 
+        thrust.text = getThrustText();
+        health.text = getHealthText();
     }
 }
