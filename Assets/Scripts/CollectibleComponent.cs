@@ -25,9 +25,9 @@ public class CollectibleComponent : MonoBehaviour
                 AnalyticsTracker.sendMetric3();
                 AnalyticsTracker.sendMetric4();
                 AnalyticsTracker.sendMetric2();
-                LevelChange levelChange = Camera.main.GetComponent<LevelChange>();
+                // LevelChange levelChange = Camera.main.GetComponent<LevelChange>();
 
-                levelChange.LoadNextLevel(); //change location for calling this
+                // levelChange.LoadNextLevel(); //change location for calling this
                 Debug.Log("end level");
             }
         }

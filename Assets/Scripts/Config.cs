@@ -28,4 +28,18 @@ public static class Config
         "Level7"
     };
     public static int currentLevel = 1;
+
+    public static void ResetAllVariables() {
+        numberofEnemies = 0;
+        isDead = false;
+        shouldEnemiesMove = false;
+        useThrustControl = true;
+        maxThrust = 75f;
+        thrustReductionAmount = 2f;
+        thrustIncrementAmount = thrustReductionAmount / 16;
+        thrustReductionDelay = 1f; // in seconds
+        maxThrustLevel3 = 20f;
+        thrustReductionAmountLevel3 = 5f;
+        thrustIncrementAmountLevel3 = 1 / 32;
+    }
 }

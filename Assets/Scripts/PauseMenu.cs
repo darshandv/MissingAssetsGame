@@ -14,13 +14,8 @@ public class PauseMenu : MenuBehavior
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape)) {
+        if (!IsGamePaused && Input.GetKeyDown(KeyCode.Escape)) {
             Pause();
         }
-    }
-
-    public void ResumeGame() {
-        menuUI.SetActive(false);
-        ResetGame();
     }
 }

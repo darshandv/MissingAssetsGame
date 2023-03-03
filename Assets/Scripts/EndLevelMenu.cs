@@ -21,39 +21,34 @@ public class EndLevelMenu : MenuBehavior
     void Update()
     {
         Scene scene = SceneManager.GetActiveScene();
-        // bool level1Done =
-        //     (scene.name == "Level1")
-        //     && (CollectibleComponent.CollectedComponents == 2);
-        // bool level2Done =
-        //     (scene.name == "Level2")
-        //     && (CollectibleComponent.CollectedComponents == 2);
-        // bool level3Done =
-        //     (scene.name == "Level3")
-        //     && (CollectibleComponent.CollectedComponents >= 4);
-        // bool level4Done =
-        //     (scene.name == "Level4")
-        //     && (CollectibleComponent.CollectedComponents >= 4);
-        // bool level1Done = (scene.name == "Level1") && (CollectibleComponent.CollectedComponents >= CollectibleComponent.TotalComponents);
-        // bool level1Done = (scene.name == "Level1") && (CollectibleComponent.CollectedComponents >= CollectibleComponent.TotalComponents);
+        bool level1Done = (scene.name == "Level1") && (CollectibleComponent.CollectedComponents == 1);
+        bool level2Done = (scene.name == "Level2") && (CollectibleComponent.CollectedComponents == 2);
+        bool level3Done = (scene.name == "Level3") && (CollectibleComponent.CollectedComponents == 2);
+        bool level4Done = (scene.name == "Level4") && (CollectibleComponent.CollectedComponents == 2);
 
-        if (PlayerMovement.getHealth() <= 0)
+        if (PlayerMovement.getHealth() <= 0 || Config.isDead)
         {
             Pause();
             losingText.SetActive(true);
             winningText.SetActive(false);
             restartButton.SetActive(true);
             nextLevelButton.SetActive(false);
-        }
-        // else if (level1Done || level2Done || level3Done || level4Done)
-        // || (PlayerMovement.numberOfEnemiesKilled == PlayerMovement.maxEnemiesLimit)
-        // )
-        // {
-        //     Pause();
-        //     losingText.SetActive(false);
-        //     winningText.SetActive(true);
+        } else if (level1Done || level2Done || level3Done || level4Done) {
+            if (level1Done) {
+                nextLevel = "Level2";
+            } else if (level2Done) {
+                nextLevel = "Level3";
+            } else if (level3Done) {
+                nextLevel = "Level4";
+            } else if (level4Done) {
+                nextLevel = "Level5";
+            }
 
-        //     nextLevelButton.SetActive(true);
-        //     restartButton.SetActive(false);
-        // }
+            Pause();
+            losingText.SetActive(false);
+            winningText.SetActive(true);
+            restartButton.SetActive(false);
+            nextLevelButton.SetActive(true);
+        }
     }
 }
