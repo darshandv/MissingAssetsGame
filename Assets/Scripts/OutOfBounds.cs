@@ -7,7 +7,7 @@ public class OutOfBounds : MonoBehaviour
     // Start is called before the first frame update
     PlayerMovement playerMovement;
     private float time = 0.0f;
-    private float interpolationPeriod = 5f;
+    private float interpolationPeriod = 1f;
     private int counter = 0;
 
     private void Start()
@@ -27,7 +27,7 @@ public class OutOfBounds : MonoBehaviour
             {
                 counter++;
                 time = 0.0f;
-                playerMovement.reduceHealth(5);
+                playerMovement.reduceHealth(25);
                 playerMovement.healthBar.SetHealth(PlayerMovement.getHealth());
                 Debug.Log("Health reduce: " + PlayerMovement.getHealth());
             }
