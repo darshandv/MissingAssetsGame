@@ -22,7 +22,7 @@ public class EndLevelMenu : MenuBehavior
     {
         Scene scene = SceneManager.GetActiveScene();
         bool level1Done = (scene.name == "Level1") && (CollectibleComponent.CollectedComponents == 1);
-        bool level2Done = (scene.name == "Level2") && (CollectibleComponent.CollectedComponents == 2);
+        bool level2Done = (scene.name == "Level2") && (CollectibleComponent.CollectedComponents == 3);
         bool level3Done = (scene.name == "Level3") && (CollectibleComponent.CollectedComponents == 2);
         bool level4Done = (scene.name == "Level4") && (CollectibleComponent.CollectedComponents == 2);
 

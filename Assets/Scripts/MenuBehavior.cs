@@ -45,14 +45,14 @@ public class MenuBehavior : MonoBehaviour
     {
         ResetGame();
         LoadingNewScene();
-        SceneManager.LoadScene(nextLevel);
-        nextLevel = "";
+        // SceneManager.LoadScene(nextLevel);
+        // nextLevel = "";
         
-        // LevelChange levelChange = Camera.main.GetComponent<LevelChange>();
+        LevelChange levelChange = Camera.main.GetComponent<LevelChange>();
         
-        // levelChange.LoadNextLevel(); //change location for calling this
+        levelChange.LoadNextLevel(); //change location for calling this
         // SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-        // Debug.Log("HAPPENING");
+        Debug.Log("HAPPENING");
         
         // CollectibleComponent.ResetCollectedComponents();
     }
