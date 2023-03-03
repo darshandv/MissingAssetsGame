@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class textController : MonoBehaviour
 {
@@ -27,7 +28,9 @@ public class textController : MonoBehaviour
     }
 
     void Update(){
-        thrust.text = getThrustText();
-        health.text = getHealthText();
+        if (Config.healthbarNeeded && Config.thrustbarNeeded) {
+            thrust.text = getThrustText();
+            health.text = getHealthText();
+        } 
     }
 }

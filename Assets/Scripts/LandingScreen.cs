@@ -16,14 +16,6 @@ public class LandingScreen : MonoBehaviour
         SceneManager.LoadScene(firstLevel);
     }
 
-    public void OpenTutorials() {
-
-    }
-
-    public void CloseTutorials() {
-
-    }
-
     // Can be changed later
     public void QuitGame() {
         #if UNITY_EDITOR

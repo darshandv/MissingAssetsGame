@@ -14,6 +14,8 @@ public static class Config
     public static float maxThrustLevel3 = 20f;
     public static float thrustReductionAmountLevel3 = 5f;
     public static float thrustIncrementAmountLevel3 = 1 / 32;
+    public static bool thrustbarNeeded = true;
+    public static bool healthbarNeeded = true;
 
     //Levels
     public static string[] levels =
@@ -41,5 +43,7 @@ public static class Config
         maxThrustLevel3 = 20f;
         thrustReductionAmountLevel3 = 5f;
         thrustIncrementAmountLevel3 = 1 / 32;
+        thrustbarNeeded = true;
+        healthbarNeeded = true;
     }
 }
