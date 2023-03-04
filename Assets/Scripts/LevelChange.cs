@@ -8,11 +8,10 @@ public class LevelChange : MonoBehaviour
     {
         Config.currentLevel++;
         Debug.Log("Config.currentLevel: "+Config.currentLevel);
-        if (Config.currentLevel < Config.levels.Length)
+        if (Config.currentLevel <= 15)
         {
             // SceneManager.LoadScene("Level"+Config.currentLevel);
-            Debug.Log("Next level" + Config.levels[Config.currentLevel]);
-            StartCoroutine(EndLevel(Config.levels[Config.currentLevel]));
+            StartCoroutine(EndLevel("Level" + Config.currentLevel));
         }
         else
         {
@@ -22,9 +21,9 @@ public class LevelChange : MonoBehaviour
 
     IEnumerator EndLevel(string sceneName)
     {
-
+        
         AsyncOperation nScene = SceneManager.LoadSceneAsync(
-            sceneName,
+            "Scenes/" + sceneName,
             LoadSceneMode.Single
         );
         nScene.allowSceneActivation = false;

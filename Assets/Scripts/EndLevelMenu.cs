@@ -35,13 +35,14 @@ public class EndLevelMenu : MenuBehavior
             nextLevelButton.SetActive(false);
         } else if (level1Done || level2Done || level3Done || level4Done) {
             if (level1Done) {
-                nextLevel = "Level2";
+                nextLevel = "Scenes/week9/Level2";
             } else if (level2Done) {
-                nextLevel = "Level3";
+                // TODO: Should change to Level3 after adding it
+                nextLevel = "Scenes/week9/Level2"; 
             } else if (level3Done) {
-                nextLevel = "Level4";
+                nextLevel = "Scenes/week9/Level2";
             } else if (level4Done) {
-                nextLevel = "Level5";
+                nextLevel = "Scenes/week9/Level2";
             }
 
             Pause();
