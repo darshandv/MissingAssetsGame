@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class OutOfBounds : MonoBehaviour
 {
@@ -9,6 +10,7 @@ public class OutOfBounds : MonoBehaviour
     private float time = 0.0f;
     private float interpolationPeriod = 1f;
     private int counter = 0;
+    public GameObject warning_message;
 
     private void Start()
     {
@@ -43,6 +45,7 @@ public class OutOfBounds : MonoBehaviour
         {
             Debug.Log("exitttt: "+ collision.name);
             AnalyticsTracker.isOutOfBounds = true;
+            warning_message.SetActive(true);
         }
     }
     private void OnTriggerEnter2D(Collider2D collision)
@@ -52,6 +55,7 @@ public class OutOfBounds : MonoBehaviour
             counter = 0;
             AnalyticsTracker.isOutOfBounds = false;
             Debug.Log("enter: "+ collision.name);
+            warning_message.SetActive(false);
         }
     }
 
