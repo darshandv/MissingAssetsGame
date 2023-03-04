@@ -18,13 +18,21 @@ public static class Config
     //Levels
     public static string[] levels =
     {
-        "Scenes/week9/LandingScreen",
-        "Scenes/week9/Level2",
-        "Scenes/week9/LandingScreen", // Just for testing purposes
+        "Scenes/LandingScreen",
+        "Scenes/Level1",
+        "Scenes/Level2",
+        "Scenes/Level3",
+        "Scenes/Level4",
+        "Scenes/Level5",
+        "Scenes/Level6",
+        "Scenes/Level7",
+        "Scenes/Level8",
+        // "Scenes/LandingScreen", // Just for testing purposes
     };
     public static int currentLevel = 1;
 
-    public static void ResetAllVariables() {
+    public static void ResetAllVariables()
+    {
         numberofEnemies = 0;
         isDead = false;
         shouldEnemiesMove = false;
