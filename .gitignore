@@ -73,4 +73,6 @@ crashlytics-build.properties
 
 # custom
 .vscode/*
+
+week9_build/*
 Assets/TextMesh Pro/Examples & Extras/Resources/Fonts & Materials/Oswald Bold SDF.asset

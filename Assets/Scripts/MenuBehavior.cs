@@ -51,7 +51,7 @@ public class MenuBehavior : MonoBehaviour
         // LevelChange levelChange = Camera.main.GetComponent<LevelChange>();
         
         // levelChange.LoadNextLevel(); //change location for calling this
-        // SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        // // SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         // Debug.Log("HAPPENING");
         
         // CollectibleComponent.ResetCollectedComponents();
