@@ -29,7 +29,7 @@ public class OutOfBounds : MonoBehaviour
             {
                 counter++;
                 time = 0.0f;
-                playerMovement.reduceHealth(25);
+                playerMovement.reduceHealth(100);
                 playerMovement.healthBar.SetHealth(PlayerMovement.getHealth());
                 Debug.Log("Health reduce: " + PlayerMovement.getHealth());
             }
