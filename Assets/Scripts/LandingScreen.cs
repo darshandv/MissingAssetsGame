@@ -9,7 +9,7 @@ public class LandingScreen : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        firstLevel = Config.levels[6];
+        firstLevel = Config.levels[1];
     }
 
     public void StartGame() {

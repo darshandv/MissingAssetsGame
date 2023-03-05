@@ -9,6 +9,7 @@ public class EndLevelMenu : MenuBehavior
     public GameObject winningText;
     public GameObject nextLevelButton;
     public GameObject restartButton;
+
     // public GameObject warning_message;
 
     // Start is called before the first frame update
@@ -42,6 +43,7 @@ public class EndLevelMenu : MenuBehavior
             winningText.SetActive(false);
             restartButton.SetActive(true);
             nextLevelButton.SetActive(false);
+            Debug.Log("INSIDE (PlayerMovement.getHealth() <= 0 || Config.isDead)");
         }
         else if (level1Done || level2Done || level3Done || level4Done)
         {

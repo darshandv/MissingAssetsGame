@@ -46,7 +46,7 @@ public class PlayerMovement : MonoBehaviour
     public void reduceHealth(int value)
     {
         health = health - value;
-        if (health == 0)
+        if (health <= 0)
         {
             isDead = true;
             // Analytics to be sent here
