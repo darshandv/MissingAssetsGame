@@ -8,7 +8,6 @@ public class MissileEnemyController : MonoBehaviour
     public GameObject missilePrefab;
     public Transform missileSpawnPoint;
     public Transform target;
-    public PlayerMovement pm;
     public float initialMissileSpeed = 1f;
     public float maxMissileSpeed = 100f;
     public float accelerationTime = 1f;
@@ -18,6 +17,8 @@ public class MissileEnemyController : MonoBehaviour
 
     private float currentMissileSpeed;
     private float timeUntilNextFire;
+
+    public int numOfBulletsDie = 5;
 
     void Start()
     {
@@ -29,8 +30,17 @@ public class MissileEnemyController : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        Destroy(gameObject);
-        pm.increaseEnemyKills();
+        numOfBulletsDie--;
+        if (numOfBulletsDie == 0)
+        {
+            Destroy(gameObject);
+
+            if (collision.collider.CompareTag("PlayerBullet"))
+            {
+                AnalyticsTracker.playerBulletsHit += 1;
+                AnalyticsTracker.enemiesKilled += 1;
+            }
+        }
     }
 
     private void FixedUpdate()

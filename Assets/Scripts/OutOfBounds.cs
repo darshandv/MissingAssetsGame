@@ -20,45 +20,49 @@ public class OutOfBounds : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
-        
         if (AnalyticsTracker.isOutOfBounds)
         {
             time += Time.deltaTime;
 
-            if (time >= interpolationPeriod || counter==0)
+            if (time >= interpolationPeriod || counter == 0)
             {
                 counter++;
                 time = 0.0f;
-                playerMovement.reduceHealth(25);
+                playerMovement.reduceHealth(12);
                 playerMovement.healthBar.SetHealth(PlayerMovement.getHealth());
                 Debug.Log("Health reduce: " + PlayerMovement.getHealth());
             }
 
-            if(PlayerMovement.getHealth() <= 0) {
+            if (PlayerMovement.getHealth() <= 0)
+            {
                 AnalyticsTracker.sendMetric1("bounds");
                 AnalyticsTracker.sendMetric6("bounds");
             }
         }
     }
+
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.GetType() == typeof(UnityEngine.BoxCollider2D))
+        if (
+            collision.GetType() == typeof(UnityEngine.BoxCollider2D) && (collision.name == "Player")
+        )
         {
-            Debug.Log("exitttt: "+ collision.name);
+            Debug.Log("exitttt: " + collision.name);
             AnalyticsTracker.isOutOfBounds = true;
             warning_message.SetActive(true);
         }
     }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.GetType() == typeof(UnityEngine.BoxCollider2D))
+        if (
+            collision.GetType() == typeof(UnityEngine.BoxCollider2D) && (collision.name == "Player")
+        )
         {
             counter = 0;
             AnalyticsTracker.isOutOfBounds = false;
-            Debug.Log("enter: "+ collision.name);
+            Debug.Log("enter: " + collision.name);
             warning_message.SetActive(false);
         }
     }
-
-   
 }

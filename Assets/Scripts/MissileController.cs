@@ -2,21 +2,20 @@ using UnityEngine;
 
 public class MissileController : MonoBehaviour
 {
-    public float lifeTime = 5f;
+    public float lifeTime = 10f;
     public int damage = 10;
     public float speed = 5f;
-    public float trackingSpeed = 1f; // how quickly the missile can change direction
+    public float trackingSpeed = 2f; // how quickly the missile can change direction
 
-    private PlayerMovement pm;
     private Vector2 targetPosition;
+    private GameObject playerGameObject;
 
     void Start()
     {
-        GameObject playerGameObject = GameObject.FindWithTag("Player");
+        playerGameObject = GameObject.FindWithTag("Player");
         if (playerGameObject != null)
         {
-            pm = playerGameObject.GetComponent<PlayerMovement>();
-            targetPosition = pm.transform.position;
+            targetPosition = playerGameObject.transform.position;
         }
         else
         {
@@ -28,12 +27,12 @@ public class MissileController : MonoBehaviour
 
     void Update()
     {
-        if (pm != null)
+        if (playerGameObject != null)
         {
             // calculate the new target position based on the player's current position
             targetPosition = Vector2.MoveTowards(
                 targetPosition,
-                pm.transform.position,
+                playerGameObject.transform.position,
                 trackingSpeed * Time.deltaTime
             );
 
@@ -49,10 +48,6 @@ public class MissileController : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (pm != null)
-        {
-            pm.reduceHealth(damage);
-            Destroy(gameObject);
-        }
+        Destroy(gameObject);
     }
 }

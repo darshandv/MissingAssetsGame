@@ -33,6 +33,8 @@ public class PlayerMovement : MonoBehaviour
 
     public bool thrustZero = false;
 
+    public int missileDamage = 10;
+
     public static void resetHealth()
     {
         health = 100;
@@ -88,6 +90,12 @@ public class PlayerMovement : MonoBehaviour
             {
                 reduceHealth((int)(collision.relativeVelocity.magnitude));
             }
+            else if (collision.collider.CompareTag("Missile"))
+            {
+                //enemy bullets
+                reduceHealth(missileDamage);
+                Debug.Log("MISSILE DAMAGE TRIGGERED");
+            }
             else
             {
                 //enemy bullets
@@ -110,8 +118,6 @@ public class PlayerMovement : MonoBehaviour
             AnalyticsTracker.sendMetric7();
             AnalyticsTracker.sendMetric8();
             AnalyticsTracker.sendMetric9();
-
-            
 
             // StatisticsManager.buildAnaltyicsDataObjAndPush(0,1,"DeathByEnemy","0%",0,"player_termination","enemy");
             // StatisticsManager.buildAnaltyicsDataObjAndPush(numberOfEnemiesKilled,1,"NumEnemiesKilled","0%",0,"numEnemiesKilled","enemy");
@@ -164,7 +170,8 @@ public class PlayerMovement : MonoBehaviour
         // if you long press W
         if (tc.getThrust() > 0.04)
         {
-            if(thrustZero) {
+            if (thrustZero)
+            {
                 AnalyticsTracker.thrustZeroCounter++;
                 thrustZero = false;
             }
@@ -227,7 +234,9 @@ public class PlayerMovement : MonoBehaviour
         // player_rigid_body.velocity = Vector3.right * 2;
         tc = new ThrustController();
         thrustPower = 0.12f; // 0.05f for local testing, build yet to be decided
-        AnalyticsTracker.timeStampRecord = new DateTimeOffset(DateTime.UtcNow).ToUnixTimeMilliseconds(); // To record first level time
+        AnalyticsTracker.timeStampRecord = new DateTimeOffset(
+            DateTime.UtcNow
+        ).ToUnixTimeMilliseconds(); // To record first level time
     }
 
     // Update is called once per frame
