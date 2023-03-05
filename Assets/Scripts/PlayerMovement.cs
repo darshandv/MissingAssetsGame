@@ -61,7 +61,10 @@ public class PlayerMovement : MonoBehaviour
         {
             reduceHealth(regHealthReduction);
             healthBar.SetHealth(getHealth());
-            if (collision.gameObject.name.Contains("Asteroid"))
+            if (
+                collision.gameObject.name.Contains("Asteroid")
+                || collision.gameObject.name.Contains("Enemy")
+            )
             {
                 reduceHealth((int)(collision.relativeVelocity.magnitude));
             }
@@ -70,7 +73,8 @@ public class PlayerMovement : MonoBehaviour
         if (health <= 0)
         {
             Destroy(gameObject);
-            if (collision.collider.CompareTag("EnemyBullet")){
+            if (collision.collider.CompareTag("EnemyBullet"))
+            {
                 AnalyticsTracker.sendMetric1("enemy");
             }
             AnalyticsTracker.sendMetric2();

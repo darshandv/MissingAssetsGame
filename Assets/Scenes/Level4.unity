@@ -353,7 +353,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &100553435
 GameObject:
@@ -474,6 +474,7 @@ MonoBehaviour:
   menuUI: {fileID: 1773683235}
   healthBar: {fileID: 402153214}
   thrustBar: {fileID: 1239498891}
+  warning_message: {fileID: 2073196105}
   losingText: {fileID: 1876028957}
   winningText: {fileID: 800789484}
   nextLevelButton: {fileID: 1968335574}
@@ -553,7 +554,7 @@ RectTransform:
   m_Children:
   - {fileID: 1773683236}
   m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -787,6 +788,7 @@ MonoBehaviour:
   increment: 0.05
   shouldMove: 0
   moveY: 1
+  numBulletsToDie: 5
 --- !u!212 &143008534
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1307,7 +1309,7 @@ Transform:
   - {fileID: 407400295}
   - {fileID: 2013906813}
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &279894605
 GameObject:
@@ -1470,6 +1472,7 @@ MonoBehaviour:
   increment: 0.05
   shouldMove: 0
   moveY: 1
+  numBulletsToDie: 5
 --- !u!212 &279894609
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1940,6 +1943,7 @@ MonoBehaviour:
   menuUI: {fileID: 1845470647}
   healthBar: {fileID: 402153214}
   thrustBar: {fileID: 1239498891}
+  warning_message: {fileID: 2073196105}
 --- !u!114 &398955742
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2015,7 +2019,7 @@ RectTransform:
   m_Children:
   - {fileID: 1845470650}
   m_Father: {fileID: 0}
-  m_RootOrder: 15
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -2706,6 +2710,7 @@ MonoBehaviour:
   increment: 0.05
   shouldMove: 0
   moveY: 1
+  numBulletsToDie: 5
 --- !u!212 &550529003
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -4357,6 +4362,7 @@ MonoBehaviour:
   increment: 0.05
   shouldMove: 0
   moveY: 1
+  numBulletsToDie: 5
 --- !u!212 &951356598
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -5861,6 +5867,7 @@ MonoBehaviour:
   increment: 0.05
   shouldMove: 0
   moveY: 1
+  numBulletsToDie: 5
 --- !u!212 &1405015745
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -6682,7 +6689,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1581711975
 SpriteRenderer:
@@ -6851,6 +6858,7 @@ MonoBehaviour:
   menuUI: {fileID: 303582427}
   healthBar: {fileID: 402153214}
   thrustBar: {fileID: 1239498891}
+  warning_message: {fileID: 2073196106}
 --- !u!114 &1660614666
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7201,7 +7209,7 @@ RectTransform:
   - {fileID: 402153213}
   - {fileID: 1099461601}
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -8576,6 +8584,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c859296edaedc47579c9a6e9713119c2, type: 3}
+--- !u!1 &2073196105 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1090187929645628160, guid: c859296edaedc47579c9a6e9713119c2, type: 3}
+  m_PrefabInstance: {fileID: 2073196104}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &2073196106 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8160527890875592871, guid: c859296edaedc47579c9a6e9713119c2, type: 3}
+  m_PrefabInstance: {fileID: 2073196104}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2084793193
 GameObject:
   m_ObjectHideFlags: 0

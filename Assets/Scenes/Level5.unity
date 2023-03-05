@@ -939,6 +939,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   menuUI: {fileID: 1672669439}
+  healthBar: {fileID: 0}
+  thrustBar: {fileID: 0}
+  warning_message: {fileID: 0}
   losingText: {fileID: 1427135435}
   winningText: {fileID: 1167841112}
   nextLevelButton: {fileID: 349527352}
@@ -1613,7 +1616,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3303820224205235236, guid: 985a396b654f94651ae01286a910e3cc, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0.41
+      value: 0.40999985
       objectReference: {fileID: 0}
     - target: {fileID: 3303820224205235236, guid: 985a396b654f94651ae01286a910e3cc, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -2127,6 +2130,7 @@ MonoBehaviour:
   increment: 0.05
   shouldMove: 0
   moveY: 1
+  numBulletsToDie: 5
 --- !u!212 &886071846
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2970,6 +2974,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   menuUI: {fileID: 1000237316}
+  healthBar: {fileID: 0}
+  thrustBar: {fileID: 0}
+  warning_message: {fileID: 0}
 --- !u!114 &1329685146
 MonoBehaviour:
   m_ObjectHideFlags: 0

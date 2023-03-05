@@ -18,87 +18,111 @@ public class EnemyController : MonoBehaviour
     private int UP = 1;
     private int direction = 1;
 
-
+    public int numBulletsToDie = 5;
 
     void Start()
     {
         initialPosition = transform.position;
         rb = GetComponent<Rigidbody2D>();
-        InvokeRepeating("Shoot", startInterval ,deltaInterval);
+        InvokeRepeating("Shoot", startInterval, deltaInterval);
         Config.numberofEnemies += 1;
     }
 
     void Shoot()
-    {   
-        if(weapon && target)
+    {
+        if (weapon && target)
         {
             weapon.Fire(target);
         }
     }
 
-    private void OnCollisionEnter2D(Collision2D collision) 
-    {   
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
         // Avoid enemies dying from other enemy bullets
-        if(!collision.gameObject.name.Contains("EnemyBullet")) { // TODO: A better way to identify
-            Destroy(gameObject);
-            pm.increaseEnemyKills();
-        }
+        // if (!collision.gameObject.name.Contains("EnemyBullet"))
+        // {
+        //     // TODO: A better way to identify
+        // }
 
-        if(collision.collider.CompareTag("PlayerBullet")) {
+        if (collision.collider.CompareTag("PlayerBullet"))
+        {
+            
+            // pm.increaseEnemyKills();
+
+            numBulletsToDie--;
+
+            if(numBulletsToDie == 0) 
+            {
+                Destroy(gameObject);
+            }
+
             AnalyticsTracker.playerBulletsHit += 1;
             AnalyticsTracker.enemiesKilled += 1;
         }
     }
 
-    float getPosition(Vector2 current) {
-        if(moveY) {
+    float getPosition(Vector2 current)
+    {
+        if (moveY)
+        {
             return current.y;
         }
-        else {
+        else
+        {
             return current.x;
         }
     }
 
-    void setPosition(float pos) {
-        if(moveY) {
-            transform.position = new Vector2(transform.position.x,pos);
+    void setPosition(float pos)
+    {
+        if (moveY)
+        {
+            transform.position = new Vector2(transform.position.x, pos);
         }
-        else {
-            transform.position = new Vector2(pos,transform.position.y);
+        else
+        {
+            transform.position = new Vector2(pos, transform.position.y);
         }
     }
 
-    bool insideBound() {
-        if(direction == UP) {
+    bool insideBound()
+    {
+        if (direction == UP)
+        {
             return getPosition(transform.position) + 1 < getPosition(initialPosition) + range;
         }
-        else {
+        else
+        {
             return getPosition(transform.position) - 1 > getPosition(initialPosition) - range;
         }
     }
 
-    private void addDelta(){
-        if(insideBound()){
-            setPosition(getPosition(transform.position)+direction*increment);
+    private void addDelta()
+    {
+        if (insideBound())
+        {
+            setPosition(getPosition(transform.position) + direction * increment);
         }
-        else {
+        else
+        {
             direction *= -1;
         }
     }
 
-    void Update() {
+    void Update()
+    {
         // Local config takes precedence
-        if(shouldMove || Config.shouldEnemiesMove)
+        if (shouldMove || Config.shouldEnemiesMove)
             addDelta();
     }
 
     private void FixedUpdate()
     {
-        if (target) {
-            Vector3 aimDirection =  new Vector2(target.position.x, target.position.y) - rb.position;
+        if (target)
+        {
+            Vector3 aimDirection = new Vector2(target.position.x, target.position.y) - rb.position;
             float aimAngle = Mathf.Atan2(aimDirection.y, aimDirection.x) * Mathf.Rad2Deg + 90f;
             rb.rotation = aimAngle;
         }
-
     }
 }

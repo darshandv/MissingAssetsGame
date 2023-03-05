@@ -5,7 +5,7 @@ using UnityEngine;
 public class Bullet : MonoBehaviour
 {
    Vector2 initialPosition;
-   public float distanceRange = 10.0f;
+   public float distanceRange = 25.0f;
 
    private void Start() {
       initialPosition = transform.position;
