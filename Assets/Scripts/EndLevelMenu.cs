@@ -74,7 +74,6 @@ public class EndLevelMenu : MenuBehavior
             }
             else if (level2Done)
             {
-                // TODO: Should change to Level3 after adding it
                 nextLevel = "Scenes/Level3";
             }
             else if (level3Done)
