@@ -18,15 +18,15 @@ public static class Config
     //Levels
     public static string[] levels =
     {
-        "Scenes/LandingScreen",
-        "Scenes/Level1",
-        "Scenes/Level2",
-        "Scenes/Level3",
-        "Scenes/Level4",
-        "Scenes/Level5",
-        "Scenes/Level6",
-        "Scenes/Level7",
-        "Scenes/Level8",
+        "LandingScreen",
+        "Level1",
+        "Level2",
+        "Level3",
+        "Level4",
+        "Level5",
+        "Level6",
+        "Level7",
+        "Level8",
         // "Scenes/LandingScreen", // Just for testing purposes
     };
     public static int currentLevel = 1;

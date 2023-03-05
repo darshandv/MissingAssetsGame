@@ -36,6 +36,7 @@ public class OutOfBounds : MonoBehaviour
 
             if(PlayerMovement.getHealth() <= 0) {
                 AnalyticsTracker.sendMetric1("bounds");
+                AnalyticsTracker.sendMetric6("bounds");
             }
         }
     }

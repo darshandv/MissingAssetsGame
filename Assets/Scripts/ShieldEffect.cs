@@ -9,6 +9,7 @@ public class ShieldEffect : PowerupBehavior
     public override void Apply(GameObject targetObj)
     {
         targetObj.GetComponent<PlayerMovement>().isInvulnerable = true;
+        AnalyticsTracker.shieldCollected++;
         targetObj.GetComponentInChildren<ShieldController>().shielded = true;
     }
 
