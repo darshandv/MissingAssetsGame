@@ -140,11 +140,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3303820223569538504, guid: 985a396b654f94651ae01286a910e3cc, type: 3}
       propertyPath: m_Value
-      value: 100
+      value: 75
       objectReference: {fileID: 0}
     - target: {fileID: 3303820223569538504, guid: 985a396b654f94651ae01286a910e3cc, type: 3}
       propertyPath: m_MaxValue
-      value: 100
+      value: 75
       objectReference: {fileID: 0}
     - target: {fileID: 3303820223569538506, guid: 985a396b654f94651ae01286a910e3cc, type: 3}
       propertyPath: m_Pivot.x
@@ -459,6 +459,7 @@ MonoBehaviour:
   menuUI: {fileID: 1436052696}
   healthBar: {fileID: 196838711}
   thrustBar: {fileID: 3254980}
+  warning_message: {fileID: 1089197134}
 --- !u!114 &151975039
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1421,7 +1422,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 100
+  m_Text: 75
 --- !u!222 &627458481
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2062,6 +2063,7 @@ MonoBehaviour:
   menuUI: {fileID: 1239107869}
   healthBar: {fileID: 196838711}
   thrustBar: {fileID: 3254980}
+  warning_message: {fileID: 0}
 --- !u!114 &925940404
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2290,6 +2292,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1086654018920685020, guid: bcaad12b668285948ae14848e1aa3f1a, type: 3}
   m_PrefabInstance: {fileID: 982804136}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1089197134 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1090187929645628160, guid: c859296edaedc47579c9a6e9713119c2, type: 3}
+  m_PrefabInstance: {fileID: 1533419892}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1091857255
 GameObject:
   m_ObjectHideFlags: 0
@@ -2460,10 +2467,12 @@ MonoBehaviour:
   menuUI: {fileID: 1594911575}
   healthBar: {fileID: 196838711}
   thrustBar: {fileID: 3254980}
+  warning_message: {fileID: 1089197134}
   losingText: {fileID: 1091857255}
   winningText: {fileID: 813700438}
   nextLevelButton: {fileID: 1707883552}
   restartButton: {fileID: 788048437}
+  warning_message: {fileID: 1089197134}
 --- !u!114 &1098824273
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4581,11 +4590,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1086654018920685020, guid: bcaad12b668285948ae14848e1aa3f1a, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.6
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 1086654018920685020, guid: bcaad12b668285948ae14848e1aa3f1a, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.6
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 1086654018920685020, guid: bcaad12b668285948ae14848e1aa3f1a, type: 3}
       propertyPath: m_LocalPosition.x

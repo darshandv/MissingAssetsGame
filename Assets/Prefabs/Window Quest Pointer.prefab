@@ -66,7 +66,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 5d932b8ecff1641db93f07c70e79fba1, type: 3}
+  m_Sprite: {fileID: 21300000, guid: b06c251c0669643e9acd565bd997d76d, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -127,8 +127,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   uiCamera: {fileID: 0}
-  arrow: {fileID: 21300000, guid: 5d932b8ecff1641db93f07c70e79fba1, type: 3}
+  arrow: {fileID: 21300000, guid: b06c251c0669643e9acd565bd997d76d, type: 3}
   cross: {fileID: 21300000, guid: 1e2b8913538404418b0c3d78af0b7ee2, type: 3}
   pointerRectTransform: {fileID: 3607417459569515898}
   goalPlanet: {fileID: 0}
   player: {fileID: 0}
+  backupGoals: []
