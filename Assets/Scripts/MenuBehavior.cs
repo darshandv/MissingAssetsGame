@@ -14,6 +14,13 @@ public class MenuBehavior : MonoBehaviour
 
     public GameObject warning_message;
 
+    private Camera mainCamera;
+
+    void Start()
+    {
+        Camera mainCamera = Camera.main;
+    }
+
     private void LoadingNewScene()
     {
         PlayerMovement.resetHealth();
@@ -27,6 +34,11 @@ public class MenuBehavior : MonoBehaviour
         Time.timeScale = 1f;
         IsGamePaused = false;
         warning_message.SetActive(false);
+        if (mainCamera)
+        {
+            CameraFollow cs = mainCamera.GetComponent<CameraFollow>();
+            cs.StartGameZoom();
+        }
     }
 
     public void ResumeGame()
@@ -58,7 +70,6 @@ public class MenuBehavior : MonoBehaviour
 
     public void NextLevel()
     {
-        
         // Send metrics to the next level
         AnalyticsTracker.sendMetric2();
         AnalyticsTracker.sendMetric3();
@@ -69,8 +80,6 @@ public class MenuBehavior : MonoBehaviour
         AnalyticsTracker.sendMetric8();
         AnalyticsTracker.sendMetric9();
 
-
-        
         ResetGame();
         LoadingNewScene();
         SceneManager.LoadScene(nextLevel);
