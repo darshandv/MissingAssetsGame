@@ -11,6 +11,8 @@ public class MachineGunEnemyController : MonoBehaviour
     public float fireRate = 0.1f;
     public float bulletSpread = 5f;
 
+    public int numBulletsToDie = 5;
+
     private float timeUntilNextFire = 0f;
 
     void Start()
@@ -33,8 +35,19 @@ public class MachineGunEnemyController : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        Destroy(gameObject);
-        pm.increaseEnemyKills();
+        if (collision.collider.CompareTag("PlayerBullet"))
+        {
+            numBulletsToDie--;
+
+            if (numBulletsToDie == 0)
+            {
+                Destroy(gameObject);
+                pm.increaseEnemyKills();
+            }
+
+            AnalyticsTracker.playerBulletsHit += 1;
+            AnalyticsTracker.enemiesKilled += 1;
+        }
     }
 
     private void FixedUpdate()
@@ -50,6 +63,8 @@ public class MachineGunEnemyController : MonoBehaviour
 
     void FireBullet()
     {
+        if (!target)
+            return;
         // Set bullet direction to point towards target
         Vector2 bulletDirection = (Vector2)target.position - (Vector2)bulletSpawnPoint.position;
 
@@ -63,7 +78,7 @@ public class MachineGunEnemyController : MonoBehaviour
         Vector3 startingPosition =
             bulletSpawnPoint.position
             - ((numBullets - 1) * distanceBetweenBullets * bulletSpawnPoint.right) / 2;
-        
+
         // Vector2 direction = (target.position - bullet.transform.position).normalized;
 
         // Spawn the bullets in parallel with the calculated spacing
