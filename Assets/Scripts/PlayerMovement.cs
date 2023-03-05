@@ -59,14 +59,22 @@ public class PlayerMovement : MonoBehaviour
     {
         if (!isInvulnerable)
         {
-            reduceHealth(regHealthReduction);
+            // reduceHealth(regHealthReduction);
             healthBar.SetHealth(getHealth());
-            if (
-                collision.gameObject.name.Contains("Asteroid")
-                || collision.gameObject.name.Contains("Enemy")
-            )
+            if (collision.collider.CompareTag("Enemy"))
             {
                 reduceHealth((int)(collision.relativeVelocity.magnitude));
+
+                //apply force in the opposite direction
+            }
+            else if (collision.gameObject.name.Contains("Asteroid"))
+            {
+                reduceHealth((int)(collision.relativeVelocity.magnitude));
+            }
+            else
+            {
+                //enemy bullets
+                reduceHealth(regHealthReduction);
             }
         }
         Debug.Log(health);

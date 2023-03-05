@@ -23,7 +23,7 @@ public class Meteor : MonoBehaviour
     }
 
     private void OnCollisionEnter2D(Collision2D collision) 
-    {   
+    {
         if (collision.gameObject.name.Contains("EnemyBullet")) {
             Destroy(collision.gameObject);
         } else if (collision.gameObject.name.Contains("Bullet")) {
