@@ -58,6 +58,19 @@ public class MenuBehavior : MonoBehaviour
 
     public void NextLevel()
     {
+        
+        // Send metrics to the next level
+        AnalyticsTracker.sendMetric2();
+        AnalyticsTracker.sendMetric3();
+        AnalyticsTracker.sendMetric4();
+        AnalyticsTracker.sendMetric5();
+        AnalyticsTracker.sendMetric6("NextLevel");
+        AnalyticsTracker.sendMetric7();
+        AnalyticsTracker.sendMetric8();
+        AnalyticsTracker.sendMetric9();
+
+
+        
         ResetGame();
         LoadingNewScene();
         SceneManager.LoadScene(nextLevel);

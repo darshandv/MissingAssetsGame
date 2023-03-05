@@ -11,6 +11,17 @@ public class Metric4 {
     public int totalEnemyBullets;
 }
 
+public class Metric5 {
+    public long startTime;
+    public long endTime;
+}
+
+public class Metric6{
+    public float remainingThrust;
+    public long remainingHealth;
+    public string cause;
+}
+
 public static class AnalyticsTracker
 {
     public static int metricVersion = 1;
@@ -20,6 +31,12 @@ public static class AnalyticsTracker
     public static int enemyBulletsHit = 0; // Enemy bullets that hit player
     public static int totalEnemyBullets = 0; // Total Enemy Bullets fired
     public static bool isOutOfBounds = false;
+    public static long health = 0;
+    public static float thrust = 0;
+    public static int thrustZeroCounter = 0;
+    public static int shieldCollected = 0;
+
+    public static long timeStampRecord = 0;
 
     public static void resetVariables() {
         playerBullets = 0;
@@ -28,6 +45,7 @@ public static class AnalyticsTracker
         totalEnemyBullets = 0;
         isOutOfBounds = false;
         playerBulletsHit = 0;
+        timeStampRecord = 0;
     }
 
     public static void sendMetric1(string value){
@@ -71,4 +89,34 @@ public static class AnalyticsTracker
         totalEnemyBullets = 0;
     }
 
+    public static void sendMetric5 () {
+        Metric5 data = new Metric5();
+        data.startTime = timeStampRecord;
+        data.endTime = new DateTimeOffset(DateTime.UtcNow).ToUnixTimeMilliseconds();
+        StatisticsManager.buildAnaltyicsDataObjAndPush("playerTimeElapsed",JsonConvert.SerializeObject(data));
+        timeStampRecord = 0;
+    }
+
+    public static void sendMetric6(string cause) {
+        Metric6 data = new Metric6();
+        data.remainingHealth = health;
+        data.remainingThrust = thrust;
+        StatisticsManager.buildAnaltyicsDataObjAndPush("remainingThrustAndHealth",JsonConvert.SerializeObject(data));
+        health = 0;
+        thrust = 0;
+    }
+
+    public static void sendMetric7() {
+        StatisticsManager.buildAnaltyicsDataObjAndPush("levelCompleted","1");
+    }
+
+    public static void sendMetric8() {
+        StatisticsManager.buildAnaltyicsDataObjAndPush("zeroThrustCounter",thrustZeroCounter.ToString());
+        thrustZeroCounter = 0;
+    }
+    
+    public static void sendMetric9() {
+        StatisticsManager.buildAnaltyicsDataObjAndPush("shieldsCollected",shieldCollected.ToString());
+        shieldCollected = 0;
+    }
 }

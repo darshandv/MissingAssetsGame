@@ -22,9 +22,9 @@ public class CollectibleComponent : MonoBehaviour
             if (CollectedComponents >= TotalComponents)
             {
                 // StartCoroutine(EndLevel());
-                AnalyticsTracker.sendMetric3();
-                AnalyticsTracker.sendMetric4();
-                AnalyticsTracker.sendMetric2();
+                // AnalyticsTracker.sendMetric3();
+                // AnalyticsTracker.sendMetric4();
+                // AnalyticsTracker.sendMetric2();
                 // LevelChange levelChange = Camera.main.GetComponent<LevelChange>();
 
                 // levelChange.LoadNextLevel(); //change location for calling this

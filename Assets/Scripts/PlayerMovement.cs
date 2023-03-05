@@ -1,4 +1,5 @@
 using System.Collections;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -29,6 +30,8 @@ public class PlayerMovement : MonoBehaviour
     private bool isReducingThrust = false;
     private float thrustReductionStartTime = 0f;
     private bool isThrustKeyReleased = true;
+
+    public bool thrustZero = false;
 
     public static void resetHealth()
     {
@@ -98,10 +101,18 @@ public class PlayerMovement : MonoBehaviour
             if (collision.collider.CompareTag("EnemyBullet"))
             {
                 AnalyticsTracker.sendMetric1("enemy");
+                AnalyticsTracker.sendMetric6("enemy");
             }
             AnalyticsTracker.sendMetric2();
             AnalyticsTracker.sendMetric3();
             AnalyticsTracker.sendMetric4();
+            AnalyticsTracker.sendMetric5();
+            AnalyticsTracker.sendMetric7();
+            AnalyticsTracker.sendMetric8();
+            AnalyticsTracker.sendMetric9();
+
+            
+
             // StatisticsManager.buildAnaltyicsDataObjAndPush(0,1,"DeathByEnemy","0%",0,"player_termination","enemy");
             // StatisticsManager.buildAnaltyicsDataObjAndPush(numberOfEnemiesKilled,1,"NumEnemiesKilled","0%",0,"numEnemiesKilled","enemy");
         }
@@ -153,6 +164,10 @@ public class PlayerMovement : MonoBehaviour
         // if you long press W
         if (tc.getThrust() > 0.04)
         {
+            if(thrustZero) {
+                AnalyticsTracker.thrustZeroCounter++;
+                thrustZero = false;
+            }
             if (Input.GetKeyDown(KeyCode.W))
             {
                 // Reduce thrust instantly
@@ -192,6 +207,7 @@ public class PlayerMovement : MonoBehaviour
         else
         {
             isThrustKeyReleased = true;
+            thrustZero = true;
         }
         if (isThrustKeyReleased)
         {
@@ -211,6 +227,7 @@ public class PlayerMovement : MonoBehaviour
         // player_rigid_body.velocity = Vector3.right * 2;
         tc = new ThrustController();
         thrustPower = 0.12f; // 0.05f for local testing, build yet to be decided
+        AnalyticsTracker.timeStampRecord = new DateTimeOffset(DateTime.UtcNow).ToUnixTimeMilliseconds(); // To record first level time
     }
 
     // Update is called once per frame
@@ -271,5 +288,7 @@ public class PlayerMovement : MonoBehaviour
                 player_rigid_body.velocity = player_rigid_body.velocity.normalized * playerSpeed;
             }
         }
+        AnalyticsTracker.health = health;
+        AnalyticsTracker.thrust = tc.getThrust();
     }
 }
