@@ -15,4 +15,12 @@ public class ThrustBar : MonoBehaviour
 		slider.value = thrust;
 		fill.color = gradient.Evaluate(slider.normalizedValue);
 	}
+
+	public void SetMaxThrust(int thrust)
+	{
+		slider.maxValue = thrust;
+		slider.value = thrust;
+		fill.color = gradient.Evaluate(1f);
+	}
 }
+

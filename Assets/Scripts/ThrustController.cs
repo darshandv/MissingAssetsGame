@@ -8,9 +8,16 @@ public class ThrustController
 
     public void reduceThrust(float reduceValue)
     {
-        if (thrust >= reduceValue)
+        if (thrust >= 0f)
         {
-            thrust -= reduceValue;
+            if ((thrust - reduceValue) == 0)
+            {
+                thrust = 0;
+            }
+            else
+            {
+                thrust -= reduceValue;
+            }
         }
     }
 
