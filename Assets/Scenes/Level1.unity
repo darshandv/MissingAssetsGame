@@ -3794,12 +3794,12 @@ PrefabInstance:
       objectReference: {fileID: 335390099}
     - target: {fileID: 3607417459590073720, guid: 43aabf3e24f9c47b98876da404ee6da2, type: 3}
       propertyPath: backupGoals.Array.size
-      value: 5
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 3607417459590073720, guid: 43aabf3e24f9c47b98876da404ee6da2, type: 3}
       propertyPath: backupGoals.Array.data[0]
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 982804137}
     - target: {fileID: 3607417459590073720, guid: 43aabf3e24f9c47b98876da404ee6da2, type: 3}
       propertyPath: backupGoals.Array.data[1]
       value: 
@@ -3807,7 +3807,7 @@ PrefabInstance:
     - target: {fileID: 3607417459590073720, guid: 43aabf3e24f9c47b98876da404ee6da2, type: 3}
       propertyPath: backupGoals.Array.data[2]
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1877794177}
     - target: {fileID: 3607417459590073720, guid: 43aabf3e24f9c47b98876da404ee6da2, type: 3}
       propertyPath: backupGoals.Array.data[3]
       value: 
@@ -4514,6 +4514,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bcaad12b668285948ae14848e1aa3f1a, type: 3}
+--- !u!4 &1877794177 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1086654018920685020, guid: bcaad12b668285948ae14848e1aa3f1a, type: 3}
+  m_PrefabInstance: {fileID: 1877794176}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1878561467
 GameObject:
   m_ObjectHideFlags: 0
