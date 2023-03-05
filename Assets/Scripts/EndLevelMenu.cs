@@ -35,6 +35,18 @@ public class EndLevelMenu : MenuBehavior
         bool level4Done =
             (scene.name == "Level4")
             && (CollectibleComponent.CollectedComponents == Config.levelCollectibles[3]);
+        bool level5Done =
+            (scene.name == "Level5")
+            && (CollectibleComponent.CollectedComponents == Config.levelCollectibles[4]);
+        bool level6Done =
+            (scene.name == "Level6")
+            && (CollectibleComponent.CollectedComponents == Config.levelCollectibles[5]);
+        bool level7Done =
+            (scene.name == "Level7")
+            && (CollectibleComponent.CollectedComponents == Config.levelCollectibles[6]);
+        bool level8Done =
+            (scene.name == "Level8")
+            && (CollectibleComponent.CollectedComponents == Config.levelCollectibles[7]);
 
         if (PlayerMovement.getHealth() <= 0 || Config.isDead)
         {
@@ -45,7 +57,16 @@ public class EndLevelMenu : MenuBehavior
             nextLevelButton.SetActive(false);
             Debug.Log("INSIDE (PlayerMovement.getHealth() <= 0 || Config.isDead)");
         }
-        else if (level1Done || level2Done || level3Done || level4Done)
+        else if (
+            level1Done
+            || level2Done
+            || level3Done
+            || level4Done
+            || level5Done
+            || level6Done
+            || level7Done
+            || level8Done
+        )
         {
             if (level1Done)
             {
@@ -63,6 +84,18 @@ public class EndLevelMenu : MenuBehavior
             else if (level4Done)
             {
                 nextLevel = "Scenes/Level5";
+            }
+            else if (level5Done)
+            {
+                nextLevel = "Scenes/Level6";
+            }
+            else if (level6Done)
+            {
+                nextLevel = "Scenes/Level7";
+            }
+            else if (level7Done)
+            {
+                nextLevel = "Scenes/Level8";
             }
 
             Pause();
