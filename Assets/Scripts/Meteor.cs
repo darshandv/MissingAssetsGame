@@ -11,6 +11,8 @@ public class Meteor : MonoBehaviour
     public float speed = 5.0f;
     private float lifetime = 30.0f;
 
+    public numBulletsToDie = 2;
+
     void Awake() {
         spriteRenderer = GetComponent<SpriteRenderer>();
         meteorBody = GetComponent<Rigidbody2D>();
@@ -24,10 +26,15 @@ public class Meteor : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision) 
     {
+
         if (collision.gameObject.name.Contains("EnemyBullet")) {
             Destroy(collision.gameObject);
         } else if (collision.gameObject.name.Contains("Bullet")) {
-            Destroy(this.gameObject);
+            numBulletsToDie--;
+            if(numBulletsToDie == 0)
+            {
+                Destroy(this.gameObject);
+            }
         }
     }
 
