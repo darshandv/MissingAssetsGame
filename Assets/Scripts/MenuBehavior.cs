@@ -9,7 +9,11 @@ public class MenuBehavior : MonoBehaviour
     public GameObject menuUI;
     public static string nextLevel;
 
-    private void LoadingNewScene() {
+    public GameObject healthBar;
+    public GameObject thrustBar;
+
+    private void LoadingNewScene()
+    {
         PlayerMovement.resetHealth();
         CollectibleComponent.CollectedComponents = 0;
         PlayerMovement.numberOfEnemiesKilled = 0;
@@ -22,14 +26,21 @@ public class MenuBehavior : MonoBehaviour
         IsGamePaused = false;
     }
 
-    public void ResumeGame() {
+    public void ResumeGame()
+    {
         menuUI.SetActive(false);
+        healthBar.SetActive(true);
+        thrustBar.SetActive(true);
+
         ResetGame();
     }
 
     public void Pause()
     {
         menuUI.SetActive(true);
+        healthBar.SetActive(false);
+        thrustBar.SetActive(false);
+
         Time.timeScale = 0f;
         IsGamePaused = true;
     }
@@ -47,13 +58,13 @@ public class MenuBehavior : MonoBehaviour
         LoadingNewScene();
         SceneManager.LoadScene(nextLevel);
         nextLevel = "";
-        
+
         // LevelChange levelChange = Camera.main.GetComponent<LevelChange>();
-        
+
         // levelChange.LoadNextLevel(); //change location for calling this
         // // SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         // Debug.Log("HAPPENING");
-        
+
         // CollectibleComponent.ResetCollectedComponents();
     }
 
@@ -68,10 +79,10 @@ public class MenuBehavior : MonoBehaviour
     public void QuitGame()
     {
         ResetGame();
-        #if UNITY_EDITOR
-            UnityEditor.EditorApplication.isPlaying = false;
-        #endif
-            Application.Quit();
+#if UNITY_EDITOR
+        UnityEditor.EditorApplication.isPlaying = false;
+#endif
+        Application.Quit();
 
         Debug.Log("Quitting Game");
     }

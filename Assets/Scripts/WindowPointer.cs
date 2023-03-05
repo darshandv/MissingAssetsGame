@@ -30,8 +30,11 @@ public class WindowPointer : MonoBehaviour
 
     private void FixedUpdate()
     {
-        targetPosition = goalPlanet.position;
-        pointerImage = transform.Find("Pointer").GetComponent<Image>();
+        if (goalPlanet)
+        {
+            targetPosition = goalPlanet.position;
+            pointerImage = transform.Find("Pointer").GetComponent<Image>();
+        }
     }
 
     private void Update()
