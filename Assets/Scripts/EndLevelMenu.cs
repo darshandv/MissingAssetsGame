@@ -22,13 +22,17 @@ public class EndLevelMenu : MenuBehavior
     {
         Scene scene = SceneManager.GetActiveScene();
         bool level1Done =
-            (scene.name == "Level1") && (CollectibleComponent.CollectedComponents == 4);
+            (scene.name == "Level1")
+            && (CollectibleComponent.CollectedComponents == Config.levelCollectibles[0]);
         bool level2Done =
-            (scene.name == "Level2") && (CollectibleComponent.CollectedComponents == 2);
+            (scene.name == "Level2")
+            && (CollectibleComponent.CollectedComponents == Config.levelCollectibles[1]);
         bool level3Done =
-            (scene.name == "Level3") && (CollectibleComponent.CollectedComponents == 2);
+            (scene.name == "Level3")
+            && (CollectibleComponent.CollectedComponents == Config.levelCollectibles[2]);
         bool level4Done =
-            (scene.name == "Level4") && (CollectibleComponent.CollectedComponents == 2);
+            (scene.name == "Level4")
+            && (CollectibleComponent.CollectedComponents == Config.levelCollectibles[3]);
 
         if (PlayerMovement.getHealth() <= 0 || Config.isDead)
         {

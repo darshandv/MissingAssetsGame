@@ -31,6 +31,8 @@ public static class Config
     };
     public static int currentLevel = 1;
 
+    public static int[] levelCollectibles = { 4, 5, 2, 2, 3, 3, 3, 3, 3 };
+
     public static void ResetAllVariables()
     {
         numberofEnemies = 0;

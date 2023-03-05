@@ -12,10 +12,12 @@ public class textController : MonoBehaviour
     public ThrustBar thrustBar;
     GameObject playerGameObj;
 
-    
-    string getThrustText() {
-        if (!player) return "Wasted";
-        else {
+    string getThrustText()
+    {
+        if (!player)
+            return "Wasted";
+        else
+        {
             thrustBar.SetThrust(player.tc.getThrust());
             return player.tc.getThrust().ToString("F1");
         }
@@ -23,11 +25,14 @@ public class textController : MonoBehaviour
 
     string getHealthText()
     {
-        if (!player) return "Wasted";
-        else return " "+PlayerMovement.getHealth().ToString();
+        if (!player)
+            return "Wasted";
+        else
+            return " " + PlayerMovement.getHealth().ToString();
     }
 
-    void Update(){
+    void Update()
+    {
         thrust.text = getThrustText();
         health.text = getHealthText();
     }
