@@ -63,9 +63,23 @@ public class PlayerMovement : MonoBehaviour
             healthBar.SetHealth(getHealth());
             if (collision.collider.CompareTag("Enemy"))
             {
-                reduceHealth((int)(collision.relativeVelocity.magnitude));
+                GameObject player = GameObject.FindGameObjectWithTag("Player");
+                // reduceHealth((int)(collision.relativeVelocity.magnitude));
 
                 //apply force in the opposite direction
+                // Get the colliding object's rigidbody2D component
+                Rigidbody2D playerRigidbody = player.GetComponent<Rigidbody2D>();
+                // Debug.Log(playerRigidbody);
+                if (playerRigidbody != null)
+                {
+                    // Calculate the force to be applied in the opposite direction of the collision
+                    Vector2 forceDirection = -collision.contacts[0].normal;
+                    float forceMagnitude = collision.relativeVelocity.magnitude * 10;
+                    Vector2 force = forceDirection * forceMagnitude;
+
+                    // Apply the force to the colliding object's rigidbody2D component
+                    playerRigidbody.AddForce(force, ForceMode2D.Impulse);
+                }
             }
             else if (collision.gameObject.name.Contains("Asteroid"))
             {

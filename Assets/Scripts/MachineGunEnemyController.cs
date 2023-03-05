@@ -63,6 +63,8 @@ public class MachineGunEnemyController : MonoBehaviour
         Vector3 startingPosition =
             bulletSpawnPoint.position
             - ((numBullets - 1) * distanceBetweenBullets * bulletSpawnPoint.right) / 2;
+        
+        // Vector2 direction = (target.position - bullet.transform.position).normalized;
 
         // Spawn the bullets in parallel with the calculated spacing
         for (int i = 0; i < numBullets; i++)
