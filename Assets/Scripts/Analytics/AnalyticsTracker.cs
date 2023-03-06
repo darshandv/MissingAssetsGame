@@ -101,6 +101,7 @@ public static class AnalyticsTracker
         Metric6 data = new Metric6();
         data.remainingHealth = health;
         data.remainingThrust = thrust;
+        data.cause = cause;
         StatisticsManager.buildAnaltyicsDataObjAndPush("remainingThrustAndHealth",JsonConvert.SerializeObject(data));
         health = 0;
         thrust = 0;
