@@ -26,7 +26,7 @@ public static class Config
         "Level5",
         "Level6",
         "Level7",
-        "Level8",
+        // "Level8",
         // "Scenes/LandingScreen", // Just for testing purposes
     };
     public static int currentLevel = 1;
