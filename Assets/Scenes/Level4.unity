@@ -851,10 +851,9 @@ MonoBehaviour:
   bulletPrefab: {fileID: 6215409759271257246, guid: e248496eab8676b4689c899dec13870f, type: 3}
   bulletSpawnPoint: {fileID: 194607166}
   target: {fileID: 922808027}
-  pm: {fileID: 922808028}
   bulletSpeed: 10
   fireRate: 0.5
-  bulletSpread: 5
+  numBullets: 5
   numBulletsToDie: 5
 --- !u!1 &165407905
 GameObject:
@@ -1462,7 +1461,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 279894607}
   weapon: {fileID: 1884599709}
-  pm: {fileID: 922808028}
   target: {fileID: 922808027}
   startInterval: 2
   deltaInterval: 2
@@ -1829,7 +1827,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Collect SHIELD for pretection from '\u221E'"
+  m_text: Collect SHIELD for protection
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 0161d805a3764c089bef00bfe00793f5, type: 2}
   m_sharedMaterial: {fileID: 2147374, guid: 0161d805a3764c089bef00bfe00793f5, type: 2}
@@ -2700,7 +2698,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 550529001}
   weapon: {fileID: 1549102857}
-  pm: {fileID: 922808028}
   target: {fileID: 922808027}
   startInterval: 2
   deltaInterval: 2
@@ -4352,7 +4349,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 951356596}
   weapon: {fileID: 1834527590}
-  pm: {fileID: 922808028}
   target: {fileID: 922808027}
   startInterval: 2
   deltaInterval: 2
@@ -5963,7 +5959,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 1405015743}
   weapon: {fileID: 1055341520}
-  pm: {fileID: 922808028}
   target: {fileID: 922808027}
   startInterval: 2
   deltaInterval: 2
@@ -7076,7 +7071,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 0}
+  m_BackGroundColor: {r: 0.49411765, g: 0.49411765, b: 0.49411765, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
