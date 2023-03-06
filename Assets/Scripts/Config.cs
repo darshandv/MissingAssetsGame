@@ -31,7 +31,7 @@ public static class Config
     };
     public static int currentLevel = 1;
 
-    public static int[] levelCollectibles = { 4, 6, 6, 6, 3, 6, 6, 3, 3 };
+    public static int[] levelCollectibles = { 4, 7, 6, 6, 3, 3, 2, 3, 3 };
 
     public static void ResetAllVariables()
     {
