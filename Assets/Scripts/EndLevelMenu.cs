@@ -95,13 +95,17 @@ public class EndLevelMenu : MenuBehavior
             else if (level7Done)
             {
                 nextLevel = "Scenes/Level8";
+                nextLevelButton.SetActive(false);
             }
 
             Pause();
             losingText.SetActive(false);
             winningText.SetActive(true);
             restartButton.SetActive(false);
-            nextLevelButton.SetActive(true);
+            if (!level7Done) {
+                nextLevelButton.SetActive(true);
+            }
+            
         }
     }
 }

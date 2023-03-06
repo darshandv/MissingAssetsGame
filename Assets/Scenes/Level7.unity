@@ -457,6 +457,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9106600347774853881, guid: ab3831eba3872472db8c82db139f882c, type: 3}
+      propertyPath: warning_message
+      value: 
+      objectReference: {fileID: 1771127787}
     m_RemovedComponents:
     - {fileID: 9106600346078954514, guid: ab3831eba3872472db8c82db139f882c, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: ab3831eba3872472db8c82db139f882c, type: 3}
@@ -999,7 +1003,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: YOU WON!
+  m_text: YOU WON! GAME OVER.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 0161d805a3764c089bef00bfe00793f5, type: 2}
   m_sharedMaterial: {fileID: 2147374, guid: 0161d805a3764c089bef00bfe00793f5, type: 2}
@@ -1749,6 +1753,7 @@ MonoBehaviour:
   increment: 0.05
   shouldMove: 0
   moveY: 1
+  numBulletsToDie: 5
 --- !u!212 &664519129
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2911,6 +2916,7 @@ MonoBehaviour:
   increment: 0.05
   shouldMove: 0
   moveY: 1
+  numBulletsToDie: 5
 --- !u!212 &886071846
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3227,6 +3233,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   menuUI: {fileID: 399886579}
+  healthBar: {fileID: 0}
+  thrustBar: {fileID: 0}
+  warning_message: {fileID: 0}
   losingText: {fileID: 791176634}
   winningText: {fileID: 371961878}
   nextLevelButton: {fileID: 786842543}
@@ -3818,6 +3827,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   menuUI: {fileID: 1000237316}
+  healthBar: {fileID: 0}
+  thrustBar: {fileID: 0}
+  warning_message: {fileID: 0}
 --- !u!114 &1329685146
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4527,6 +4539,7 @@ MonoBehaviour:
   increment: 0.05
   shouldMove: 0
   moveY: 1
+  numBulletsToDie: 5
 --- !u!212 &1410354573
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -5742,6 +5755,7 @@ MonoBehaviour:
   increment: 0.05
   shouldMove: 0
   moveY: 1
+  numBulletsToDie: 5
 --- !u!212 &1899801457
 SpriteRenderer:
   m_ObjectHideFlags: 0
