@@ -6,7 +6,8 @@ public class EnemyController : MonoBehaviour
 {
     public Rigidbody2D rb;
     public EnemyWeapon weapon;
-    public PlayerMovement pm;
+
+    // public PlayerMovement pm;
     public Transform target;
     public float startInterval = 2.0f;
     public float deltaInterval = 2.0f;
@@ -46,18 +47,16 @@ public class EnemyController : MonoBehaviour
 
         if (collision.collider.CompareTag("PlayerBullet"))
         {
-            
             // pm.increaseEnemyKills();
 
             numBulletsToDie--;
+            AnalyticsTracker.playerBulletsHit += 1;
 
-            if(numBulletsToDie == 0) 
+            if (numBulletsToDie == 0)
             {
+                AnalyticsTracker.enemiesKilled += 1;
                 Destroy(gameObject);
             }
-
-            AnalyticsTracker.playerBulletsHit += 1;
-            AnalyticsTracker.enemiesKilled += 1;
         }
     }
 

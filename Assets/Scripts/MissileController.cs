@@ -2,10 +2,11 @@ using UnityEngine;
 
 public class MissileController : MonoBehaviour
 {
-    public float lifeTime = 10f;
+    public float lifeTime = 8f;
     public int damage = 10;
-    public float speed = 5f;
-    public float trackingSpeed = 2f; // how quickly the missile can change direction
+    public float speed = 20f;
+    public float trackingSpeed = 10f; // how quickly the missile can change direction
+    public float maxRotationSpeed = 180f;
 
     private Vector2 targetPosition;
     private GameObject playerGameObject;
@@ -21,7 +22,6 @@ public class MissileController : MonoBehaviour
         {
             Debug.LogError("Cannot find player game object.");
         }
-
         Destroy(gameObject, lifeTime);
     }
 
@@ -29,7 +29,8 @@ public class MissileController : MonoBehaviour
     {
         if (playerGameObject != null)
         {
-            // calculate the new target position based on the player's current position
+            // update target position to follow the player
+            Vector2 targetPosition = transform.position;
             targetPosition = Vector2.MoveTowards(
                 targetPosition,
                 playerGameObject.transform.position,
@@ -40,14 +41,22 @@ public class MissileController : MonoBehaviour
             Vector2 direction = targetPosition - (Vector2)transform.position;
             transform.position += (Vector3)direction.normalized * speed * Time.deltaTime;
 
-            // rotate the missile to face the direction it is moving in
+            // rotate the missile towards its velocity vector
             float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg - 90f;
-            transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
+            Quaternion targetRotation = Quaternion.AngleAxis(angle, Vector3.forward);
+            Quaternion currentRotation = transform.rotation;
+            float maxDeltaAngle = maxRotationSpeed * Time.deltaTime;
+            transform.rotation = Quaternion.RotateTowards(
+                currentRotation,
+                targetRotation,
+                maxDeltaAngle
+            );
         }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        // Debug.Log("collision of missile");
         Destroy(gameObject);
     }
 }

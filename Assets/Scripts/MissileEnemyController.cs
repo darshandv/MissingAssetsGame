@@ -8,7 +8,7 @@ public class MissileEnemyController : MonoBehaviour
     public GameObject missilePrefab;
     public Transform missileSpawnPoint;
     public Transform target;
-    public float initialMissileSpeed = 1f;
+    public float initialMissileSpeed = 10f;
     public float maxMissileSpeed = 100f;
     public float accelerationTime = 1f;
     public float fireRate = 1.0f;
@@ -25,20 +25,21 @@ public class MissileEnemyController : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         // currentMissileSpeed = initialMissileSpeed;
         // timeUntilNextFire = fireRate;
+        Config.numberofEnemies += 1;
         InvokeRepeating("FireMissile", 0f, fireRate);
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        numOfBulletsDie--;
-        if (numOfBulletsDie == 0)
+        if (collision.collider.CompareTag("PlayerBullet"))
         {
-            Destroy(gameObject);
+            AnalyticsTracker.playerBulletsHit += 1;
+            numOfBulletsDie--;
 
-            if (collision.collider.CompareTag("PlayerBullet"))
+            if (numOfBulletsDie == 0)
             {
-                AnalyticsTracker.playerBulletsHit += 1;
                 AnalyticsTracker.enemiesKilled += 1;
+                Destroy(gameObject);
             }
         }
     }
@@ -48,27 +49,34 @@ public class MissileEnemyController : MonoBehaviour
         if (target)
         {
             Vector3 aimDirection = new Vector2(target.position.x, target.position.y) - rb.position;
-            float aimAngle = Mathf.Atan2(aimDirection.y, aimDirection.x) * Mathf.Rad2Deg;
+            float aimAngle = Mathf.Atan2(aimDirection.y, aimDirection.x) * Mathf.Rad2Deg + 90f;
             rb.rotation = aimAngle;
         }
     }
 
-    async void FireMissile()
+    void FireMissile()
     {
         currentMissileSpeed = initialMissileSpeed;
         timeUntilNextFire = fireRate;
         GameObject missile = Instantiate(
             missilePrefab,
-            missileSpawnPoint.position + new Vector3(0, 1, 0), // add an offset to the spawn position
-            missileSpawnPoint.rotation
+            missileSpawnPoint.position, // add an offset to the spawn position
+            missileSpawnPoint.rotation * Quaternion.Euler(0f, 0f, 180f) // add 180 degree rotation
         );
+        // missile.transform.localScale = new Vector3(-1, 1, 1); // flip horizontally
 
         Rigidbody2D missileRigidbody = missile.GetComponent<Rigidbody2D>();
         missileRigidbody.velocity =
             (target.position - missile.transform.position).normalized * initialMissileSpeed;
-
-        await Task.Delay(500);
-        AccelerateMissile();
+        Debug.Log(
+            missileRigidbody.velocity
+                + " "
+                + (target.position - missile.transform.position).normalized
+                + " "
+                + (target.position - missile.transform.position)
+        );
+        // await Task.Delay(500);
+        // AccelerateMissile();
         // Debug.Log("BEFORE:::::: AccelerateMissile invoked " + currentMissileSpeed);
     }
 

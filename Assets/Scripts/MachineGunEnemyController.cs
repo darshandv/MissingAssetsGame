@@ -6,10 +6,11 @@ public class MachineGunEnemyController : MonoBehaviour
     public GameObject bulletPrefab;
     public Transform bulletSpawnPoint;
     public Transform target;
-    public PlayerMovement pm;
+
+    // public PlayerMovement pm;
     public float bulletSpeed = 10f;
     public float fireRate = 0.1f;
-    public float bulletSpread = 5f;
+    public int numBullets = 5;
 
     public int numBulletsToDie = 5;
 
@@ -18,6 +19,7 @@ public class MachineGunEnemyController : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        Config.numberofEnemies += 1;
     }
 
     void Update()
@@ -38,15 +40,13 @@ public class MachineGunEnemyController : MonoBehaviour
         if (collision.collider.CompareTag("PlayerBullet"))
         {
             numBulletsToDie--;
+            AnalyticsTracker.playerBulletsHit += 1;
 
             if (numBulletsToDie == 0)
             {
+                AnalyticsTracker.enemiesKilled += 1;
                 Destroy(gameObject);
-                pm.increaseEnemyKills();
             }
-
-            AnalyticsTracker.playerBulletsHit += 1;
-            AnalyticsTracker.enemiesKilled += 1;
         }
     }
 
@@ -54,9 +54,8 @@ public class MachineGunEnemyController : MonoBehaviour
     {
         if (target)
         {
-            Vector3 aimDirection = new Vector3(rb.position.x, rb.position.y, 0f) - target.position;
-
-            float aimAngle = Mathf.Atan2(aimDirection.y, aimDirection.x) * Mathf.Rad2Deg - 90f;
+            Vector3 aimDirection = new Vector2(target.position.x, target.position.y) - rb.position;
+            float aimAngle = Mathf.Atan2(aimDirection.y, aimDirection.x) * Mathf.Rad2Deg + 90f;
             rb.rotation = aimAngle;
         }
     }
@@ -67,9 +66,6 @@ public class MachineGunEnemyController : MonoBehaviour
             return;
         // Set bullet direction to point towards target
         Vector2 bulletDirection = (Vector2)target.position - (Vector2)bulletSpawnPoint.position;
-
-        // Set the number of bullets to fire in parallel
-        int numBullets = 5;
 
         // Set the distance between the bullets
         float distanceBetweenBullets = 0.5f;
