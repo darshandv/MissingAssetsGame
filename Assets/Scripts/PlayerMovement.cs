@@ -229,7 +229,7 @@ public class PlayerMovement : MonoBehaviour
     }
 
     void Start()
-    {
+    {   healthBar.SetHealth(getHealth());
         player_rigid_body = this.GetComponent<Rigidbody2D>();
         // player_rigid_body.velocity = Vector3.right * 2;
         tc = new ThrustController();

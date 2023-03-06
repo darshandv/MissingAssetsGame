@@ -11,7 +11,6 @@ public class ThrustBar : MonoBehaviour
 
 	public void SetThrust(float thrust)
 	{
-	
 		slider.value = thrust;
 		fill.color = gradient.Evaluate(slider.normalizedValue);
 	}
