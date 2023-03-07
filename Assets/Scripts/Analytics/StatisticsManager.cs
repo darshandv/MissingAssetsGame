@@ -12,11 +12,11 @@ public class StatisticsManager
     //     "https://missing-assets-default-rtdb.firebaseio.com/analytics_data_prod.json";
 
     // PROD LINK - use this at time of building
-    // public string database_url =
-    //     "https://missing-assets-default-rtdb.firebaseio.com/analytics_data_prod.json";
-
     public string database_url =
-        "https://missing-assets-prod-default-rtdb.firebaseio.com/analytics_data_prod.json";
+        "https://missing-assets-default-rtdb.firebaseio.com/analytics_data_prod.json";
+
+    // public string database_url =
+    //     "https://missing-assets-prod-default-rtdb.firebaseio.com/analytics_data_prod.json";
 
     public void pushDataToAnalyticsDb(AnalyticsData analyticsData)
     {
