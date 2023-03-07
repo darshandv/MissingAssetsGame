@@ -118,6 +118,7 @@ public class PlayerMovement : MonoBehaviour
             AnalyticsTracker.sendMetric7();
             AnalyticsTracker.sendMetric8();
             AnalyticsTracker.sendMetric9();
+            AnalyticsTracker.sendMetric10();
 
             // StatisticsManager.buildAnaltyicsDataObjAndPush(0,1,"DeathByEnemy","0%",0,"player_termination","enemy");
             // StatisticsManager.buildAnaltyicsDataObjAndPush(numberOfEnemiesKilled,1,"NumEnemiesKilled","0%",0,"numEnemiesKilled","enemy");

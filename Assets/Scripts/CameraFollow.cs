@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using System;
 
 public class CameraFollow : MonoBehaviour
 {
@@ -91,6 +92,7 @@ public class CameraFollow : MonoBehaviour
             if (godViewMode)
             {
                 // Save current camera position
+                AnalyticsTracker.pressedTimes.Add(new DateTimeOffset(DateTime.UtcNow).ToUnixTimeMilliseconds());
                 previousCameraPosition = transform.position;
             }
         }

@@ -79,6 +79,7 @@ public class MenuBehavior : MonoBehaviour
         AnalyticsTracker.sendMetric7();
         AnalyticsTracker.sendMetric8();
         AnalyticsTracker.sendMetric9();
+        AnalyticsTracker.sendMetric10();
 
         ResetGame();
         LoadingNewScene();

@@ -1,5 +1,6 @@
 using System;
 using Newtonsoft.Json;
+using System.Collections.Generic;
 
 public class Metric3 {
     public int playerBulletHits;
@@ -22,6 +23,11 @@ public class Metric6{
     public string cause;
 }
 
+public class Metric10{
+    public long startTime;
+    public List<long> pressedTimes;
+}
+
 public static class AnalyticsTracker
 {
     public static int metricVersion = 1;
@@ -37,6 +43,7 @@ public static class AnalyticsTracker
     public static int shieldCollected = 0;
 
     public static long timeStampRecord = 0;
+    public static List<long> pressedTimes = new List<long>();
 
     public static void resetVariables() {
         playerBullets = 0;
@@ -94,7 +101,7 @@ public static class AnalyticsTracker
         data.startTime = timeStampRecord;
         data.endTime = new DateTimeOffset(DateTime.UtcNow).ToUnixTimeMilliseconds();
         StatisticsManager.buildAnaltyicsDataObjAndPush("playerTimeElapsed",JsonConvert.SerializeObject(data));
-        timeStampRecord = 0;
+        // timeStampRecord = 0; Will be reset at metric10
     }
 
     public static void sendMetric6(string cause) {
@@ -119,5 +126,14 @@ public static class AnalyticsTracker
     public static void sendMetric9() {
         StatisticsManager.buildAnaltyicsDataObjAndPush("shieldsCollected",shieldCollected.ToString());
         shieldCollected = 0;
+    }
+
+    public static void sendMetric10() {
+        Metric10 data = new Metric10();
+        data.startTime = timeStampRecord;
+        data.pressedTimes = pressedTimes;
+        StatisticsManager.buildAnaltyicsDataObjAndPush("qPresses",JsonConvert.SerializeObject(data));
+        timeStampRecord = 0;
+        pressedTimes = new List<long>();
     }
 }
