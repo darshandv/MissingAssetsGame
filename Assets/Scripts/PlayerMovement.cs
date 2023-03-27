@@ -164,6 +164,19 @@ public class PlayerMovement : MonoBehaviour
         player_rigid_body.AddForce(force, ForceMode2D.Impulse);
     }
 
+    private void applyNegForceOnPlayer()
+    {
+        Debug.Log("before");
+        if(Config.isInPlanet) return;
+
+        float brakeForce = thrustPower*0.7f; // adjust the value as needed
+        Vector2 brakeDirection = -player_rigid_body.velocity.normalized;
+        Vector2 force = brakeDirection * brakeForce;
+        player_rigid_body.AddForce(force, ForceMode2D.Impulse);
+        Debug.Log("after");
+    }
+
+
     private void allowLimitedThrust()
     {
         // Now you can continuously press W key and keep applying force to
@@ -254,6 +267,12 @@ public class PlayerMovement : MonoBehaviour
             //     gameOver();
             // }
 
+            if (Input.GetKey(KeyCode.S))
+            {
+                applyNegForceOnPlayer();
+                // Debug.Log("S");
+            }
+
             if (Config.useThrustControl)
             {
                 allowLimitedThrust();
@@ -264,6 +283,8 @@ public class PlayerMovement : MonoBehaviour
                 {
                     applyForceOnPlayer();
                 }
+
+                
             }
             // }
 

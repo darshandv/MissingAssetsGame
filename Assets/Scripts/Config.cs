@@ -3,6 +3,7 @@ public static class Config
     public static int numberofEnemies = 0;
     public static bool isDead = false;
     public static bool shouldEnemiesMove = false;
+    public static bool isInPlanet = false;
 
     // Thrust related variables
     public static bool useThrustControl = true;
@@ -46,5 +47,6 @@ public static class Config
         maxThrustLevel3 = 20f;
         thrustReductionAmountLevel3 = 5f;
         thrustIncrementAmountLevel3 = 1 / 32;
+        isInPlanet = false;
     }
 }

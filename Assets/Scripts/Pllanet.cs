@@ -20,6 +20,16 @@ public class Planet : MonoBehaviour
     // public Rigidbody2D player_rigid_body; 
     // // Start is called before the first frame update
 
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        Config.isInPlanet = true;
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        Config.isInPlanet = false;
+    }
+
     void OnTriggerStay2D(Collider2D ship) {
         if (ship.name.Contains("Player")) {
             float x_error = transform.position.x - ship.transform.position.x;
