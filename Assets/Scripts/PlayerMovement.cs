@@ -166,16 +166,25 @@ public class PlayerMovement : MonoBehaviour
 
     private void applyNegForceOnPlayer()
     {
-        Debug.Log("before");
-        if(Config.isInPlanet) return;
+        if (Config.isInPlanet)
+            return;
 
-        float brakeForce = thrustPower*0.7f; // adjust the value as needed
+        float brakeForce = thrustPower * 0.8f;
         Vector2 brakeDirection = -player_rigid_body.velocity.normalized;
         Vector2 force = brakeDirection * brakeForce;
         player_rigid_body.AddForce(force, ForceMode2D.Impulse);
-        Debug.Log("after");
-    }
 
+        // Apply an additional deceleration force once the player's 
+        // speed has been reduced to a certain threshold
+        float brakeThreshold = 0.05f;
+        if (player_rigid_body.velocity.magnitude < brakeThreshold)
+        {
+            float decelerationForce = brakeForce * 0.5f;
+            Vector2 decelerationDirection = -player_rigid_body.velocity.normalized;
+            Vector2 deceleration = decelerationDirection * decelerationForce;
+            player_rigid_body.AddForce(deceleration, ForceMode2D.Impulse);
+        }
+    }
 
     private void allowLimitedThrust()
     {
@@ -243,7 +252,8 @@ public class PlayerMovement : MonoBehaviour
     }
 
     void Start()
-    {   healthBar.SetHealth(getHealth());
+    {
+        healthBar.SetHealth(getHealth());
         player_rigid_body = this.GetComponent<Rigidbody2D>();
         // player_rigid_body.velocity = Vector3.right * 2;
         tc = new ThrustController();
@@ -283,8 +293,6 @@ public class PlayerMovement : MonoBehaviour
                 {
                     applyForceOnPlayer();
                 }
-
-                
             }
             // }
 
