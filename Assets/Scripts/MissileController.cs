@@ -4,8 +4,8 @@ public class MissileController : MonoBehaviour
 {
     public float lifeTime = 8f;
     public int damage = 10;
-    public float speed = 20f;
-    public float trackingSpeed = 10f; // how quickly the missile can change direction
+    public float speed = 30f;
+    public float trackingSpeed = 20f; // how quickly the missile can change direction
     public float maxRotationSpeed = 180f;
 
     private Vector2 targetPosition;
