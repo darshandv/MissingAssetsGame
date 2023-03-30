@@ -305,8 +305,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 90}
-  m_SizeDelta: {x: 160, y: 30}
+  m_AnchoredPosition: {x: 0, y: -67}
+  m_SizeDelta: {x: 160, y: 40}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &14709817
 MonoBehaviour:
@@ -639,7 +639,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 67203548}
   weapon: {fileID: 418035521}
-  pm: {fileID: 1762540029}
   target: {fileID: 1762540031}
   startInterval: 2
   deltaInterval: 2
@@ -647,6 +646,7 @@ MonoBehaviour:
   increment: 0.05
   shouldMove: 1
   moveY: 1
+  numBulletsToDie: 5
 --- !u!212 &67203550
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1339,6 +1339,7 @@ MonoBehaviour:
   minSize: 2
   maxSize: 4
   speed: 5
+  numBulletsToDie: 2
 --- !u!212 &164159700
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1927,6 +1928,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   menuUI: {fileID: 1983809848}
+  healthBar: {fileID: 0}
+  thrustBar: {fileID: 0}
+  warning_message: {fileID: 0}
   losingText: {fileID: 1768135357}
   winningText: {fileID: 1013621696}
   nextLevelButton: {fileID: 1049603823}
@@ -2289,10 +2293,10 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: c9f6d0e7bc8541498c9a4799ba184ede, type: 3}
-    m_FontSize: 14
+    m_FontSize: 24
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 10
+    m_MinSize: 2
     m_MaxSize: 40
     m_Alignment: 4
     m_AlignByGeometry: 0
@@ -2483,6 +2487,7 @@ MonoBehaviour:
   minSize: 2
   maxSize: 4
   speed: 5
+  numBulletsToDie: 2
 --- !u!212 &433223214
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2610,10 +2615,10 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: c9f6d0e7bc8541498c9a4799ba184ede, type: 3}
-    m_FontSize: 14
+    m_FontSize: 24
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 10
+    m_MinSize: 2
     m_MaxSize: 40
     m_Alignment: 4
     m_AlignByGeometry: 0
@@ -2985,6 +2990,7 @@ MonoBehaviour:
   minSize: 2
   maxSize: 4
   speed: 5
+  numBulletsToDie: 2
 --- !u!212 &474209744
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3424,6 +3430,7 @@ MonoBehaviour:
   minSize: 2
   maxSize: 4
   speed: 5
+  numBulletsToDie: 2
 --- !u!212 &664495747
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3564,6 +3571,7 @@ MonoBehaviour:
   minSize: 2
   maxSize: 4
   speed: 5
+  numBulletsToDie: 2
 --- !u!212 &681522923
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -4645,6 +4653,7 @@ MonoBehaviour:
   minSize: 2
   maxSize: 4
   speed: 5
+  numBulletsToDie: 2
 --- !u!212 &943455176
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -4712,6 +4721,143 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 32
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 30}
+--- !u!1 &949396403
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 949396404}
+  - component: {fileID: 949396406}
+  - component: {fileID: 949396405}
+  m_Layer: 5
+  m_Name: Instructions
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &949396404
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 949396403}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1000237319}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 230, y: 216}
+  m_SizeDelta: {x: 200, y: 50}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &949396405
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 949396403}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_text: "Press spacebar to shoot bullets at the aliens\n'W' : Thrust\n'S' : Reverse
+    Thrust\n'Q' : Zoom Out/In(God View)\nMouse : Change Direction of Player \nFollow
+    Arrow : get the Collectibles\n'ESC' : Pause Menu"
+  m_isRightToLeft: 0
+  m_fontAsset: {fileID: 11400000, guid: 0161d805a3764c089bef00bfe00793f5, type: 2}
+  m_sharedMaterial: {fileID: 2147374, guid: 0161d805a3764c089bef00bfe00793f5, type: 2}
+  m_fontSharedMaterials: []
+  m_fontMaterial: {fileID: 0}
+  m_fontMaterials: []
+  m_fontColor32:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+  m_enableVertexGradient: 0
+  m_colorMode: 3
+  m_fontColorGradient:
+    topLeft: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 1, g: 1, b: 1, a: 1}
+    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
+    bottomRight: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColorGradientPreset: {fileID: 0}
+  m_spriteAsset: {fileID: 0}
+  m_tintAllSprites: 0
+  m_StyleSheet: {fileID: 0}
+  m_TextStyleHashCode: -1183493901
+  m_overrideHtmlColors: 0
+  m_faceColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontSize: 24
+  m_fontSizeBase: 24
+  m_fontWeight: 400
+  m_enableAutoSizing: 0
+  m_fontSizeMin: 18
+  m_fontSizeMax: 72
+  m_fontStyle: 0
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 256
+  m_textAlignment: 65535
+  m_characterSpacing: 0
+  m_wordSpacing: 0
+  m_lineSpacing: 0
+  m_lineSpacingMax: 0
+  m_paragraphSpacing: 0
+  m_charWidthMaxAdj: 0
+  m_enableWordWrapping: 1
+  m_wordWrappingRatios: 0.4
+  m_overflowMode: 0
+  m_linkedTextComponent: {fileID: 0}
+  parentLinkedComponent: {fileID: 0}
+  m_enableKerning: 1
+  m_enableExtraPadding: 0
+  checkPaddingRequired: 0
+  m_isRichText: 1
+  m_parseCtrlCharacters: 1
+  m_isOrthographic: 1
+  m_isCullingEnabled: 0
+  m_horizontalMapping: 0
+  m_verticalMapping: 0
+  m_uvLineOffset: 0
+  m_geometrySortingOrder: 0
+  m_IsTextObjectScaleStatic: 0
+  m_VertexBufferAutoSizeReduction: 0
+  m_useMaxVisibleDescender: 1
+  m_pageToDisplay: 1
+  m_margin: {x: -475.76794, y: 0, z: 0, w: 0}
+  m_isUsingLegacyAnimationComponent: 0
+  m_isVolumetricText: 0
+  m_hasFontAssetChanged: 0
+  m_baseMaterial: {fileID: 0}
+  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!222 &949396406
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 949396403}
+  m_CullTransparentMesh: 1
 --- !u!1 &964820578
 GameObject:
   m_ObjectHideFlags: 0
@@ -4785,6 +4931,7 @@ MonoBehaviour:
   minSize: 2
   maxSize: 4
   speed: 5
+  numBulletsToDie: 2
 --- !u!212 &964820582
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -5009,6 +5156,7 @@ RectTransform:
   - {fileID: 1008868088}
   - {fileID: 1382121862}
   - {fileID: 1592717665}
+  - {fileID: 949396404}
   m_Father: {fileID: 1329685149}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -5054,8 +5202,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 30}
-  m_SizeDelta: {x: 160, y: 30}
+  m_AnchoredPosition: {x: 0, y: -127}
+  m_SizeDelta: {x: 160, y: 40}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1008868089
 MonoBehaviour:
@@ -5577,6 +5725,7 @@ MonoBehaviour:
   minSize: 2
   maxSize: 4
   speed: 5
+  numBulletsToDie: 2
 --- !u!212 &1065588952
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -5717,6 +5866,7 @@ MonoBehaviour:
   minSize: 2
   maxSize: 4
   speed: 5
+  numBulletsToDie: 2
 --- !u!212 &1102381178
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -6180,6 +6330,7 @@ MonoBehaviour:
   minSize: 2
   maxSize: 4
   speed: 5
+  numBulletsToDie: 2
 --- !u!212 &1213692182
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -6521,6 +6672,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   menuUI: {fileID: 1000237316}
+  healthBar: {fileID: 0}
+  thrustBar: {fileID: 0}
+  warning_message: {fileID: 0}
 --- !u!114 &1329685146
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6676,6 +6830,7 @@ MonoBehaviour:
   minSize: 2
   maxSize: 4
   speed: 5
+  numBulletsToDie: 2
 --- !u!212 &1335693583
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -6916,7 +7071,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 1367014790}
   weapon: {fileID: 1942653848}
-  pm: {fileID: 1762540029}
   target: {fileID: 1762540031}
   startInterval: 2
   deltaInterval: 2
@@ -6924,6 +7078,7 @@ MonoBehaviour:
   increment: 0.05
   shouldMove: 1
   moveY: 1
+  numBulletsToDie: 5
 --- !u!212 &1367014792
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -7208,8 +7363,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -30}
-  m_SizeDelta: {x: 160, y: 30}
+  m_AnchoredPosition: {x: 0, y: -187}
+  m_SizeDelta: {x: 160, y: 40}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1382121863
 MonoBehaviour:
@@ -7688,10 +7843,10 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: c9f6d0e7bc8541498c9a4799ba184ede, type: 3}
-    m_FontSize: 14
+    m_FontSize: 24
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 10
+    m_MinSize: 2
     m_MaxSize: 40
     m_Alignment: 4
     m_AlignByGeometry: 0
@@ -7941,7 +8096,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 1570113375}
   weapon: {fileID: 2139677985}
-  pm: {fileID: 1762540029}
   target: {fileID: 1762540031}
   startInterval: 2
   deltaInterval: 2
@@ -7949,6 +8103,7 @@ MonoBehaviour:
   increment: 0.05
   shouldMove: 0
   moveY: 0
+  numBulletsToDie: 5
 --- !u!212 &1570113377
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -8078,10 +8233,10 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: c9f6d0e7bc8541498c9a4799ba184ede, type: 3}
-    m_FontSize: 14
+    m_FontSize: 24
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 10
+    m_MinSize: 2
     m_MaxSize: 40
     m_Alignment: 4
     m_AlignByGeometry: 0
@@ -8135,8 +8290,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -90}
-  m_SizeDelta: {x: 160, y: 30}
+  m_AnchoredPosition: {x: 0, y: -247}
+  m_SizeDelta: {x: 160, y: 40}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1592717666
 MonoBehaviour:
@@ -8305,6 +8460,7 @@ MonoBehaviour:
   minSize: 2
   maxSize: 4
   speed: 5
+  numBulletsToDie: 2
 --- !u!212 &1612179251
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -8563,6 +8719,7 @@ MonoBehaviour:
   minSize: 2
   maxSize: 4
   speed: 5
+  numBulletsToDie: 2
 --- !u!212 &1683965025
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -8703,6 +8860,7 @@ MonoBehaviour:
   minSize: 2
   maxSize: 4
   speed: 5
+  numBulletsToDie: 2
 --- !u!212 &1718634726
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -9007,7 +9165,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 1750450473}
   weapon: {fileID: 1393336439}
-  pm: {fileID: 1762540029}
   target: {fileID: 1762540031}
   startInterval: 2
   deltaInterval: 2
@@ -9015,6 +9172,7 @@ MonoBehaviour:
   increment: 0.05
   shouldMove: 0
   moveY: 1
+  numBulletsToDie: 5
 --- !u!212 &1750450475
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -9621,7 +9779,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 1823775648}
   weapon: {fileID: 306257558}
-  pm: {fileID: 1762540029}
   target: {fileID: 1762540031}
   startInterval: 2
   deltaInterval: 2
@@ -9629,6 +9786,7 @@ MonoBehaviour:
   increment: 0.05
   shouldMove: 1
   moveY: 0
+  numBulletsToDie: 5
 --- !u!212 &1823775650
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -9755,6 +9913,7 @@ MonoBehaviour:
   minSize: 2
   maxSize: 4
   speed: 5
+  numBulletsToDie: 2
 --- !u!212 &1826248550
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -9911,6 +10070,7 @@ MonoBehaviour:
   minSize: 2
   maxSize: 4
   speed: 5
+  numBulletsToDie: 2
 --- !u!212 &1828417916
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -10051,6 +10211,7 @@ MonoBehaviour:
   minSize: 2
   maxSize: 4
   speed: 5
+  numBulletsToDie: 2
 --- !u!212 &1906524499
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -10702,6 +10863,7 @@ MonoBehaviour:
   minSize: 2
   maxSize: 4
   speed: 5
+  numBulletsToDie: 2
 --- !u!212 &1996578358
 SpriteRenderer:
   m_ObjectHideFlags: 0
