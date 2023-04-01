@@ -19,7 +19,6 @@ public static class Config
     //Levels
     public static string[] levels =
     {
-        "LandingScreen",
         "Level1",
         "Level2",
         "Level3",
