@@ -3372,8 +3372,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "'W' : Thrust\n'Q' : Zoom Out/In(God View)\nMouse : Change Direction of
-    Player \nFollow Arrow : get the Collectibles\n'ESC' : Pause Menu"
+  m_text: "'W' : Thrust\n'S' : Brake\n'Q' : Zoom Out/In(God View)\nMouse : Change
+    Direction of Player \nFollow Arrow : get the Collectibles\n'ESC' : Pause Menu"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 0161d805a3764c089bef00bfe00793f5, type: 2}
   m_sharedMaterial: {fileID: 2147374, guid: 0161d805a3764c089bef00bfe00793f5, type: 2}
