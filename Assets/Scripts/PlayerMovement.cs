@@ -96,6 +96,11 @@ public class PlayerMovement : MonoBehaviour
                 reduceHealth(missileDamage);
                 Debug.Log("MISSILE DAMAGE TRIGGERED");
             }
+            else if (collision.collider.CompareTag("Boundary"))
+            {
+                //out of bounds
+                Debug.Log("Player at the Boundary");
+            }
             else
             {
                 //enemy bullets
