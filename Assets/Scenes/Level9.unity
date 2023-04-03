@@ -140,7 +140,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1086654018920685020, guid: bcaad12b668285948ae14848e1aa3f1a, type: 3}
       propertyPath: m_RootOrder
-      value: 14
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 1086654018920685020, guid: bcaad12b668285948ae14848e1aa3f1a, type: 3}
       propertyPath: m_LocalPosition.x
@@ -639,7 +639,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 67203548}
   weapon: {fileID: 418035521}
-  pm: {fileID: 1762540029}
   target: {fileID: 1762540031}
   startInterval: 2
   deltaInterval: 2
@@ -647,6 +646,7 @@ MonoBehaviour:
   increment: 0.05
   shouldMove: 1
   moveY: 1
+  numBulletsToDie: 5
 --- !u!212 &67203550
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -798,7 +798,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &89062055
 PrefabInstance:
@@ -817,7 +817,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1086654018920685020, guid: bcaad12b668285948ae14848e1aa3f1a, type: 3}
       propertyPath: m_RootOrder
-      value: 16
+      value: 17
       objectReference: {fileID: 0}
     - target: {fileID: 1086654018920685020, guid: bcaad12b668285948ae14848e1aa3f1a, type: 3}
       propertyPath: m_LocalPosition.x
@@ -995,64 +995,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 92404778}
   m_CullTransparentMesh: 1
---- !u!1001 &103353206
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 9106600346078954511, guid: ab3831eba3872472db8c82db139f882c, type: 3}
-      propertyPath: m_Name
-      value: Boundary
-      objectReference: {fileID: 0}
-    - target: {fileID: 9106600346078954513, guid: ab3831eba3872472db8c82db139f882c, type: 3}
-      propertyPath: m_RootOrder
-      value: 22
-      objectReference: {fileID: 0}
-    - target: {fileID: 9106600346078954513, guid: ab3831eba3872472db8c82db139f882c, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -100.9
-      objectReference: {fileID: 0}
-    - target: {fileID: 9106600346078954513, guid: ab3831eba3872472db8c82db139f882c, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 89.3
-      objectReference: {fileID: 0}
-    - target: {fileID: 9106600346078954513, guid: ab3831eba3872472db8c82db139f882c, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9106600346078954513, guid: ab3831eba3872472db8c82db139f882c, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 9106600346078954513, guid: ab3831eba3872472db8c82db139f882c, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9106600346078954513, guid: ab3831eba3872472db8c82db139f882c, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9106600346078954513, guid: ab3831eba3872472db8c82db139f882c, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9106600346078954513, guid: ab3831eba3872472db8c82db139f882c, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9106600346078954513, guid: ab3831eba3872472db8c82db139f882c, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9106600346078954513, guid: ab3831eba3872472db8c82db139f882c, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 9106600346078954514, guid: ab3831eba3872472db8c82db139f882c, type: 3}
-  m_SourcePrefab: {fileID: 100100000, guid: ab3831eba3872472db8c82db139f882c, type: 3}
 --- !u!1 &115379349
 GameObject:
   m_ObjectHideFlags: 0
@@ -1157,7 +1099,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 7686516549917837764, guid: a99b563bfd4434cd388dc39572e18ce8, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 7686516549917837764, guid: a99b563bfd4434cd388dc39572e18ce8, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1222,7 +1164,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1086654018920685020, guid: bcaad12b668285948ae14848e1aa3f1a, type: 3}
       propertyPath: m_RootOrder
-      value: 15
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 1086654018920685020, guid: bcaad12b668285948ae14848e1aa3f1a, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1339,6 +1281,7 @@ MonoBehaviour:
   minSize: 2
   maxSize: 4
   speed: 5
+  numBulletsToDie: 2
 --- !u!212 &164159700
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1488,7 +1431,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 19
+  m_RootOrder: 20
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &195206684
 GameObject:
@@ -1724,7 +1667,7 @@ Transform:
   m_Children:
   - {fileID: 742440573}
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &281487349
 GameObject:
@@ -1927,6 +1870,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   menuUI: {fileID: 1983809848}
+  healthBar: {fileID: 0}
+  thrustBar: {fileID: 0}
   losingText: {fileID: 1768135357}
   winningText: {fileID: 1013621696}
   nextLevelButton: {fileID: 1049603823}
@@ -2227,7 +2172,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 17
+  m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &367955163
 GameObject:
@@ -2483,6 +2428,7 @@ MonoBehaviour:
   minSize: 2
   maxSize: 4
   speed: 5
+  numBulletsToDie: 2
 --- !u!212 &433223214
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2910,7 +2856,7 @@ Transform:
   m_Children:
   - {fileID: 2014033278}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &474209740
 GameObject:
@@ -2985,6 +2931,7 @@ MonoBehaviour:
   minSize: 2
   maxSize: 4
   speed: 5
+  numBulletsToDie: 2
 --- !u!212 &474209744
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3249,7 +3196,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 18
+  m_RootOrder: 19
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!224 &575460263 stripped
 RectTransform:
@@ -3349,7 +3296,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 20
+  m_RootOrder: 21
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &664495743
 GameObject:
@@ -3424,6 +3371,7 @@ MonoBehaviour:
   minSize: 2
   maxSize: 4
   speed: 5
+  numBulletsToDie: 2
 --- !u!212 &664495747
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3564,6 +3512,7 @@ MonoBehaviour:
   minSize: 2
   maxSize: 4
   speed: 5
+  numBulletsToDie: 2
 --- !u!212 &681522923
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -4356,7 +4305,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &879060197
 GameObject:
@@ -4645,6 +4594,7 @@ MonoBehaviour:
   minSize: 2
   maxSize: 4
   speed: 5
+  numBulletsToDie: 2
 --- !u!212 &943455176
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -4785,6 +4735,7 @@ MonoBehaviour:
   minSize: 2
   maxSize: 4
   speed: 5
+  numBulletsToDie: 2
 --- !u!212 &964820582
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -5577,6 +5528,7 @@ MonoBehaviour:
   minSize: 2
   maxSize: 4
   speed: 5
+  numBulletsToDie: 2
 --- !u!212 &1065588952
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -5717,6 +5669,7 @@ MonoBehaviour:
   minSize: 2
   maxSize: 4
   speed: 5
+  numBulletsToDie: 2
 --- !u!212 &1102381178
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -6105,7 +6058,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1213692178
 GameObject:
@@ -6180,6 +6133,7 @@ MonoBehaviour:
   minSize: 2
   maxSize: 4
   speed: 5
+  numBulletsToDie: 2
 --- !u!212 &1213692182
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -6521,6 +6475,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   menuUI: {fileID: 1000237316}
+  healthBar: {fileID: 0}
+  thrustBar: {fileID: 0}
 --- !u!114 &1329685146
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6596,7 +6552,7 @@ RectTransform:
   m_Children:
   - {fileID: 1000237319}
   m_Father: {fileID: 0}
-  m_RootOrder: 21
+  m_RootOrder: 22
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -6676,6 +6632,7 @@ MonoBehaviour:
   minSize: 2
   maxSize: 4
   speed: 5
+  numBulletsToDie: 2
 --- !u!212 &1335693583
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -6859,7 +6816,7 @@ Transform:
   m_Children:
   - {fileID: 1908041216}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1367014788
 GameObject:
@@ -6916,7 +6873,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 1367014790}
   weapon: {fileID: 1942653848}
-  pm: {fileID: 1762540029}
   target: {fileID: 1762540031}
   startInterval: 2
   deltaInterval: 2
@@ -6924,6 +6880,7 @@ MonoBehaviour:
   increment: 0.05
   shouldMove: 1
   moveY: 1
+  numBulletsToDie: 5
 --- !u!212 &1367014792
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -6991,7 +6948,7 @@ Transform:
   - {fileID: 1942653849}
   - {fileID: 281487350}
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180.238}
 --- !u!60 &1367014794
 PolygonCollider2D:
@@ -7941,7 +7898,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 1570113375}
   weapon: {fileID: 2139677985}
-  pm: {fileID: 1762540029}
   target: {fileID: 1762540031}
   startInterval: 2
   deltaInterval: 2
@@ -7949,6 +7905,7 @@ MonoBehaviour:
   increment: 0.05
   shouldMove: 0
   moveY: 0
+  numBulletsToDie: 5
 --- !u!212 &1570113377
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -8305,6 +8262,7 @@ MonoBehaviour:
   minSize: 2
   maxSize: 4
   speed: 5
+  numBulletsToDie: 2
 --- !u!212 &1612179251
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -8372,6 +8330,71 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 40
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &1628189588
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 8671836040048829782, guid: f8d81a4e04bec447a9bd568d476aa679, type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8671836040048829782, guid: f8d81a4e04bec447a9bd568d476aa679, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.02
+      objectReference: {fileID: 0}
+    - target: {fileID: 8671836040048829782, guid: f8d81a4e04bec447a9bd568d476aa679, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 8671836040048829782, guid: f8d81a4e04bec447a9bd568d476aa679, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 7.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8671836040048829782, guid: f8d81a4e04bec447a9bd568d476aa679, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 4.1270084
+      objectReference: {fileID: 0}
+    - target: {fileID: 8671836040048829782, guid: f8d81a4e04bec447a9bd568d476aa679, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -1.2875836
+      objectReference: {fileID: 0}
+    - target: {fileID: 8671836040048829782, guid: f8d81a4e04bec447a9bd568d476aa679, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8671836040048829782, guid: f8d81a4e04bec447a9bd568d476aa679, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8671836040048829782, guid: f8d81a4e04bec447a9bd568d476aa679, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8671836040048829782, guid: f8d81a4e04bec447a9bd568d476aa679, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8671836040048829782, guid: f8d81a4e04bec447a9bd568d476aa679, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8671836040048829782, guid: f8d81a4e04bec447a9bd568d476aa679, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8671836040048829782, guid: f8d81a4e04bec447a9bd568d476aa679, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8671836040048829800, guid: f8d81a4e04bec447a9bd568d476aa679, type: 3}
+      propertyPath: m_Name
+      value: Bounds
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: f8d81a4e04bec447a9bd568d476aa679, type: 3}
 --- !u!1 &1676737531
 GameObject:
   m_ObjectHideFlags: 0
@@ -8488,7 +8511,7 @@ Transform:
   m_Children:
   - {fileID: 296052797}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1683965021
 GameObject:
@@ -8563,6 +8586,7 @@ MonoBehaviour:
   minSize: 2
   maxSize: 4
   speed: 5
+  numBulletsToDie: 2
 --- !u!212 &1683965025
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -8703,6 +8727,7 @@ MonoBehaviour:
   minSize: 2
   maxSize: 4
   speed: 5
+  numBulletsToDie: 2
 --- !u!212 &1718634726
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -9007,7 +9032,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 1750450473}
   weapon: {fileID: 1393336439}
-  pm: {fileID: 1762540029}
   target: {fileID: 1762540031}
   startInterval: 2
   deltaInterval: 2
@@ -9015,6 +9039,7 @@ MonoBehaviour:
   increment: 0.05
   shouldMove: 0
   moveY: 1
+  numBulletsToDie: 5
 --- !u!212 &1750450475
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -9332,7 +9357,7 @@ RectTransform:
   - {fileID: 575460263}
   - {fileID: 1157605504}
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -9621,7 +9646,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 1823775648}
   weapon: {fileID: 306257558}
-  pm: {fileID: 1762540029}
   target: {fileID: 1762540031}
   startInterval: 2
   deltaInterval: 2
@@ -9629,6 +9653,7 @@ MonoBehaviour:
   increment: 0.05
   shouldMove: 1
   moveY: 0
+  numBulletsToDie: 5
 --- !u!212 &1823775650
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -9755,6 +9780,7 @@ MonoBehaviour:
   minSize: 2
   maxSize: 4
   speed: 5
+  numBulletsToDie: 2
 --- !u!212 &1826248550
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -9911,6 +9937,7 @@ MonoBehaviour:
   minSize: 2
   maxSize: 4
   speed: 5
+  numBulletsToDie: 2
 --- !u!212 &1828417916
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -10051,6 +10078,7 @@ MonoBehaviour:
   minSize: 2
   maxSize: 4
   speed: 5
+  numBulletsToDie: 2
 --- !u!212 &1906524499
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -10352,7 +10380,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1942653847
 GameObject:
@@ -10472,7 +10500,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1086654018920685020, guid: bcaad12b668285948ae14848e1aa3f1a, type: 3}
       propertyPath: m_RootOrder
-      value: 13
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 1086654018920685020, guid: bcaad12b668285948ae14848e1aa3f1a, type: 3}
       propertyPath: m_LocalPosition.x
@@ -10702,6 +10730,7 @@ MonoBehaviour:
   minSize: 2
   maxSize: 4
   speed: 5
+  numBulletsToDie: 2
 --- !u!212 &1996578358
 SpriteRenderer:
   m_ObjectHideFlags: 0
