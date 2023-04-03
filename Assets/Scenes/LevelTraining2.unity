@@ -367,6 +367,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 805617180}
     m_Modifications:
+    - target: {fileID: 103419042820495644, guid: 7dec13b18e6cc43cdb0b83455ecce1c1, type: 3}
+      propertyPath: level
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 902022956978641411, guid: 7dec13b18e6cc43cdb0b83455ecce1c1, type: 3}
       propertyPath: m_Layer
       value: 0
@@ -2398,7 +2402,7 @@ PrefabInstance:
       objectReference: {fileID: 7250588514170254948, guid: 0000000000000000d000000000000000, type: 0}
     - target: {fileID: 1086654018920685016, guid: bcaad12b668285948ae14848e1aa3f1a, type: 3}
       propertyPath: m_Name
-      value: Collectible (3)
+      value: Collectible (1)
       objectReference: {fileID: 0}
     - target: {fileID: 1086654018920685020, guid: bcaad12b668285948ae14848e1aa3f1a, type: 3}
       propertyPath: m_RootOrder
@@ -4870,7 +4874,7 @@ PrefabInstance:
       objectReference: {fileID: 7250588514170254948, guid: 0000000000000000d000000000000000, type: 0}
     - target: {fileID: 1086654018920685016, guid: bcaad12b668285948ae14848e1aa3f1a, type: 3}
       propertyPath: m_Name
-      value: Collectible (4)
+      value: Collectible (2)
       objectReference: {fileID: 0}
     - target: {fileID: 1086654018920685020, guid: bcaad12b668285948ae14848e1aa3f1a, type: 3}
       propertyPath: m_RootOrder

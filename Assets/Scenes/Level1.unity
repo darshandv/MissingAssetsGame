@@ -367,6 +367,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 805617180}
     m_Modifications:
+    - target: {fileID: 103419042820495644, guid: 7dec13b18e6cc43cdb0b83455ecce1c1, type: 3}
+      propertyPath: level
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 902022956978641411, guid: 7dec13b18e6cc43cdb0b83455ecce1c1, type: 3}
       propertyPath: m_Layer
       value: 0
@@ -593,7 +597,6 @@ MonoBehaviour:
   menuUI: {fileID: 1436052696}
   healthBar: {fileID: 196838711}
   thrustBar: {fileID: 3254980}
-  warning_message: {fileID: 0}
 --- !u!114 &151975039
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2289,7 +2292,6 @@ MonoBehaviour:
   menuUI: {fileID: 1239107869}
   healthBar: {fileID: 196838711}
   thrustBar: {fileID: 3254980}
-  warning_message: {fileID: 0}
 --- !u!114 &925940404
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2465,7 +2467,7 @@ PrefabInstance:
       objectReference: {fileID: 7250588514170254948, guid: 0000000000000000d000000000000000, type: 0}
     - target: {fileID: 1086654018920685016, guid: bcaad12b668285948ae14848e1aa3f1a, type: 3}
       propertyPath: m_Name
-      value: Collectible (3)
+      value: Collectible (1)
       objectReference: {fileID: 0}
     - target: {fileID: 1086654018920685020, guid: bcaad12b668285948ae14848e1aa3f1a, type: 3}
       propertyPath: m_RootOrder
@@ -2696,7 +2698,6 @@ MonoBehaviour:
   menuUI: {fileID: 1594911575}
   healthBar: {fileID: 196838711}
   thrustBar: {fileID: 3254980}
-  warning_message: {fileID: 0}
   losingText: {fileID: 1091857255}
   winningText: {fileID: 813700438}
   nextLevelButton: {fileID: 1707883552}
@@ -4739,7 +4740,7 @@ PrefabInstance:
       objectReference: {fileID: 7250588514170254948, guid: 0000000000000000d000000000000000, type: 0}
     - target: {fileID: 1086654018920685016, guid: bcaad12b668285948ae14848e1aa3f1a, type: 3}
       propertyPath: m_Name
-      value: Collectible (5)
+      value: Collectible (3)
       objectReference: {fileID: 0}
     - target: {fileID: 1086654018920685020, guid: bcaad12b668285948ae14848e1aa3f1a, type: 3}
       propertyPath: m_RootOrder
@@ -4939,7 +4940,7 @@ PrefabInstance:
       objectReference: {fileID: 7250588514170254948, guid: 0000000000000000d000000000000000, type: 0}
     - target: {fileID: 1086654018920685016, guid: bcaad12b668285948ae14848e1aa3f1a, type: 3}
       propertyPath: m_Name
-      value: Collectible (4)
+      value: Collectible (2)
       objectReference: {fileID: 0}
     - target: {fileID: 1086654018920685020, guid: bcaad12b668285948ae14848e1aa3f1a, type: 3}
       propertyPath: m_RootOrder
