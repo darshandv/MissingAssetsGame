@@ -12,7 +12,7 @@ public class MenuBehavior : MonoBehaviour
     public GameObject healthBar;
     public GameObject thrustBar;
 
-    public GameObject warning_message;
+    //public GameObject warning_message;
 
     private Camera mainCamera;
 
@@ -33,7 +33,7 @@ public class MenuBehavior : MonoBehaviour
     {
         Time.timeScale = 1f;
         IsGamePaused = false;
-        warning_message.SetActive(false);
+        //warning_message.SetActive(false);
         if (mainCamera)
         {
             CameraFollow cs = mainCamera.GetComponent<CameraFollow>();
@@ -55,7 +55,7 @@ public class MenuBehavior : MonoBehaviour
         menuUI.SetActive(true);
         healthBar.SetActive(false);
         thrustBar.SetActive(false);
-        warning_message.SetActive(false);
+        //warning_message.SetActive(false);
 
         Time.timeScale = 0f;
         IsGamePaused = true;
