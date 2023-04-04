@@ -12,8 +12,14 @@ public class LandingScreen : MonoBehaviour
         firstLevel = "LevelTraining1";
     }
 
+
     public void StartGame() {
         SceneManager.LoadScene(firstLevel);
+    }
+
+    public void LevelSelectionScreen()
+    {
+        SceneManager.LoadScene("LevelSelectionScreen");
     }
 
     // Can be changed later
