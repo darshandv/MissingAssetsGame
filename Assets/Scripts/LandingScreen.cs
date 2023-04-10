@@ -9,7 +9,7 @@ public class LandingScreen : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        firstLevel = "LevelTraining1";
+        firstLevel = "Level3";
     }
 
 
