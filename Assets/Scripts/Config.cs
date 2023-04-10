@@ -1,8 +1,14 @@
+public enum MovementType {
+    None,
+    FixedAxis,
+    Follow
+}
+
 public static class Config
 {
     public static int numberofEnemies = 0;
     public static bool isDead = false;
-    public static bool shouldEnemiesMove = false;
+    public static MovementType movementType = MovementType.None;
     public static bool isInPlanet = false;
 
     // Thrust related variables
@@ -39,7 +45,7 @@ public static class Config
     {
         numberofEnemies = 0;
         isDead = false;
-        shouldEnemiesMove = false;
+        movementType = MovementType.None;
         useThrustControl = true;
         maxThrust = 5f;
         thrustReductionAmount = 2f;
