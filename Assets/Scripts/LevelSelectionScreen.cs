@@ -11,59 +11,59 @@ public class LevelSelectionScreen : MonoBehaviour
 
     public void Level1Selection()
     {
-        SceneManager.LoadScene("LevelTraining1");
+        SceneManager.LoadScene(Config.levels[0]);
     }
 
     public void Level2Selection()
     {
-        SceneManager.LoadScene("LevelTraining2");
+        SceneManager.LoadScene(Config.levels[1]);
     }
     public void Level3Selection()
     {
-        SceneManager.LoadScene("Level1");
+        SceneManager.LoadScene(Config.levels[2]);
     }
     public void Level4Selection()
     {
-        SceneManager.LoadScene("Level2");
+        SceneManager.LoadScene(Config.levels[3]);
     }
 
     public void Level5Selection()
     {
-        SceneManager.LoadScene("Level3");
+        SceneManager.LoadScene(Config.levels[4]);
     }
 
     public void Level6Selection()
     {
-        SceneManager.LoadScene("Level4");
+        SceneManager.LoadScene(Config.levels[5]);
     }
 
     public void Level7Selection()
     {
-        SceneManager.LoadScene("Level5");
+        SceneManager.LoadScene(Config.levels[6]);
     }
 
     public void Level8Selection()
     {
-        SceneManager.LoadScene("Level6");
+        SceneManager.LoadScene(Config.levels[7]);
     }
 
     public void Level9Selection()
     {
-        SceneManager.LoadScene("Level7");
+        SceneManager.LoadScene(Config.levels[8]);
     }
 
     public void Level10Selection()
     {
-        SceneManager.LoadScene("Level8");
+        SceneManager.LoadScene(Config.levels[9]);
     }
 
     public void Level11Selection()
     {
-        SceneManager.LoadScene("Level9");
+        SceneManager.LoadScene(Config.levels[10]);
     }
 
     public void Level12Selection()
     {
-        SceneManager.LoadScene("Level10");
+        SceneManager.LoadScene(Config.levels[11]);
     }
 }

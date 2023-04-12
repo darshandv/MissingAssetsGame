@@ -51,6 +51,7 @@ public class PlayerMovement : MonoBehaviour
         if (health <= 0)
         {
             isDead = true;
+            Config.isDead = true;
             // Analytics to be sent here
         }
     }
