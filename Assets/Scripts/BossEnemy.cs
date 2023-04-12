@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class BossEnemy : MonoBehaviour
 {
+    public EnemyHealthBarBehavior enemyHealthBarBehavior;
     // Level 1 attributes
     public int level1Health = 100;
     public float level1MissileSpeed = 5f;
@@ -30,7 +31,7 @@ public class BossEnemy : MonoBehaviour
 
     // public GameObject rocketPrefab;
     public Transform spawnPoint;
-    public Transform target;
+    Transform target;
 
     int currentLevel = 1;
     private int currentHealth;
@@ -59,6 +60,8 @@ public class BossEnemy : MonoBehaviour
 
     void Start()
     {
+        enemyHealthBarBehavior.SetHealth(level1Health, level1Health);
+
         SetDifficultyLevel();
 
         target = GameObject.FindGameObjectWithTag("Player").transform;
@@ -102,11 +105,13 @@ public class BossEnemy : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        Debug.Log(collision);
-
+        Debug.Log("Enemy hit");
         if (collision.collider.CompareTag("PlayerBullet"))
         {
-            currentHealth -= Random.Range(3, 6); 
+            int damage = Random.Range(3, 6);
+            currentHealth -= damage;
+            Debug.Log("currentHealth: " + currentHealth);
+            enemyHealthBarBehavior.SetHealth(level1Health,currentHealth);
         }
     }
 
@@ -130,7 +135,7 @@ public class BossEnemy : MonoBehaviour
             transform.position += (Vector3)(direction * moveSpeed * Time.deltaTime);
         }
 
-        Debug.Log("currentHealth: " + currentHealth);
+        //Debug.Log("currentHealth: " + currentHealth);
 
         if (currentHealth <= 0)
         {

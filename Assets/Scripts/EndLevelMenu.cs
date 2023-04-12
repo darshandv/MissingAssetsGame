@@ -28,7 +28,7 @@ public class EndLevelMenu : MenuBehavior
     changeData currentLevelDone() {
         string currentScene = SceneManager.GetActiveScene().name;
         int levelNumber = Array.IndexOf(Config.levels,currentScene);
-        Debug.Log(currentScene+levelNumber);
+        //Debug.Log(currentScene+" "+levelNumber);
         changeData returnData = new changeData();
         if (CollectibleComponent.CollectedComponents == Config.levelCollectibles[levelNumber]) {
             returnData.levelDone = true;
