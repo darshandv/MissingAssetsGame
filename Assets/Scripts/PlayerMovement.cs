@@ -206,7 +206,10 @@ public class PlayerMovement : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.W))
             {
                 // Reduce thrust instantly
-                applyForceOnPlayer();
+                if (tc.getThrust()>0.1){
+                    applyForceOnPlayer();
+                }
+                
                 tc.reduceThrust(
                     (
                         (Config.currentLevel == 3)
@@ -219,7 +222,9 @@ public class PlayerMovement : MonoBehaviour
             else if (Input.GetKey(KeyCode.W))
             {
                 // Reduce thrust continuously if key is held down
-                applyForceOnPlayer();
+                if (tc.getThrust()>0.1){
+                    applyForceOnPlayer();
+                }
                 if (!isReducingThrust)
                 {
                     isReducingThrust = true;
