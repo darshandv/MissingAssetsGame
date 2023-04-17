@@ -80,7 +80,7 @@ public class BossEnemy : MonoBehaviour
     void Fire()
     {
         // Choose a random attack pattern
-        int attackPattern = Random.Range(1, 3);
+        int attackPattern = Random.Range(1, 2);
 
         if(!enableShooting) return;
 
@@ -130,9 +130,8 @@ public class BossEnemy : MonoBehaviour
         {
             float distance = Vector2.Distance(transform.position,target.position);
             bool inRange = distance <= followUpperBound;
+            // if(!inRange) return;
 
-            if(!inRange) return;
-            
             // Calculate the direction to the target
             Vector2 direction = target.position - transform.position;
             direction.Normalize();
