@@ -6,7 +6,9 @@ public class EnemyController : MonoBehaviour
 {
     public Rigidbody2D rb;
     public EnemyWeapon weapon;
-
+    public EnemyHealthBarBehavior enemyHealthBarBehavior;
+    int maxEnemyHealth=100;
+    int health = 100;
     // public PlayerMovement pm;
     public Transform target;
     public float startInterval = 2.0f;
@@ -25,6 +27,7 @@ public class EnemyController : MonoBehaviour
     public bool enableShooting = true;
 
     public int numBulletsToDie = 5;
+    int damagePerBullet ;
 
     void Start()
     {
@@ -32,6 +35,8 @@ public class EnemyController : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         InvokeRepeating("Shoot", startInterval, deltaInterval);
         Config.numberofEnemies += 1;
+        enemyHealthBarBehavior.SetHealth(maxEnemyHealth, maxEnemyHealth);
+        damagePerBullet = maxEnemyHealth / numBulletsToDie;
     }
 
     void Shoot()
@@ -55,6 +60,9 @@ public class EnemyController : MonoBehaviour
             // pm.increaseEnemyKills();
 
             numBulletsToDie--;
+            health = health - damagePerBullet;
+            enemyHealthBarBehavior.SetHealth(maxEnemyHealth, health);
+
             AnalyticsTracker.playerBulletsHit += 1;
 
             if (numBulletsToDie == 0)
