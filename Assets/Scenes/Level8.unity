@@ -676,8 +676,13 @@ MonoBehaviour:
   deltaInterval: 2
   range: 10
   increment: 0.05
-  shouldMove: 0
+  movementType: 0
   moveY: 1
+  speed: 1
+  followStopDistance: 2.5
+  followLowerBound: 2.5
+  followUpperBound: 20
+  enableShooting: 1
   numBulletsToDie: 5
 --- !u!212 &184335979
 SpriteRenderer:
@@ -854,12 +859,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 11
-  m_Sprite: {fileID: 21300000, guid: fea59d8fffc214c2a8419c4f5a9e9800, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 6c1e4ff26411247c6a12502761cad50d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 7.5, y: 7.5}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -874,7 +879,7 @@ Transform:
   m_GameObject: {fileID: 358741127}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -9.6, y: 16.69, z: 0}
-  m_LocalScale: {x: 4.41, y: 4.52, z: 1}
+  m_LocalScale: {x: 1.32, y: 1.35, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -1866,6 +1871,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   powerupBehavior: {fileID: 11400000, guid: 20a07b867a7e84b898564d93ac2c3616, type: 2}
+  shieldTime: 7
 --- !u!70 &842214742
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -3745,8 +3751,13 @@ MonoBehaviour:
   deltaInterval: 2
   range: 10
   increment: 0.05
-  shouldMove: 0
+  movementType: 0
   moveY: 1
+  speed: 1
+  followStopDistance: 2.5
+  followLowerBound: 2.5
+  followUpperBound: 20
+  enableShooting: 1
   numBulletsToDie: 5
 --- !u!212 &1269845034
 SpriteRenderer:
@@ -4771,6 +4782,7 @@ MonoBehaviour:
   toggleGodViewKey: 113
   godViewZoomSpeed: 2.5
   playerZoomSpeed: 5
+  enableGodView: 1
 --- !u!81 &1442210889
 AudioListener:
   m_ObjectHideFlags: 0
@@ -6836,6 +6848,7 @@ MonoBehaviour:
   toggleGodViewKey: 113
   godViewZoomSpeed: 2.5
   playerZoomSpeed: 5
+  enableGodView: 1
 --- !u!81 &2000773843
 AudioListener:
   m_ObjectHideFlags: 0
@@ -7167,8 +7180,13 @@ MonoBehaviour:
   deltaInterval: 2
   range: 10
   increment: 0.05
-  shouldMove: 0
+  movementType: 0
   moveY: 1
+  speed: 1
+  followStopDistance: 2.5
+  followLowerBound: 2.5
+  followUpperBound: 20
+  enableShooting: 1
   numBulletsToDie: 5
 --- !u!212 &2095749780
 SpriteRenderer:

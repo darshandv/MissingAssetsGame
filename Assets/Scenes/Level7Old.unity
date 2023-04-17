@@ -777,12 +777,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 11
-  m_Sprite: {fileID: 21300000, guid: fea59d8fffc214c2a8419c4f5a9e9800, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 6c1e4ff26411247c6a12502761cad50d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 7.5, y: 7.5}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -797,7 +797,7 @@ Transform:
   m_GameObject: {fileID: 358741127}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -19.77, y: 1.98, z: 0}
-  m_LocalScale: {x: 4.41, y: 4.52, z: 1}
+  m_LocalScale: {x: 1.67, y: 1.62, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -1688,8 +1688,13 @@ MonoBehaviour:
   deltaInterval: 2
   range: 10
   increment: 0.05
-  shouldMove: 0
+  movementType: 0
   moveY: 1
+  speed: 1
+  followStopDistance: 2.5
+  followLowerBound: 2.5
+  followUpperBound: 20
+  enableShooting: 1
   numBulletsToDie: 5
 --- !u!212 &664519129
 SpriteRenderer:
@@ -2850,8 +2855,13 @@ MonoBehaviour:
   deltaInterval: 2
   range: 10
   increment: 0.05
-  shouldMove: 0
+  movementType: 0
   moveY: 1
+  speed: 1
+  followStopDistance: 2.5
+  followLowerBound: 2.5
+  followUpperBound: 20
+  enableShooting: 1
   numBulletsToDie: 5
 --- !u!212 &886071846
 SpriteRenderer:
@@ -4673,8 +4683,13 @@ MonoBehaviour:
   deltaInterval: 2
   range: 10
   increment: 0.05
-  shouldMove: 0
+  movementType: 0
   moveY: 1
+  speed: 1
+  followStopDistance: 2.5
+  followLowerBound: 2.5
+  followUpperBound: 20
+  enableShooting: 1
   numBulletsToDie: 5
 --- !u!212 &1410354573
 SpriteRenderer:
@@ -4802,11 +4817,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3160353721983846044, guid: b911bc1202ac5414ab15dbee16d459a1, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -23.19
+      value: -23.9
       objectReference: {fileID: 0}
     - target: {fileID: 3160353721983846044, guid: b911bc1202ac5414ab15dbee16d459a1, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 5.56
+      value: 6.2
       objectReference: {fileID: 0}
     - target: {fileID: 3160353721983846044, guid: b911bc1202ac5414ab15dbee16d459a1, type: 3}
       propertyPath: m_LocalPosition.z
@@ -4924,6 +4939,7 @@ MonoBehaviour:
   toggleGodViewKey: 113
   godViewZoomSpeed: 2.5
   playerZoomSpeed: 5
+  enableGodView: 1
 --- !u!81 &1442210889
 AudioListener:
   m_ObjectHideFlags: 0
@@ -5888,8 +5904,13 @@ MonoBehaviour:
   deltaInterval: 2
   range: 10
   increment: 0.05
-  shouldMove: 0
+  movementType: 0
   moveY: 1
+  speed: 1
+  followStopDistance: 2.5
+  followLowerBound: 2.5
+  followUpperBound: 20
+  enableShooting: 1
   numBulletsToDie: 5
 --- !u!212 &1899801457
 SpriteRenderer:
@@ -6671,6 +6692,7 @@ MonoBehaviour:
   toggleGodViewKey: 113
   godViewZoomSpeed: 2.5
   playerZoomSpeed: 5
+  enableGodView: 1
 --- !u!81 &2000773843
 AudioListener:
   m_ObjectHideFlags: 0
