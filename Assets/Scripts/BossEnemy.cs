@@ -58,6 +58,12 @@ public class BossEnemy : MonoBehaviour
     public float dodgeRate = 3f; // The rate at which the boss dodges attacks
     public float dodgeSpeed = 1f; // The speed at which the boss dodges attacks
 
+    public bool enableShooting = true;
+    public bool enableFollow = true;
+
+
+    public float followUpperBound = 3.0f;
+
     void Start()
     {
         enemyHealthBarBehavior.SetHealth(level1Health, level1Health);
@@ -75,6 +81,8 @@ public class BossEnemy : MonoBehaviour
     {
         // Choose a random attack pattern
         int attackPattern = Random.Range(1, 3);
+
+        if(!enableShooting) return;
 
         // Fire the appropriate attack
         switch (attackPattern)
@@ -117,8 +125,14 @@ public class BossEnemy : MonoBehaviour
 
     void Update()
     {
-        if (target != null)
+
+        if (target != null && enableFollow)
         {
+            float distance = Vector2.Distance(transform.position,target.position);
+            bool inRange = distance <= followUpperBound;
+
+            if(!inRange) return;
+            
             // Calculate the direction to the target
             Vector2 direction = target.position - transform.position;
             direction.Normalize();

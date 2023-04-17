@@ -30,6 +30,28 @@ public class Planet : MonoBehaviour
         Config.isInPlanet = false;
     }
 
+    private bool withinCollider(Collider2D other) {
+        bool isCompletelyWithinCircle = true;
+        Bounds bounds = other.GetComponent<Renderer>().bounds;
+        Vector2[] vertices = new Vector2[4] {
+            new Vector2(bounds.min.x, bounds.min.y),
+            new Vector2(bounds.min.x, bounds.max.y),
+            new Vector2(bounds.max.x, bounds.min.y),
+            new Vector2(bounds.max.x, bounds.max.y)
+        };
+
+        foreach (Vector2 vertex in vertices)
+        {
+            if (!GetComponent<CircleCollider2D>().OverlapPoint(vertex))
+            {
+                isCompletelyWithinCircle = false;
+                break;
+            }
+        }
+
+        return isCompletelyWithinCircle;
+    }
+
     void OnTriggerStay2D(Collider2D ship) {
         if (ship.name.Contains("Player")) {
             float x_error = transform.position.x - ship.transform.position.x;
@@ -49,6 +71,22 @@ public class Planet : MonoBehaviour
             ship.attachedRigidbody.AddForce(unit_vector);
             // Debug.Log(force_of_push * unit_vector); 
         }
+        Debug.Log("Inside : " + ship.IsTouching(GetComponent<Collider2D>()));
+        
+        if(withinCollider(ship)) {
+            if(ship.name.Contains("FollowEnemy")) {
+                EnemyController ec = ship.GetComponent<EnemyController>();
+                ec.movementType = MovementType.None;
+                ec.enableShooting = false;
+            }
+            else if (ship.name.Contains("BossEnemy")) {
+                BossEnemy be = ship.GetComponent<BossEnemy>();
+                be.enableShooting = false;
+                be.enableFollow = false;
+            }
+        }
+
+
     }
 
 }
