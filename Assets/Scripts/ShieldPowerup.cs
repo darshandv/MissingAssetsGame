@@ -5,6 +5,7 @@ using UnityEngine;
 public class ShieldPowerup : MonoBehaviour
 {
     public PowerupBehavior powerupBehavior;
+    public float shieldTime = 7f;
 
     private void OnTriggerEnter2D(Collider2D collider2D) {
         if (collider2D.name == "Player") {
@@ -16,7 +17,7 @@ public class ShieldPowerup : MonoBehaviour
 
     private IEnumerator ExecuteEffect(Collider2D collider2D) {
         powerupBehavior.Apply(collider2D.gameObject);
-        yield return new WaitForSeconds(7f);
+        yield return new WaitForSeconds(shieldTime);
         powerupBehavior.Remove(collider2D.gameObject);
         Destroy(gameObject);
     }
