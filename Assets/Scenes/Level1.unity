@@ -2748,7 +2748,7 @@ MonoBehaviour:
   slider: {fileID: 1266477404}
   low: {r: 0.9056604, g: 0.2682805, b: 0.2682805, a: 0}
   high: {r: 0.24276468, g: 0.8584906, b: 0.03563542, a: 0}
-  offset: {x: 0, y: 2.6, z: 0}
+  offset: {x: 0, y: 3, z: 0}
   fill: {fileID: 1799573419}
 --- !u!114 &976476574
 MonoBehaviour:

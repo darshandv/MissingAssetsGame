@@ -379,6 +379,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a65f971df0f97bb44b10ff46288224d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Player: {fileID: 0}
 --- !u!1 &3160353721983845985
 GameObject:
   m_ObjectHideFlags: 0
@@ -408,7 +409,7 @@ Transform:
   m_GameObject: {fileID: 3160353721983845985}
   m_LocalRotation: {x: 0, y: -0, z: 0.7071068, w: -0.7071068}
   m_LocalPosition: {x: -30.53, y: 0.06, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.39, y: 1.48, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3160353721187189419}
@@ -486,11 +487,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerSpeed: 0
   orientation: 0
+  healthBar: {fileID: 0}
   player_rigid_body: {fileID: 3160353721983845987}
   thrustPower: 0.02
   weapon: {fileID: 3160353721187189416}
   isDead: 0
   isInvulnerable: 0
+  thrustZero: 0
+  missileDamage: 10
 --- !u!50 &3160353721983845987
 Rigidbody2D:
   serializedVersion: 4
