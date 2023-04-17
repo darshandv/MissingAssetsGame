@@ -20,6 +20,9 @@ public class EnemyController : MonoBehaviour
     private int direction = 1;
     public float speed = 1.0f;
     public float followStopDistance = 2.5f;
+    public float followLowerBound = 2.5f;
+    public float followUpperBound = 20.0f;
+    public bool enableShooting = true;
 
     public int numBulletsToDie = 5;
 
@@ -33,7 +36,7 @@ public class EnemyController : MonoBehaviour
 
     void Shoot()
     {
-        if (weapon && target)
+        if (weapon && target && enableShooting)
         {
             weapon.Fire(target);
         }
@@ -111,7 +114,8 @@ public class EnemyController : MonoBehaviour
     }
 
     private void follow() {
-        if(Vector2.Distance(transform.position,target.position) >= followStopDistance){        
+        float distance = Vector2.Distance(transform.position,target.position); 
+        if(distance >= followLowerBound && distance <= followUpperBound){        
             var step =  speed * Time.deltaTime;
             transform.position = Vector3.MoveTowards(transform.position, target.position, step);
         }

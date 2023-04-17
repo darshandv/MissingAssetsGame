@@ -14,6 +14,7 @@ public class CameraFollow : MonoBehaviour
     public float godViewZoomSpeed = 2.5f;
     public float playerZoomSpeed = 5f;
 
+    public bool enableGodView = true;
     private bool godViewMode = false;
     private float previousOrthographicSize;
     private Vector3 previousCameraPosition;
@@ -46,7 +47,7 @@ public class CameraFollow : MonoBehaviour
             previousCameraPosition = transform.position;
         }
 
-        if (godViewMode)
+        if (godViewMode && enableGodView)
         {
             // Switch to god view mode
             float currentOrthographicSize = Camera.main.orthographicSize;
@@ -97,7 +98,7 @@ public class CameraFollow : MonoBehaviour
             }
         }
 
-        if (godViewMode)
+        if (godViewMode && enableGodView)
         {
             // Switch to god view mode
             float currentOrthographicSize = Camera.main.orthographicSize;
