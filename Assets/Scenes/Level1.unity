@@ -1250,6 +1250,7 @@ MonoBehaviour:
   toggleGodViewKey: 113
   godViewZoomSpeed: 2.5
   playerZoomSpeed: 5
+  enableGodView: 1
 --- !u!81 &278259766
 AudioListener:
   m_ObjectHideFlags: 0
@@ -1708,6 +1709,7 @@ MonoBehaviour:
   toggleGodViewKey: 113
   godViewZoomSpeed: 1
   playerZoomSpeed: 2
+  enableGodView: 1
 --- !u!81 &438583324
 AudioListener:
   m_ObjectHideFlags: 0
@@ -2746,7 +2748,7 @@ MonoBehaviour:
   slider: {fileID: 1266477404}
   low: {r: 0.9056604, g: 0.2682805, b: 0.2682805, a: 0}
   high: {r: 0.24276468, g: 0.8584906, b: 0.03563542, a: 0}
-  offset: {x: 0, y: 2.5, z: 0}
+  offset: {x: 0, y: 2.6, z: 0}
   fill: {fileID: 1799573419}
 --- !u!114 &976476574
 MonoBehaviour:
@@ -5941,17 +5943,25 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 846843507876547815, guid: 53016857dfd714fd39c06c44af9210db, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -2.45
+      objectReference: {fileID: 0}
+    - target: {fileID: 846843507876547815, guid: 53016857dfd714fd39c06c44af9210db, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.24
+      objectReference: {fileID: 0}
     - target: {fileID: 846843509020247400, guid: 53016857dfd714fd39c06c44af9210db, type: 3}
       propertyPath: m_RootOrder
       value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 846843509020247400, guid: 53016857dfd714fd39c06c44af9210db, type: 3}
       propertyPath: m_LocalScale.x
-      value: 1.2448983
+      value: 1.3
       objectReference: {fileID: 0}
     - target: {fileID: 846843509020247400, guid: 53016857dfd714fd39c06c44af9210db, type: 3}
       propertyPath: m_LocalScale.y
-      value: 1.3556451
+      value: 1.33
       objectReference: {fileID: 0}
     - target: {fileID: 846843509020247400, guid: 53016857dfd714fd39c06c44af9210db, type: 3}
       propertyPath: m_LocalPosition.x
@@ -5996,7 +6006,7 @@ PrefabInstance:
     - target: {fileID: 846843509020247401, guid: 53016857dfd714fd39c06c44af9210db, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 51309b9aee8c74fa7900e6f32dd21f0e, type: 3}
+      objectReference: {fileID: 21300000, guid: b7edf612418e344c081cbff2452605f8, type: 3}
     - target: {fileID: 846843509020247401, guid: 53016857dfd714fd39c06c44af9210db, type: 3}
       propertyPath: m_Color.b
       value: 1
