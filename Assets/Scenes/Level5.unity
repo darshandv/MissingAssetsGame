@@ -2297,7 +2297,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &296911072
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2885,7 +2885,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &426799787
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3808,6 +3808,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 505649906}
   weapon: {fileID: 725456533}
+  enemyHealthBarBehavior: {fileID: 0}
   target: {fileID: 1649493721}
   startInterval: 2
   deltaInterval: 2
@@ -6241,6 +6242,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 935617731}
   weapon: {fileID: 1183031732}
+  enemyHealthBarBehavior: {fileID: 0}
   target: {fileID: 1649493721}
   startInterval: 2
   deltaInterval: 2
@@ -12081,6 +12083,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 1763196035}
   weapon: {fileID: 1177456517}
+  enemyHealthBarBehavior: {fileID: 0}
   target: {fileID: 1649493721}
   startInterval: 2
   deltaInterval: 2

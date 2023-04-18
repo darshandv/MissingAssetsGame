@@ -22,6 +22,11 @@ public class LandingScreen : MonoBehaviour
         SceneManager.LoadScene("LevelSelectionScreen");
     }
 
+    public void ControlsScreen()
+    {
+        SceneManager.LoadScene("ControlsScreen");
+    }
+
     // Can be changed later
     public void QuitGame() {
         #if UNITY_EDITOR

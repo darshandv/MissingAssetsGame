@@ -639,6 +639,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 44482994}
   weapon: {fileID: 1409564869}
+  enemyHealthBarBehavior: {fileID: 0}
   target: {fileID: 1762540031}
   startInterval: 2
   deltaInterval: 2
@@ -1156,6 +1157,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 67203548}
   weapon: {fileID: 418035521}
+  enemyHealthBarBehavior: {fileID: 0}
   target: {fileID: 1762540031}
   startInterval: 2
   deltaInterval: 2
@@ -1542,7 +1544,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &92404779
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5824,6 +5826,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 519764746}
   weapon: {fileID: 693813048}
+  enemyHealthBarBehavior: {fileID: 0}
   target: {fileID: 1762540031}
   startInterval: 2
   deltaInterval: 2
@@ -6384,6 +6387,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 578817193}
   weapon: {fileID: 599054938}
+  enemyHealthBarBehavior: {fileID: 0}
   target: {fileID: 1762540031}
   startInterval: 2
   deltaInterval: 2
@@ -13545,6 +13549,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 1101097843}
   weapon: {fileID: 752765375}
+  enemyHealthBarBehavior: {fileID: 0}
   target: {fileID: 1762540031}
   startInterval: 2
   deltaInterval: 2
@@ -16740,6 +16745,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 1367014790}
   weapon: {fileID: 1942653848}
+  enemyHealthBarBehavior: {fileID: 0}
   target: {fileID: 1762540031}
   startInterval: 2
   deltaInterval: 2
@@ -18780,6 +18786,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 1570113375}
   weapon: {fileID: 2139677985}
+  enemyHealthBarBehavior: {fileID: 0}
   target: {fileID: 1762540031}
   startInterval: 2
   deltaInterval: 2
@@ -19101,7 +19108,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1592717665
 RectTransform:
   m_ObjectHideFlags: 0
@@ -19748,6 +19755,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 1651727063}
   weapon: {fileID: 932708420}
+  enemyHealthBarBehavior: {fileID: 0}
   target: {fileID: 1762540031}
   startInterval: 2
   deltaInterval: 2
@@ -21032,6 +21040,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 1750450473}
   weapon: {fileID: 1393336439}
+  enemyHealthBarBehavior: {fileID: 0}
   target: {fileID: 1762540031}
   startInterval: 2
   deltaInterval: 2
@@ -22497,6 +22506,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 1823775648}
   weapon: {fileID: 306257558}
+  enemyHealthBarBehavior: {fileID: 0}
   target: {fileID: 1762540031}
   startInterval: 2
   deltaInterval: 2

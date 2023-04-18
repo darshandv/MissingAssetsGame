@@ -8983,6 +8983,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 664519127}
   weapon: {fileID: 1568447713}
+  enemyHealthBarBehavior: {fileID: 0}
   target: {fileID: 1762540031}
   startInterval: 2
   deltaInterval: 2
@@ -11261,6 +11262,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 848392297}
   weapon: {fileID: 326104497}
+  enemyHealthBarBehavior: {fileID: 0}
   target: {fileID: 1762540031}
   startInterval: 2
   deltaInterval: 2
@@ -12047,6 +12049,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 886071844}
   weapon: {fileID: 1985544668}
+  enemyHealthBarBehavior: {fileID: 0}
   target: {fileID: 1762540031}
   startInterval: 2
   deltaInterval: 2
@@ -19442,7 +19445,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1347658362
 RectTransform:
   m_ObjectHideFlags: 0
@@ -20939,6 +20942,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 1410354571}
   weapon: {fileID: 882563736}
+  enemyHealthBarBehavior: {fileID: 0}
   target: {fileID: 1762540031}
   startInterval: 2
   deltaInterval: 2
@@ -22115,6 +22119,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 1458123298}
   weapon: {fileID: 1627030427}
+  enemyHealthBarBehavior: {fileID: 0}
   target: {fileID: 1762540031}
   startInterval: 2
   deltaInterval: 2
@@ -23688,7 +23693,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1592717665
 RectTransform:
   m_ObjectHideFlags: 0
@@ -27942,6 +27947,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 1899801455}
   weapon: {fileID: 393669081}
+  enemyHealthBarBehavior: {fileID: 0}
   target: {fileID: 1762540031}
   startInterval: 2
   deltaInterval: 2
@@ -28177,6 +28183,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 1902719461}
   weapon: {fileID: 401470944}
+  enemyHealthBarBehavior: {fileID: 0}
   target: {fileID: 1762540031}
   startInterval: 2
   deltaInterval: 2

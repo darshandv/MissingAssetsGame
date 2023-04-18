@@ -547,6 +547,7 @@ MonoBehaviour:
   toggleGodViewKey: 113
   godViewZoomSpeed: 2.5
   playerZoomSpeed: 5
+  enableGodView: 1
 --- !u!81 &86850850
 AudioListener:
   m_ObjectHideFlags: 0
@@ -695,13 +696,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 222184166}
   weapon: {fileID: 1448929389}
+  enemyHealthBarBehavior: {fileID: 0}
   target: {fileID: 2112177127}
   startInterval: 2
   deltaInterval: 2
   range: 10
   increment: 0.01
-  shouldMove: 1
+  movementType: 0
   moveY: 0
+  speed: 1
+  followStopDistance: 2.5
+  followLowerBound: 2.5
+  followUpperBound: 20
+  enableShooting: 1
   numBulletsToDie: 5
 --- !u!212 &222184168
 SpriteRenderer:
@@ -1298,13 +1305,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 374040982}
   weapon: {fileID: 506190054}
+  enemyHealthBarBehavior: {fileID: 0}
   target: {fileID: 2112177127}
   startInterval: 2
   deltaInterval: 2
   range: 10
   increment: 0.01
-  shouldMove: 1
+  movementType: 0
   moveY: 1
+  speed: 1
+  followStopDistance: 2.5
+  followLowerBound: 2.5
+  followUpperBound: 20
+  enableShooting: 1
   numBulletsToDie: 5
 --- !u!212 &374040984
 SpriteRenderer:
@@ -1536,13 +1549,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 389995763}
   weapon: {fileID: 1993426731}
+  enemyHealthBarBehavior: {fileID: 0}
   target: {fileID: 2112177127}
   startInterval: 2
   deltaInterval: 2
   range: 10
   increment: 0.01
-  shouldMove: 1
+  movementType: 0
   moveY: 0
+  speed: 1
+  followStopDistance: 2.5
+  followLowerBound: 2.5
+  followUpperBound: 20
+  enableShooting: 1
   numBulletsToDie: 5
 --- !u!212 &389995765
 SpriteRenderer:
@@ -2671,13 +2690,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 666951350}
   weapon: {fileID: 487901503}
+  enemyHealthBarBehavior: {fileID: 0}
   target: {fileID: 2112177127}
   startInterval: 2
   deltaInterval: 2
   range: 10
   increment: 0.01
-  shouldMove: 1
+  movementType: 0
   moveY: 1
+  speed: 1
+  followStopDistance: 2.5
+  followLowerBound: 2.5
+  followUpperBound: 20
+  enableShooting: 1
   numBulletsToDie: 5
 --- !u!212 &666951352
 SpriteRenderer:
@@ -3698,13 +3723,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 932695081}
   weapon: {fileID: 681100185}
+  enemyHealthBarBehavior: {fileID: 0}
   target: {fileID: 2112177127}
   startInterval: 2
   deltaInterval: 2
   range: 10
   increment: 0.01
-  shouldMove: 1
+  movementType: 0
   moveY: 0
+  speed: 1
+  followStopDistance: 2.5
+  followLowerBound: 2.5
+  followUpperBound: 20
+  enableShooting: 1
   numBulletsToDie: 5
 --- !u!212 &932695083
 SpriteRenderer:
@@ -4268,7 +4299,6 @@ MonoBehaviour:
   menuUI: {fileID: 505325572}
   healthBar: {fileID: 0}
   thrustBar: {fileID: 0}
-  warning_message: {fileID: 0}
   losingText: {fileID: 308884115}
   winningText: {fileID: 1063111576}
   nextLevelButton: {fileID: 812605416}
@@ -5123,7 +5153,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1298535737
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5535,13 +5565,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 1351313117}
   weapon: {fileID: 368299746}
+  enemyHealthBarBehavior: {fileID: 0}
   target: {fileID: 2112177127}
   startInterval: 2
   deltaInterval: 2
   range: 10
   increment: 0.01
-  shouldMove: 1
+  movementType: 0
   moveY: 1
+  speed: 1
+  followStopDistance: 2.5
+  followLowerBound: 2.5
+  followUpperBound: 20
+  enableShooting: 1
   numBulletsToDie: 5
 --- !u!212 &1351313119
 SpriteRenderer:
@@ -6273,7 +6309,6 @@ MonoBehaviour:
   menuUI: {fileID: 1326044204}
   healthBar: {fileID: 0}
   thrustBar: {fileID: 0}
-  warning_message: {fileID: 0}
 --- !u!114 &1464580387
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7227,6 +7262,7 @@ MonoBehaviour:
   toggleGodViewKey: 113
   godViewZoomSpeed: 2.5
   playerZoomSpeed: 5
+  enableGodView: 1
 --- !u!81 &1897918052
 AudioListener:
   m_ObjectHideFlags: 0
@@ -7989,7 +8025,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2111738823
 RectTransform:
   m_ObjectHideFlags: 0
