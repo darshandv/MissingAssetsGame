@@ -71,7 +71,8 @@ public class BossEnemy : MonoBehaviour
     public bool enableFollow = true;
 
 
-    public float followUpperBound = 3.0f;
+    public float followLowerBound = 3.0f;
+    public float followUpperBound = 15.0f;
 
     void Start()
     {
@@ -141,8 +142,9 @@ public class BossEnemy : MonoBehaviour
         if (target != null && enableFollow)
         {
             float distance = Vector2.Distance(transform.position,target.position);
-            bool inRange = distance <= followUpperBound;
-            // if(!inRange) return;
+            // Debug.Log(distance);
+            bool inRange = distance <= followUpperBound && distance >= followLowerBound;
+            if(!inRange) return;
 
             // Calculate the direction to the target
             Vector2 direction = target.position - transform.position;

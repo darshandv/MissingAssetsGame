@@ -28,6 +28,16 @@ public class Planet : MonoBehaviour
     private void OnTriggerExit2D(Collider2D collision)
     {
         Config.isInPlanet = false;
+        if(collision.name.Contains("FollowEnemy")) {
+            EnemyController ec = collision.GetComponent<EnemyController>();
+            ec.movementType = MovementType.Follow;
+            ec.enableShooting = true;
+        }
+        else if (collision.name.Contains("BossEnemy")) {
+            BossEnemy be = collision.GetComponent<BossEnemy>();
+            be.enableShooting = true;
+            be.enableFollow = true;
+        }
     }
 
     private bool withinCollider(Collider2D other) {
@@ -71,7 +81,6 @@ public class Planet : MonoBehaviour
             ship.attachedRigidbody.AddForce(unit_vector);
             // Debug.Log(force_of_push * unit_vector); 
         }
-        Debug.Log("Inside : " + ship.IsTouching(GetComponent<Collider2D>()));
         
         if(withinCollider(ship)) {
             if(ship.name.Contains("FollowEnemy")) {
