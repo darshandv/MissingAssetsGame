@@ -173,22 +173,8 @@ public class PlayerMovement : MonoBehaviour
     {
         if (Config.isInPlanet)
             return;
-
-        float brakeForce = thrustPower * 0.8f;
-        Vector2 brakeDirection = -player_rigid_body.velocity.normalized;
-        Vector2 force = brakeDirection * brakeForce;
-        player_rigid_body.AddForce(force, ForceMode2D.Impulse);
-
-        // Apply an additional deceleration force once the player's 
-        // speed has been reduced to a certain threshold
-        float brakeThreshold = 0.05f;
-        if (player_rigid_body.velocity.magnitude < brakeThreshold)
-        {
-            float decelerationForce = brakeForce * 0.5f;
-            Vector2 decelerationDirection = -player_rigid_body.velocity.normalized;
-            Vector2 deceleration = decelerationDirection * decelerationForce;
-            player_rigid_body.AddForce(deceleration, ForceMode2D.Impulse);
-        }
+        
+        player_rigid_body.velocity = Vector2.zero;
     }
 
     private void allowLimitedThrust()
