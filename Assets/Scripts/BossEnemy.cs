@@ -13,7 +13,6 @@ public class BossEnemy : MonoBehaviour
     public int level0MissileDamage = 10;
     public float level0MovementSpeed = 0.5f;
 
-
     // Level 1 attributes
     public int level1Health = 100;
     public float level1MissileSpeed = 5f;
@@ -78,8 +77,6 @@ public class BossEnemy : MonoBehaviour
     {
 
         SetDifficultyLevel();
-        Debug.Log(maxHealth);
-        Debug.Log(currentHealth);
 
         target = GameObject.FindGameObjectWithTag("Player").transform;
 
@@ -95,7 +92,7 @@ public class BossEnemy : MonoBehaviour
     void Fire()
     {
         // Choose a random attack pattern
-        int attackPattern = Random.Range(1, 3);
+        int attackPattern = Random.Range(1, 2);
 
         if(!enableShooting) return;
 
@@ -173,7 +170,6 @@ public class BossEnemy : MonoBehaviour
 
     void SetDifficultyLevel()
     {
-        // Debug.Log(currentLevel);
         switch (currentLevel)
         {
             case 0:
