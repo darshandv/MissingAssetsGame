@@ -42,8 +42,8 @@ public class LandingScreen : MonoBehaviour
 
         #if UNITY_EDITOR
         UnityEditor.EditorApplication.isPlaying = false;
-        Application.Quit();
         #endif
+        Application.Quit();
 
         Debug.Log("Quitting Game");
     }

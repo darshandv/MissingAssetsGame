@@ -5,10 +5,19 @@ using UnityEngine;
 public class BossEnemy : MonoBehaviour
 {
     public EnemyHealthBarBehavior enemyHealthBarBehavior;
+
+     // Level 0 attributes
+    public int level0Health = 100;
+    public float level0MissileSpeed = 5f;
+    public float level0FireRate = 7f;
+    public int level0MissileDamage = 10;
+    public float level0MovementSpeed = 0.5f;
+
+
     // Level 1 attributes
     public int level1Health = 100;
     public float level1MissileSpeed = 5f;
-    public float level1FireRate = 1f;
+    public float level1FireRate = 2f;
     public int level1MissileDamage = 10;
     public float level1MovementSpeed = 1f;
 
@@ -33,7 +42,7 @@ public class BossEnemy : MonoBehaviour
     public Transform spawnPoint;
     Transform target;
 
-    int currentLevel = 1;
+    public int currentLevel = 0;
     private int currentHealth;
     private float currentMissileSpeed;
 
@@ -160,6 +169,13 @@ public class BossEnemy : MonoBehaviour
     {
         switch (currentLevel)
         {
+            case 1:
+                currentHealth = level0Health;
+                currentMissileSpeed = level0MissileSpeed;
+                fireRate = level0FireRate;
+                missileDamage = level0MissileDamage;
+                movementSpeed = level0MovementSpeed;
+                break;
             case 1:
                 currentHealth = level1Health;
                 currentMissileSpeed = level1MissileSpeed;
