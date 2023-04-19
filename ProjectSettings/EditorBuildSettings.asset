@@ -18,7 +18,7 @@ EditorBuildSettings:
     path: Assets/Scenes/LevelTraining2.unity
     guid: 06509e38863b14ae3923e304710893a6
   - enabled: 1
-    path: Assets/Scenes/Level1.unity
+    path: Assets/Scenes/BossEnemy2.unity
     guid: 21d96645c08bd4244a7037e5bd2e403a
   - enabled: 1
     path: Assets/Scenes/Level2.unity
@@ -68,4 +68,13 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/week9/Level2.unity
     guid: ff840385e3949b0439afdaffd7a8a9c0
+  - enabled: 1
+    path: Assets/Scenes/BossEnemy1.unity
+    guid: 346f41236fdf1403597368e4d8432aee
+  - enabled: 1
+    path: Assets/Scenes/BossEnemy0.unity
+    guid: 234337465a4c24e05b16dbf271e8baa1
+  - enabled: 1
+    path: Assets/Scenes/BossEnemy3.unity
+    guid: 1cd3973e123f549ccbec33b74ecf48f2
   m_configObjects: {}
