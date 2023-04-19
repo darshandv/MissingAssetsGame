@@ -7,10 +7,17 @@ public class CollectibleComponent : MonoBehaviour
 {
     public static int TotalComponents = 0; // total number of collectible components in the level
     public static int CollectedComponents = 0; // number of collected components
+    public bool changeToCircle = true;
 
     void Start()
     {
         TotalComponents++;
+        if(changeToCircle) {
+            GetComponent<PolygonCollider2D>().enabled = false;
+            CircleCollider2D circleCollider = gameObject.AddComponent<CircleCollider2D>();
+            circleCollider.radius = 5.0f;
+            circleCollider.isTrigger = true;
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D other)
