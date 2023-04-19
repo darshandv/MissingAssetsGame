@@ -7,7 +7,7 @@ public class BossEnemy : MonoBehaviour
     public EnemyHealthBarBehavior enemyHealthBarBehavior;
 
      // Level 0 attributes
-    public int level0Health = 100;
+    public int level0Health = 30;
     public float level0MissileSpeed = 5f;
     public float level0FireRate = 7f;
     public int level0MissileDamage = 10;
@@ -169,7 +169,7 @@ public class BossEnemy : MonoBehaviour
     {
         switch (currentLevel)
         {
-            case 1:
+            case 0:
                 currentHealth = level0Health;
                 currentMissileSpeed = level0MissileSpeed;
                 fireRate = level0FireRate;
