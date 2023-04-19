@@ -66,4 +66,14 @@ public class LevelSelectionScreen : MonoBehaviour
     {
         SceneManager.LoadScene(Config.levels[11]);
     }
+
+    public void Level13Selection()
+    {
+        SceneManager.LoadScene(Config.levels[12]);
+    }
+
+    public void Level14Selection()
+    {
+        SceneManager.LoadScene(Config.levels[13]);
+    }
 }
