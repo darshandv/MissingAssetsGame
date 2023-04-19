@@ -615,7 +615,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 198
   m_Sprite: {fileID: 21300000, guid: b652425a9250e492d889c4544676ea53, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -1957,8 +1957,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   menuUI: {fileID: 1585721982}
-  healthBar: {fileID: 0}
-  thrustBar: {fileID: 0}
+  healthBar: {fileID: 196838711}
+  thrustBar: {fileID: 3254980}
 --- !u!114 &787412542
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4295,8 +4295,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   menuUI: {fileID: 914456808}
-  healthBar: {fileID: 0}
-  thrustBar: {fileID: 0}
+  healthBar: {fileID: 196838711}
+  thrustBar: {fileID: 3254980}
   losingText: {fileID: 594265635}
   winningText: {fileID: 1852934246}
   nextLevelButton: {fileID: 1891100858}
@@ -4569,6 +4569,10 @@ PrefabInstance:
     - target: {fileID: 3160353721520374341, guid: b911bc1202ac5414ab15dbee16d459a1, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3160353721830765640, guid: b911bc1202ac5414ab15dbee16d459a1, type: 3}
+      propertyPath: m_SortingOrder
+      value: 199
       objectReference: {fileID: 0}
     - target: {fileID: 3160353721830765643, guid: b911bc1202ac5414ab15dbee16d459a1, type: 3}
       propertyPath: Player
