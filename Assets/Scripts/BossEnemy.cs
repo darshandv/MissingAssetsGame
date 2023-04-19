@@ -80,7 +80,7 @@ public class BossEnemy : MonoBehaviour
     void Fire()
     {
         // Choose a random attack pattern
-        int attackPattern = Random.Range(1, 2);
+        int attackPattern = Random.Range(1, 3);
 
         if(!enableShooting) return;
 
