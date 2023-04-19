@@ -5267,21 +5267,37 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 846843509020247403, guid: 53016857dfd714fd39c06c44af9210db, type: 3}
+      propertyPath: m_EdgeRadius
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 846843509020247403, guid: 53016857dfd714fd39c06c44af9210db, type: 3}
       propertyPath: m_SpriteTilingProperty.pivot.y
       value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 846843509020247403, guid: 53016857dfd714fd39c06c44af9210db, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.x
-      value: 5.57
+      value: 5.41
       objectReference: {fileID: 0}
     - target: {fileID: 846843509020247403, guid: 53016857dfd714fd39c06c44af9210db, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.y
-      value: 4.48
+      value: 4.61
       objectReference: {fileID: 0}
     - target: {fileID: 846843509020247404, guid: 53016857dfd714fd39c06c44af9210db, type: 3}
       propertyPath: target
       value: 
       objectReference: {fileID: 1778147247}
+    - target: {fileID: 846843509020247404, guid: 53016857dfd714fd39c06c44af9210db, type: 3}
+      propertyPath: currentLevel
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 846843509020247404, guid: 53016857dfd714fd39c06c44af9210db, type: 3}
+      propertyPath: level0Health
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 846843509020247404, guid: 53016857dfd714fd39c06c44af9210db, type: 3}
+      propertyPath: level0FireRate
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 846843509020247404, guid: 53016857dfd714fd39c06c44af9210db, type: 3}
       propertyPath: enemyHealthBarBehavior
       value: 

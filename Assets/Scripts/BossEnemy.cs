@@ -7,9 +7,9 @@ public class BossEnemy : MonoBehaviour
     public EnemyHealthBarBehavior enemyHealthBarBehavior;
 
      // Level 0 attributes
-    public int level0Health = 30;
+    public int level0Health = 20;
     public float level0MissileSpeed = 5f;
-    public float level0FireRate = 7f;
+    public float level0FireRate = 2f;
     public int level0MissileDamage = 10;
     public float level0MovementSpeed = 0.5f;
 
@@ -43,11 +43,12 @@ public class BossEnemy : MonoBehaviour
     Transform target;
 
     public int currentLevel = 0;
+    private int maxHealth;
     private int currentHealth;
     private float currentMissileSpeed;
 
     // Define the fire rate in rounds per second
-    public float fireRate = 0.7f;
+    public float fireRate;
     public float fireForce = 50f;
 
     private int missileDamage;
@@ -75,13 +76,18 @@ public class BossEnemy : MonoBehaviour
 
     void Start()
     {
-        enemyHealthBarBehavior.SetHealth(level1Health, level1Health);
 
         SetDifficultyLevel();
+        Debug.Log(maxHealth);
+        Debug.Log(currentHealth);
 
         target = GameObject.FindGameObjectWithTag("Player").transform;
 
         InvokeRepeating("Fire", fireRate, fireRate);
+
+        enemyHealthBarBehavior.SetHealth(maxHealth, currentHealth);
+
+        
 
         // InvokeRepeating("Dodge", dodgeRate, dodgeRate);
     }
@@ -128,7 +134,7 @@ public class BossEnemy : MonoBehaviour
             int damage = Random.Range(3, 6);
             currentHealth -= damage;
             Debug.Log("currentHealth: " + currentHealth);
-            enemyHealthBarBehavior.SetHealth(level1Health,currentHealth);
+            enemyHealthBarBehavior.SetHealth(maxHealth,currentHealth);
         }
     }
 
@@ -167,17 +173,22 @@ public class BossEnemy : MonoBehaviour
 
     void SetDifficultyLevel()
     {
+        // Debug.Log(currentLevel);
         switch (currentLevel)
         {
             case 0:
+                // Debug.Log("0 -- here");
                 currentHealth = level0Health;
+                maxHealth = level0Health;
                 currentMissileSpeed = level0MissileSpeed;
                 fireRate = level0FireRate;
                 missileDamage = level0MissileDamage;
                 movementSpeed = level0MovementSpeed;
                 break;
             case 1:
+                // Debug.Log("1 -- here");
                 currentHealth = level1Health;
+                maxHealth = level1Health;
                 currentMissileSpeed = level1MissileSpeed;
                 fireRate = level1FireRate;
                 missileDamage = level1MissileDamage;
@@ -185,24 +196,33 @@ public class BossEnemy : MonoBehaviour
                 break;
             case 2:
                 currentHealth = level2Health;
+                maxHealth = level2Health;
                 currentMissileSpeed = level2MissileSpeed;
                 fireRate = level2FireRate;
                 missileDamage = level2MissileDamage;
                 movementSpeed = level2MovementSpeed;
+                // Debug.Log("2 -- here");
+
                 break;
             case 3:
                 currentHealth = level3Health;
+                maxHealth = level3Health;
                 currentMissileSpeed = level3MissileSpeed;
                 fireRate = level3FireRate;
                 missileDamage = level3MissileDamage;
                 movementSpeed = level3MovementSpeed;
+                // Debug.Log("3 -- here");
+
                 break;
             default:
-                currentHealth = level1Health;
-                currentMissileSpeed = level1MissileSpeed;
-                fireRate = level1FireRate;
-                missileDamage = level1MissileDamage;
-                movementSpeed = level1MovementSpeed;
+                currentHealth = level0Health;
+                maxHealth = level0Health;
+                currentMissileSpeed = level0MissileSpeed;
+                fireRate = level0FireRate;
+                missileDamage = level0MissileDamage;
+                movementSpeed = level0MovementSpeed;
+                // Debug.Log("default -- here");
+
                 break;
         }
     }
