@@ -5192,11 +5192,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 846843507876547815, guid: 53016857dfd714fd39c06c44af9210db, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.45
+      value: -3.11
       objectReference: {fileID: 0}
     - target: {fileID: 846843507876547815, guid: 53016857dfd714fd39c06c44af9210db, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.24
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 846843509020247400, guid: 53016857dfd714fd39c06c44af9210db, type: 3}
       propertyPath: m_RootOrder
@@ -5267,8 +5267,12 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 846843509020247403, guid: 53016857dfd714fd39c06c44af9210db, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 846843509020247403, guid: 53016857dfd714fd39c06c44af9210db, type: 3}
       propertyPath: m_EdgeRadius
-      value: 3
+      value: 2.5
       objectReference: {fileID: 0}
     - target: {fileID: 846843509020247403, guid: 53016857dfd714fd39c06c44af9210db, type: 3}
       propertyPath: m_SpriteTilingProperty.pivot.y
