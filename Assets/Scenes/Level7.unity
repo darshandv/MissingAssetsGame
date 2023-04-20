@@ -1252,6 +1252,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1086654018920685021, guid: bcaad12b668285948ae14848e1aa3f1a, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bcaad12b668285948ae14848e1aa3f1a, type: 3}
 --- !u!1 &90708715
@@ -18278,7 +18282,7 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 25
-  m_SortingLayerID: 0
+  m_SortingLayerID: 2134036581
   m_SortingOrder: 0
   m_TargetDisplay: 0
 --- !u!224 &1268114434
@@ -28941,6 +28945,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1086654018920685021, guid: bcaad12b668285948ae14848e1aa3f1a, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bcaad12b668285948ae14848e1aa3f1a, type: 3}
 --- !u!1 &1985544667
@@ -29881,7 +29889,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 103419042820495644, guid: 7dec13b18e6cc43cdb0b83455ecce1c1, type: 3}
       propertyPath: level
-      value: 9
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 902022957682496481, guid: 7dec13b18e6cc43cdb0b83455ecce1c1, type: 3}
       propertyPath: m_Name
