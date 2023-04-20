@@ -25,26 +25,26 @@ public static class Config
     //Levels
     public static string[] levels =
     {
-        "LevelTraining1",
-        "LevelTraining2",
-        "BossEnemy0",
-        "Level2",
-        "Level3",
-        "Level4",
-        "BossEnemy1",
-        "Level5",
-        "Level6",
-        "BossEnemy2",
-        "Level7",
-        "Level8",
-        "Level9",
-        "BossEnemy3",
+        "LevelTraining1",//1
+        "LevelTraining2",//2
+        "BossEnemy0",//3
+        "Level2",//4
+        "Level3",//5
+        "Level4",//6
+        "BossEnemy1",//7
+        "Level5",//8
+        "Level6",//9
+        "BossEnemy2",//10
+        "Level7",//11
+        "Level8",//12
+        "Level9",//13
+        "BossEnemy3",//14
 
         // "Scenes/LandingScreen", // Just for testing purposes
     };
     public static int currentLevel = 1;
 
-    public static int[] levelCollectibles = { 1, 3, 4, 6, 6, 6,4, 7, 4,4, 2, 3, 3, 4, };
+    public static int[] levelCollectibles = { 1, 3, 4, 6, 6, 6, 4, 7, 4,4, 2, 3, 3, 4, };
 
     public static void ResetAllVariables()
     {
