@@ -28,7 +28,7 @@ public class Planet : MonoBehaviour
     private void OnTriggerExit2D(Collider2D collision)
     {
         Config.isInPlanet = false;
-        if(collision.name.Contains("FollowEnemy")) {
+        if(collision.name.Contains("FollowEnemy") || collision.name.Contains("Moving Enemy")) {
             EnemyController ec = collision.GetComponent<EnemyController>();
             ec.movementType = MovementType.Follow;
             ec.enableShooting = true;
@@ -83,7 +83,7 @@ public class Planet : MonoBehaviour
         }
         
         if(withinCollider(ship)) {
-            if(ship.name.Contains("FollowEnemy")) {
+            if(ship.name.Contains("FollowEnemy") || collision.name.Contains("Moving Enemy")) {
                 EnemyController ec = ship.GetComponent<EnemyController>();
                 ec.movementType = MovementType.None;
                 ec.enableShooting = false;
