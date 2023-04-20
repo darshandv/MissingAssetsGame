@@ -35,7 +35,8 @@ public class EnemyController : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         InvokeRepeating("Shoot", startInterval, deltaInterval);
         Config.numberofEnemies += 1;
-        enemyHealthBarBehavior.SetHealth(maxEnemyHealth, maxEnemyHealth);
+        if (enemyHealthBarBehavior)
+            enemyHealthBarBehavior.SetHealth(maxEnemyHealth, maxEnemyHealth);
         damagePerBullet = maxEnemyHealth / numBulletsToDie;
     }
 
@@ -61,7 +62,8 @@ public class EnemyController : MonoBehaviour
 
             numBulletsToDie--;
             health = health - damagePerBullet;
-            enemyHealthBarBehavior.SetHealth(maxEnemyHealth, health);
+            if (enemyHealthBarBehavior)
+                enemyHealthBarBehavior.SetHealth(maxEnemyHealth, health);
 
             AnalyticsTracker.playerBulletsHit += 1;
 
