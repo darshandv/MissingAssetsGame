@@ -565,6 +565,7 @@ MonoBehaviour:
   bulletPrefab: {fileID: 6215409759271257246, guid: e248496eab8676b4689c899dec13870f, type: 3}
   bulletSpawnPoint: {fileID: 194607166}
   target: {fileID: 922808027}
+  enemyHealthBarBehavior: {fileID: 1159334074}
   bulletSpeed: 10
   fireRate: 0.5
   numBullets: 5
@@ -1175,7 +1176,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 279894607}
   weapon: {fileID: 1884599709}
-  enemyHealthBarBehavior: {fileID: 0}
+  enemyHealthBarBehavior: {fileID: 1579529863}
   target: {fileID: 922808027}
   startInterval: 2
   deltaInterval: 2
@@ -3462,6 +3463,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 8338405590174001397, guid: c2c688da8a1a04c46b7e66adcf975b99, type: 3}
   m_PrefabInstance: {fileID: 895745920}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &895745922 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8338405590174001396, guid: c2c688da8a1a04c46b7e66adcf975b99, type: 3}
+  m_PrefabInstance: {fileID: 895745920}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e0099a9b18e45a4591776d05a3bd2a6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &902422882
 GameObject:
   m_ObjectHideFlags: 0
@@ -5039,6 +5051,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 8338405590174001397, guid: c2c688da8a1a04c46b7e66adcf975b99, type: 3}
   m_PrefabInstance: {fileID: 1159334072}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1159334074 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8338405590174001396, guid: c2c688da8a1a04c46b7e66adcf975b99, type: 3}
+  m_PrefabInstance: {fileID: 1159334072}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e0099a9b18e45a4591776d05a3bd2a6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1168629144
 GameObject:
   m_ObjectHideFlags: 0
@@ -5933,7 +5956,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 1405015743}
   weapon: {fileID: 1055341520}
-  enemyHealthBarBehavior: {fileID: 0}
+  enemyHealthBarBehavior: {fileID: 895745922}
   target: {fileID: 922808027}
   startInterval: 2
   deltaInterval: 2
@@ -6818,6 +6841,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 8338405590174001397, guid: c2c688da8a1a04c46b7e66adcf975b99, type: 3}
   m_PrefabInstance: {fileID: 1579529861}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1579529863 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8338405590174001396, guid: c2c688da8a1a04c46b7e66adcf975b99, type: 3}
+  m_PrefabInstance: {fileID: 1579529861}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e0099a9b18e45a4591776d05a3bd2a6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1581711973
 GameObject:
   m_ObjectHideFlags: 0

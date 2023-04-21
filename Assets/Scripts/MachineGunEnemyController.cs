@@ -6,12 +6,15 @@ public class MachineGunEnemyController : MonoBehaviour
     public GameObject bulletPrefab;
     public Transform bulletSpawnPoint;
     public Transform target;
+    public EnemyHealthBarBehavior enemyHealthBarBehavior;
+    int maxEnemyHealth = 100;
+    int health = 100;
 
     // public PlayerMovement pm;
     public float bulletSpeed = 10f;
     public float fireRate = 0.1f;
     public int numBullets = 5;
-
+    int damagePerBullet;
     public int numBulletsToDie = 5;
 
     private float timeUntilNextFire = 0f;
@@ -20,6 +23,9 @@ public class MachineGunEnemyController : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         Config.numberofEnemies += 1;
+        if (enemyHealthBarBehavior)
+            enemyHealthBarBehavior.SetHealth(maxEnemyHealth, maxEnemyHealth);
+        damagePerBullet = maxEnemyHealth / numBulletsToDie;
     }
 
     void Update()
@@ -40,7 +46,10 @@ public class MachineGunEnemyController : MonoBehaviour
         if (collision.collider.CompareTag("PlayerBullet"))
         {
             numBulletsToDie--;
+            health = health - damagePerBullet;
             AnalyticsTracker.playerBulletsHit += 1;
+            if (enemyHealthBarBehavior)
+                enemyHealthBarBehavior.SetHealth(maxEnemyHealth, health);
 
             if (numBulletsToDie == 0)
             {
