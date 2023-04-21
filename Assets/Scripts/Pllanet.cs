@@ -83,7 +83,7 @@ public class Planet : MonoBehaviour
         }
         
         if(withinCollider(ship)) {
-            if(ship.name.Contains("FollowEnemy") || collision.name.Contains("Moving Enemy")) {
+            if(ship.name.Contains("FollowEnemy") || ship.name.Contains("Moving Enemy")) {
                 EnemyController ec = ship.GetComponent<EnemyController>();
                 ec.movementType = MovementType.None;
                 ec.enableShooting = false;
