@@ -313,7 +313,7 @@ public class PlayerMovement : MonoBehaviour
             //     // StatisticsManager.buildAnaltyicsDataObjAndPush(level:0, type:"ThrustPress")
             // }
 
-            if ((Input.GetKeyDown(KeyCode.Space)) || (Input.GetKeyDown(KeyCode.E)))
+            if ((Input.GetKeyDown(KeyCode.Space)) || (Input.GetKeyDown(KeyCode.E)) || (Input.GetKeyDown(KeyCode.Mouse0)))
             {
                 weapon.Fire();
             }
