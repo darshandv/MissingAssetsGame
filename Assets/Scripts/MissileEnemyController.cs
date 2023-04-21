@@ -12,6 +12,9 @@ public class MissileEnemyController : MonoBehaviour
     public float maxMissileSpeed = 100f;
     public float accelerationTime = 1f;
     public float fireRate = 1.0f;
+    public EnemyHealthBarBehavior enemyHealthBarBehavior;
+    int maxEnemyHealth = 100;
+    int health = 100;
 
     // public float pauseTime = 0.5f;
 
@@ -19,6 +22,7 @@ public class MissileEnemyController : MonoBehaviour
     private float timeUntilNextFire;
 
     public int numOfBulletsDie = 5;
+    int damagePerBullet;
 
     void Start()
     {
