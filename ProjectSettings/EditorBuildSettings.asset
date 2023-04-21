@@ -53,7 +53,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/ControlsScreen.unity
     guid: c2db29a5e3f554a349e6e4076328c533
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/SampleScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 0
@@ -72,9 +72,18 @@ EditorBuildSettings:
     path: Assets/Scenes/BossEnemy1.unity
     guid: 346f41236fdf1403597368e4d8432aee
   - enabled: 1
+    path: Assets/Scenes/LevelTraining1.unity
+    guid: 767928ee34117ce488461a94958712ec
+  - enabled: 1
     path: Assets/Scenes/BossEnemy0.unity
     guid: 234337465a4c24e05b16dbf271e8baa1
   - enabled: 1
     path: Assets/Scenes/BossEnemy3.unity
     guid: 1cd3973e123f549ccbec33b74ecf48f2
+  - enabled: 1
+    path: Assets/Scenes/Level101.unity
+    guid: 44a10e7a7af7aa848ac46546c1caaa63
+  - enabled: 1
+    path: Assets/Scenes/Level17.unity
+    guid: b0fe43d8a9283774a98a45ae0b7394ee
   m_configObjects: {}
