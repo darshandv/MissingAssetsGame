@@ -3937,12 +3937,12 @@ PrefabInstance:
       objectReference: {fileID: 335390099}
     - target: {fileID: 3607417459590073720, guid: 43aabf3e24f9c47b98876da404ee6da2, type: 3}
       propertyPath: backupGoals.Array.size
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 3607417459590073720, guid: 43aabf3e24f9c47b98876da404ee6da2, type: 3}
       propertyPath: backupGoals.Array.data[0]
       value: 
-      objectReference: {fileID: 335390099}
+      objectReference: {fileID: 641422619}
     - target: {fileID: 3607417459590073720, guid: 43aabf3e24f9c47b98876da404ee6da2, type: 3}
       propertyPath: backupGoals.Array.data[1]
       value: 
