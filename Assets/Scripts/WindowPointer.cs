@@ -112,6 +112,10 @@ public class WindowPointer : MonoBehaviour
                     }
                     backupGoals.RemoveAt(0);
                 }
+                else
+                {
+                    Destroy(gameObject);
+                }
             }
         }
     }
