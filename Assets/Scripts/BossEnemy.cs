@@ -166,7 +166,7 @@ public class BossEnemy : MonoBehaviour
 
         if (currentHealth <= 0)
         {
-            Config.bossEnemyDead = true;
+            Config.bossEnemyDead[Config.currentLevel-1] = true;
             Destroy(gameObject);
         }
     }

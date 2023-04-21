@@ -21,7 +21,7 @@ public class MissileEnemyController : MonoBehaviour
     private float currentMissileSpeed;
     private float timeUntilNextFire;
 
-    public int numOfBulletsDie = 5;
+    public int numOfBulletsToDie = 5;
     int damagePerBullet;
 
     void Start()
@@ -31,6 +31,9 @@ public class MissileEnemyController : MonoBehaviour
         // timeUntilNextFire = fireRate;
         Config.numberofEnemies += 1;
         InvokeRepeating("FireMissile", 0f, fireRate);
+        if (enemyHealthBarBehavior)
+            enemyHealthBarBehavior.SetHealth(maxEnemyHealth, maxEnemyHealth);
+        damagePerBullet = maxEnemyHealth / numOfBulletsToDie;
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -38,9 +41,12 @@ public class MissileEnemyController : MonoBehaviour
         if (collision.collider.CompareTag("PlayerBullet"))
         {
             AnalyticsTracker.playerBulletsHit += 1;
-            numOfBulletsDie--;
+            numOfBulletsToDie--;
+            health = health - damagePerBullet;
+            if (enemyHealthBarBehavior)
+                enemyHealthBarBehavior.SetHealth(maxEnemyHealth, health);
 
-            if (numOfBulletsDie == 0)
+            if (numOfBulletsToDie == 0)
             {
                 AnalyticsTracker.enemiesKilled += 1;
                 Destroy(gameObject);
