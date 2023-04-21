@@ -57,6 +57,10 @@ public class MissileController : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         // Debug.Log("collision of missile");
-        Destroy(gameObject);
+        if (!(collision.collider.CompareTag("Enemy"))){
+            Destroy(gameObject);
+            Debug.Log(collision.collider.name);
+        }
+        
     }
 }
