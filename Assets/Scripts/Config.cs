@@ -38,7 +38,7 @@ public static class Config
         "Level7",//11
         "Level8",//12
         "Level9",//13
-        "BossEnemy3",//14
+        "BossEnemy3"//14
 
         // "Scenes/LandingScreen", // Just for testing purposes
     };
