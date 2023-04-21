@@ -2957,6 +2957,7 @@ MonoBehaviour:
   bulletPrefab: {fileID: 6215409759271257246, guid: e248496eab8676b4689c899dec13870f, type: 3}
   bulletSpawnPoint: {fileID: 1501884025}
   target: {fileID: 1762540031}
+  enemyHealthBarBehavior: {fileID: 0}
   bulletSpeed: 20
   fireRate: 1
   numBullets: 5
@@ -4453,7 +4454,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3160353721520374341, guid: b911bc1202ac5414ab15dbee16d459a1, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3160353721830765640, guid: b911bc1202ac5414ab15dbee16d459a1, type: 3}
       propertyPath: m_SortingOrder
@@ -4546,6 +4547,14 @@ PrefabInstance:
     - target: {fileID: 3160353722931291970, guid: b911bc1202ac5414ab15dbee16d459a1, type: 3}
       propertyPath: m_SortingOrder
       value: 197
+      objectReference: {fileID: 0}
+    - target: {fileID: 3160353722931291971, guid: b911bc1202ac5414ab15dbee16d459a1, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3160353722931291971, guid: b911bc1202ac5414ab15dbee16d459a1, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b911bc1202ac5414ab15dbee16d459a1, type: 3}
@@ -5444,6 +5453,7 @@ MonoBehaviour:
   bulletPrefab: {fileID: 6215409759271257246, guid: e248496eab8676b4689c899dec13870f, type: 3}
   bulletSpawnPoint: {fileID: 1024718088}
   target: {fileID: 1762540031}
+  enemyHealthBarBehavior: {fileID: 0}
   bulletSpeed: 10
   fireRate: 0.5
   numBullets: 5
