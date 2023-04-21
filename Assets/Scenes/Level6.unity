@@ -4328,7 +4328,7 @@ GameObject:
   - component: {fileID: 397524536}
   - component: {fileID: 397524540}
   m_Layer: 0
-  m_Name: EnemyFollow10
+  m_Name: FollowEnemy10
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6930,7 +6930,7 @@ GameObject:
   - component: {fileID: 589945255}
   - component: {fileID: 589945259}
   m_Layer: 0
-  m_Name: EnemyFollow1
+  m_Name: FollowEnemy1
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7464,7 +7464,7 @@ GameObject:
   - component: {fileID: 1843307022}
   - component: {fileID: 1843307024}
   m_Layer: 0
-  m_Name: EnemyFollow12
+  m_Name: FollowEnemy12
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9668,7 +9668,7 @@ GameObject:
   - component: {fileID: 800548160}
   - component: {fileID: 800548164}
   m_Layer: 0
-  m_Name: EnemyFollow4
+  m_Name: FollowEnemy4
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11626,7 +11626,7 @@ GameObject:
   - component: {fileID: 1056759093}
   - component: {fileID: 1056759097}
   m_Layer: 0
-  m_Name: EnemyFollow11
+  m_Name: FollowEnemy11
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -18881,7 +18881,7 @@ GameObject:
   - component: {fileID: 1835313630}
   - component: {fileID: 1835313634}
   m_Layer: 0
-  m_Name: EnemyFollow6
+  m_Name: FollowEnemy6
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

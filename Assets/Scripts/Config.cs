@@ -22,6 +22,8 @@ public static class Config
     public static float thrustReductionAmountLevel3 = 5f;
     public static float thrustIncrementAmountLevel3 = 1 / 32;
 
+    public static bool bossEnemyDead = false;
+
     //Levels
     public static string[] levels =
     {
@@ -36,15 +38,15 @@ public static class Config
         "Level6",//9
         "BossEnemy2",//10
         "Level7",//11
-        "Level17",//12
+        "Level8",//12
         "Level9",//13
-        "BossEnemy3"//14
+        "BossEnemy3",//14
 
         // "Scenes/LandingScreen", // Just for testing purposes
     };
     public static int currentLevel = 1;
 
-    public static int[] levelCollectibles = { 1, 3, 4, 6, 6, 6, 4, 7, 4, 4, 2, 4, 3, 4, };
+    public static int[] levelCollectibles = { 1, 3, 4, 6, 6, 6, 4, 7, 4, 4, 2, 3, 3, 4, };
 
     public static void ResetAllVariables()
     {
@@ -60,5 +62,6 @@ public static class Config
         thrustReductionAmountLevel3 = 5f;
         thrustIncrementAmountLevel3 = 1 / 32;
         isInPlanet = false;
+        bossEnemyDead = false;
     }
 }
