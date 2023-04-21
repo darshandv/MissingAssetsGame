@@ -47,7 +47,7 @@ public static class Config
     public static int currentLevel = 1;
 
     public static int[] levelCollectibles = { 1, 3, 4, 6, 6, 6, 4, 7, 4, 4, 2, 3, 3, 4, };
-    public static int[] bossEnemyLevels = { 3, 7, 10, 14 };
+    public static int[] bossEnemyLevels = { 2, 6, 9, 13 }; //Give Array index of Level
     public static void ResetAllVariables()
     {
         numberofEnemies = 0;
