@@ -4627,10 +4627,10 @@ MonoBehaviour:
   increment: 0.05
   movementType: 2
   moveY: 1
-  speed: 1
+  speed: 3
   followStopDistance: 2.5
   followLowerBound: 2.5
-  followUpperBound: 5
+  followUpperBound: 20
   enableShooting: 1
   numBulletsToDie: 5
 --- !u!212 &397524538
@@ -7052,7 +7052,7 @@ GameObject:
   - component: {fileID: 589945255}
   - component: {fileID: 589945254}
   m_Layer: 0
-  m_Name: FollowEnemy1
+  m_Name: EnemyFollow1
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9723,7 +9723,7 @@ GameObject:
   - component: {fileID: 800548160}
   - component: {fileID: 800548159}
   m_Layer: 0
-  m_Name: FollowEnemy4
+  m_Name: EnemyFollow4
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11761,7 +11761,7 @@ MonoBehaviour:
   speed: 1
   followStopDistance: 2.5
   followLowerBound: 2.5
-  followUpperBound: 5
+  followUpperBound: 20
   enableShooting: 1
   numBulletsToDie: 10
 --- !u!212 &1056759095
@@ -12824,6 +12824,7 @@ MonoBehaviour:
   bulletPrefab: {fileID: 6215409759271257246, guid: e248496eab8676b4689c899dec13870f, type: 3}
   bulletSpawnPoint: {fileID: 51750892}
   target: {fileID: 817938959}
+  enemyHealthBarBehavior: {fileID: 0}
   bulletSpeed: 10
   fireRate: 0.1
   numBullets: 5
@@ -18888,7 +18889,7 @@ GameObject:
   - component: {fileID: 1835313630}
   - component: {fileID: 1835313629}
   m_Layer: 0
-  m_Name: FollowEnemy6
+  m_Name: EnemyFollow6
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -19407,7 +19408,7 @@ MonoBehaviour:
   speed: 3
   followStopDistance: 2.5
   followLowerBound: 2.5
-  followUpperBound: 5
+  followUpperBound: 20
   enableShooting: 1
   numBulletsToDie: 5
 --- !u!1 &1844946113
