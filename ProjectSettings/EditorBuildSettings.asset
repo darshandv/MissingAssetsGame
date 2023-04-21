@@ -11,9 +11,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/LandingScreen.unity
     guid: 7f0be69f090564dcc9fe6c4b8c912d1d
-  - enabled: 1
-    path: Assets/Scenes/LevelTraining1.unity
-    guid: 83ae54bf7eb3f45e6bcf230de54fe87f
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
   - enabled: 1
     path: Assets/Scenes/LevelTraining2.unity
     guid: 06509e38863b14ae3923e304710893a6

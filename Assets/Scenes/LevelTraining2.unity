@@ -429,6 +429,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bcaad12b668285948ae14848e1aa3f1a, type: 3}
+--- !u!4 &17510625 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1086654018920685020, guid: bcaad12b668285948ae14848e1aa3f1a, type: 3}
+  m_PrefabInstance: {fileID: 17510624}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &58071004
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4058,15 +4063,15 @@ PrefabInstance:
     - target: {fileID: 3607417459590073720, guid: 43aabf3e24f9c47b98876da404ee6da2, type: 3}
       propertyPath: backupGoals.Array.data[0]
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 335390099}
     - target: {fileID: 3607417459590073720, guid: 43aabf3e24f9c47b98876da404ee6da2, type: 3}
       propertyPath: backupGoals.Array.data[1]
       value: 
-      objectReference: {fileID: 2024198565}
+      objectReference: {fileID: 17510625}
     - target: {fileID: 3607417459590073720, guid: 43aabf3e24f9c47b98876da404ee6da2, type: 3}
       propertyPath: backupGoals.Array.data[2]
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 2024198565}
     - target: {fileID: 3607417459590073720, guid: 43aabf3e24f9c47b98876da404ee6da2, type: 3}
       propertyPath: backupGoals.Array.data[3]
       value: 
