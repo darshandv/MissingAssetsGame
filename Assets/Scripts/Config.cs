@@ -22,7 +22,7 @@ public static class Config
     public static float thrustReductionAmountLevel3 = 5f;
     public static float thrustIncrementAmountLevel3 = 1 / 32;
 
-    public static bool bossEnemyDead = false;
+    public static bool[] bossEnemyDead = { true, true, false, true, true, true, false, true, true, false, true, true, true, false};
 
     //Levels
     public static string[] levels =
@@ -47,7 +47,7 @@ public static class Config
     public static int currentLevel = 1;
 
     public static int[] levelCollectibles = { 1, 3, 4, 6, 6, 6, 4, 7, 4, 4, 2, 3, 3, 4, };
-
+    public static int[] bossEnemyLevels = { 3, 7, 10, 14 };
     public static void ResetAllVariables()
     {
         numberofEnemies = 0;
@@ -62,6 +62,10 @@ public static class Config
         thrustReductionAmountLevel3 = 5f;
         thrustIncrementAmountLevel3 = 1 / 32;
         isInPlanet = false;
-        bossEnemyDead = false;
+        for(int i=0;i< bossEnemyLevels.Length; i++)
+        {
+            bossEnemyDead[bossEnemyLevels[i]] = false;
+        }
+
     }
 }

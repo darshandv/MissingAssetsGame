@@ -50,9 +50,6 @@ public class MachineGunEnemyController : MonoBehaviour
             if (enemyHealthBarBehavior)
                 enemyHealthBarBehavior.SetHealth(maxEnemyHealth, health);
             AnalyticsTracker.playerBulletsHit += 1;
-            if (enemyHealthBarBehavior)
-                enemyHealthBarBehavior.SetHealth(maxEnemyHealth, health);
-
             if (numBulletsToDie == 0)
             {
                 AnalyticsTracker.enemiesKilled += 1;

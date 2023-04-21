@@ -30,7 +30,7 @@ public class EndLevelMenu : MenuBehavior
         int levelNumber = Array.IndexOf(Config.levels,currentScene);
         //Debug.Log(currentScene+" "+levelNumber);
         changeData returnData = new changeData();
-        if (CollectibleComponent.CollectedComponents == Config.levelCollectibles[levelNumber] && Config.bossEnemyDead) {
+        if (CollectibleComponent.CollectedComponents == Config.levelCollectibles[levelNumber] && Config.bossEnemyDead[levelNumber]) {
             returnData.levelDone = true;
             returnData.nextLevel = (levelNumber == Config.levels.Length - 1)? 
             "endLevel" :  Config.levels[++levelNumber];
