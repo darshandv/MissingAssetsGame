@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class BossEnemy : MonoBehaviour
 {
@@ -73,6 +74,7 @@ public class BossEnemy : MonoBehaviour
 
     public float followLowerBound = 3.0f;
     public float followUpperBound = 15.0f;
+    int levelNumber;
 
     void Start()
     {
@@ -84,8 +86,8 @@ public class BossEnemy : MonoBehaviour
         InvokeRepeating("Fire", fireRate, fireRate);
 
         enemyHealthBarBehavior.SetHealth(maxHealth, currentHealth);
-
-        
+        string currentScene = SceneManager.GetActiveScene().name;
+        levelNumber = System.Array.IndexOf(Config.levels, currentScene);
 
         // InvokeRepeating("Dodge", dodgeRate, dodgeRate);
     }
@@ -162,11 +164,12 @@ public class BossEnemy : MonoBehaviour
             transform.position += (Vector3)(direction * moveSpeed * Time.deltaTime);
         }
 
-        //Debug.Log("currentHealth: " + currentHealth);
+        Debug.Log("currentHealth: " + currentHealth);
 
         if (currentHealth <= 0)
         {
-            Config.bossEnemyDead[Config.currentLevel-1] = true;
+            //Debug.Log("Level:" +levelNumber+" "+Config.bossEnemyDead[levelNumber]);
+            Config.bossEnemyDead[levelNumber] = true;
             Destroy(gameObject);
         }
     }
