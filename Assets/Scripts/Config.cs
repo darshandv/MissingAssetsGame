@@ -48,14 +48,14 @@ public static class Config
     {
         "LevelTraining1",//1
         "LevelTraining2",//2
-        "BossEnemy0",//3
-        "Level2",//4
-        "Level3",//5
-        "Level4",//6
-        "BossEnemy1",//7
+        "Level2",//3
+        // "Level3",//4
+        "Level4",//5
+        "Level17",//6
+        "Level9",//7
         "Level5",//8
         "Level6",//9
-        "BossEnemy2",//10
+        "BossEnemy0",//10
         "Level7",//11
         "Level17",//12
         "Level9",//13
