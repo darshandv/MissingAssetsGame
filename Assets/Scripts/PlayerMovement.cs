@@ -39,8 +39,8 @@ public class PlayerMovement : MonoBehaviour
     {
         string currentScene = SceneManager.GetActiveScene().name;
         int levelNumber = Array.IndexOf(Config.levels,currentScene);
-        Debug.Log("Level number" + levelNumber);
-		health = Config.maxHealth[levelNumber];
+        string newScene = Config.levels[++levelNumber];
+		health = Config.maxHealth[newScene];
     }
 
     public static int getHealth()
@@ -254,6 +254,7 @@ public class PlayerMovement : MonoBehaviour
 
     void Start()
     {
+        Debug.Log("start here");
         healthBar.SetHealth(getHealth());
         player_rigid_body = this.GetComponent<Rigidbody2D>();
         // player_rigid_body.velocity = Vector3.right * 2;

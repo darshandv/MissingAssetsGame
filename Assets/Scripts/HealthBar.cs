@@ -17,7 +17,7 @@ public class HealthBar : MonoBehaviour
 		string currentScene = SceneManager.GetActiveScene().name;
         int levelNumber = Array.IndexOf(Config.levels,currentScene);
 
-		int health = Config.maxHealth[levelNumber];
+		int health = Config.maxHealth[currentScene];
 		slider.maxValue = health;
 		slider.value = health;
 		fill.color = gradient.Evaluate(1f);

@@ -89,6 +89,7 @@ public class BossEnemy : MonoBehaviour
         string currentScene = SceneManager.GetActiveScene().name;
         levelNumber = System.Array.IndexOf(Config.levels, currentScene);
 
+        Config.bossEnemyDead = false;
         // InvokeRepeating("Dodge", dodgeRate, dodgeRate);
     }
 
@@ -169,7 +170,7 @@ public class BossEnemy : MonoBehaviour
         if (currentHealth <= 0)
         {
             //Debug.Log("Level:" +levelNumber+" "+Config.bossEnemyDead[levelNumber]);
-            Config.bossEnemyDead[levelNumber] = true;
+            Config.bossEnemyDead = true;
             Destroy(transform.parent.gameObject);
         }
     }

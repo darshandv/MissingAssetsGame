@@ -15,7 +15,7 @@ public class CollectibeBar : MonoBehaviour
         string currentScene = SceneManager.GetActiveScene().name;
         int levelNumber = System.Array.IndexOf(Config.levels, currentScene);
         collectibleText = GameObject.FindGameObjectWithTag("CollectibleText").GetComponent<Text>();
-        totalCollectibles = Config.levelCollectibles[levelNumber];
+        totalCollectibles = Config.levelCollectibles[currentScene];
 
     }
 
