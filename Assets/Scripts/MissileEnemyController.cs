@@ -49,7 +49,7 @@ public class MissileEnemyController : MonoBehaviour
             if (numOfBulletsToDie == 0)
             {
                 AnalyticsTracker.enemiesKilled += 1;
-                Destroy(gameObject);
+                Destroy(transform.parent.gameObject);
             }
         }
     }

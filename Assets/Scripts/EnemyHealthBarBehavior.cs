@@ -11,10 +11,13 @@ public class EnemyHealthBarBehavior : MonoBehaviour
     public Vector3 offset;
     public Image fill;
 
+    private Transform enemy;
+
     // Start is called before the first frame update
     void Start()
     {
-
+        Transform enemyContainer = transform.parent;
+        enemy = enemyContainer.GetChild(1);
     }
 
     public void SetHealth(float maxHealth, float health)
@@ -33,6 +36,6 @@ public class EnemyHealthBarBehavior : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        slider.transform.position = Camera.main.WorldToScreenPoint(transform.parent.position + offset);
+        slider.transform.position = Camera.main.WorldToScreenPoint(enemy.position + offset);
     }
 }

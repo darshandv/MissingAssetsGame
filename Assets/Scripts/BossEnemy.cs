@@ -170,7 +170,7 @@ public class BossEnemy : MonoBehaviour
         {
             //Debug.Log("Level:" +levelNumber+" "+Config.bossEnemyDead[levelNumber]);
             Config.bossEnemyDead[levelNumber] = true;
-            Destroy(gameObject);
+            Destroy(transform.parent.gameObject);
         }
     }
 

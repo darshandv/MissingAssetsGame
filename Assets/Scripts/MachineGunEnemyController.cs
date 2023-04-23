@@ -53,7 +53,7 @@ public class MachineGunEnemyController : MonoBehaviour
             if (numBulletsToDie == 0)
             {
                 AnalyticsTracker.enemiesKilled += 1;
-                Destroy(gameObject);
+                Destroy(transform.parent.gameObject);
             }
         }
     }
