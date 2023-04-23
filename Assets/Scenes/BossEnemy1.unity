@@ -4901,6 +4901,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BossEnemyHealthBar
       objectReference: {fileID: 0}
+    - target: {fileID: 8338405590174001396, guid: c2c688da8a1a04c46b7e66adcf975b99, type: 3}
+      propertyPath: offset.y
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 8338405590174001397, guid: c2c688da8a1a04c46b7e66adcf975b99, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -5545,7 +5549,7 @@ PolygonCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
