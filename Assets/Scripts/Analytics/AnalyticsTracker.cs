@@ -19,7 +19,7 @@ public class Metric5 {
 
 public class Metric6{
     public float remainingThrust;
-    public long remainingHealth;
+    public int remainingHealth;
     public string cause;
 }
 
@@ -37,7 +37,7 @@ public static class AnalyticsTracker
     public static int enemyBulletsHit = 0; // Enemy bullets that hit player
     public static int totalEnemyBullets = 0; // Total Enemy Bullets fired
     public static bool isOutOfBounds = false;
-    public static long health = 0;
+    public static int health = 0;
     public static float thrust = 0;
     public static int thrustZeroCounter = 0;
     public static int shieldCollected = 0;

@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
+using System;
+
 
 public class HealthBar : MonoBehaviour
 {
@@ -10,8 +13,11 @@ public class HealthBar : MonoBehaviour
 	public Gradient gradient;
 	public Image fill;
 
-	public void SetMaxHealth(int health)
-	{
+	void Start() {
+		string currentScene = SceneManager.GetActiveScene().name;
+        int levelNumber = Array.IndexOf(Config.levels,currentScene);
+
+		int health = Config.maxHealth[levelNumber];
 		slider.maxValue = health;
 		slider.value = health;
 		fill.color = gradient.Evaluate(1f);

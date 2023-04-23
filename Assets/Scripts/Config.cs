@@ -23,7 +23,7 @@ public static class Config
     public static float thrustIncrementAmountLevel3 = 1 / 32;
 
     public static bool[] bossEnemyDead = { true, true, false, true, true, true, false, true, true, false, true, true, true, false};
-
+    public static int[] maxHealth =  { 50,50,50,50,50,50,50,50,50,50,50,50,50,50 };
     //Levels
     public static string[] levels =
     {
