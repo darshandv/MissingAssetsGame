@@ -37,10 +37,10 @@ public static class Config
         {"BossEnemy1",50},
         {"Level5",50},
         {"Level6",50},
-        {"BossEnemy2",50},
+        {"BossEnemy2",200},
         {"Level7",50},
         {"Level17",50},
-        {"Level9",100},
+        {"Level9",50},
         {"BossEnemy3",50}
     };
     //Levels
@@ -49,17 +49,17 @@ public static class Config
         "LevelTraining1",//1
         "LevelTraining2",//2
         "Level2",//3
-        // "Level3",//4
+        "Level3",//4
         "Level4",//5
         "Level17",//6
         "Level9",//7
         "Level5",//8
         "Level6",//9
-        "BossEnemy0",//10
+        "BossEnemy3",//10
         "Level7",//11
         "Level17",//12
         "Level9",//13
-        "BossEnemy3",//14
+        "BossEnemy2",//14
 
         // "Scenes/LandingScreen", // Just for testing purposes
     };
