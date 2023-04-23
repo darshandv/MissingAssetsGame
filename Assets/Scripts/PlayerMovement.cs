@@ -173,8 +173,8 @@ public class PlayerMovement : MonoBehaviour
     {
         if (Config.isInPlanet)
             return;
-        
-        player_rigid_body.velocity = Vector2.zero;
+        Vector2 currentVelocity = player_rigid_body.velocity;
+        player_rigid_body.velocity = Vector2.Lerp(currentVelocity, Vector2.zero, 1f);
     }
 
     private void allowLimitedThrust()
@@ -192,10 +192,11 @@ public class PlayerMovement : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.W))
             {
                 // Reduce thrust instantly
-                if (tc.getThrust()>0.1){
+                if (tc.getThrust() > 0.1)
+                {
                     applyForceOnPlayer();
                 }
-                
+
                 tc.reduceThrust(
                     (
                         (Config.currentLevel == 3)
@@ -208,7 +209,8 @@ public class PlayerMovement : MonoBehaviour
             else if (Input.GetKey(KeyCode.W))
             {
                 // Reduce thrust continuously if key is held down
-                if (tc.getThrust()>0.1){
+                if (tc.getThrust() > 0.1)
+                {
                     applyForceOnPlayer();
                 }
                 if (!isReducingThrust)
@@ -313,7 +315,11 @@ public class PlayerMovement : MonoBehaviour
             //     // StatisticsManager.buildAnaltyicsDataObjAndPush(level:0, type:"ThrustPress")
             // }
 
-            if ((Input.GetKeyDown(KeyCode.Space)) || (Input.GetKeyDown(KeyCode.E)) || (Input.GetKeyDown(KeyCode.Mouse0)))
+            if (
+                (Input.GetKeyDown(KeyCode.Space))
+                || (Input.GetKeyDown(KeyCode.E))
+                || (Input.GetKeyDown(KeyCode.Mouse0))
+            )
             {
                 weapon.Fire();
             }
