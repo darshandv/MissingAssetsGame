@@ -1226,8 +1226,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 101781988}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.1139, y: -0.232, z: 0}
-  m_LocalScale: {x: 91.5156, y: 63.94649, z: 12.806556}
+  m_LocalPosition: {x: 0.0955, y: -2.6568, z: 0}
+  m_LocalScale: {x: 92.34898, y: 65.828636, z: 12.806556}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -20475,11 +20475,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3160353721983846044, guid: b911bc1202ac5414ab15dbee16d459a1, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -39.4
+      value: -31.1
       objectReference: {fileID: 0}
     - target: {fileID: 3160353721983846044, guid: b911bc1202ac5414ab15dbee16d459a1, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 22.9
+      value: 15.2
       objectReference: {fileID: 0}
     - target: {fileID: 3160353721983846044, guid: b911bc1202ac5414ab15dbee16d459a1, type: 3}
       propertyPath: m_LocalPosition.z
@@ -29049,7 +29049,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   followSpeed: 10
   target: {fileID: 1762540031}
-  godViewOrthographicSize: 35
+  godViewOrthographicSize: 28
   levelTransform: {fileID: 101781990}
   toggleGodViewKey: 113
   godViewZoomSpeed: 2.5

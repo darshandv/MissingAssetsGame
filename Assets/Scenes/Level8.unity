@@ -200,8 +200,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 30171467}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.1139, y: -0.232, z: 0}
-  m_LocalScale: {x: 91.5156, y: 63.94649, z: 12.806556}
+  m_LocalPosition: {x: 13.7456, y: 11.0832, z: 0}
+  m_LocalScale: {x: 64.253105, y: 41.315826, z: 12.806556}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -6555,7 +6555,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   followSpeed: 10
   target: {fileID: 1762540031}
-  godViewOrthographicSize: 35
+  godViewOrthographicSize: 20
   levelTransform: {fileID: 30171469}
   toggleGodViewKey: 113
   godViewZoomSpeed: 2.5
