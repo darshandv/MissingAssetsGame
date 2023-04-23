@@ -39,11 +39,11 @@ public class PlayerMovement : MonoBehaviour
     {
         string currentScene = SceneManager.GetActiveScene().name;
         int levelNumber = Array.IndexOf(Config.levels,currentScene);
-
-		int health = Config.maxHealth[levelNumber];
+        Debug.Log("Level number" + levelNumber);
+		health = Config.maxHealth[levelNumber];
     }
 
-    public static long getHealth()
+    public static int getHealth()
     {
         return health;
     }
@@ -155,7 +155,7 @@ public class PlayerMovement : MonoBehaviour
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         resetHealth();
-        healthBar.SetHealth(100);
+        healthBar.SetHealth(50);
     }
 
     void gameOver()
