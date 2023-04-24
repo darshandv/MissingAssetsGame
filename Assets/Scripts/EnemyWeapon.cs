@@ -7,6 +7,7 @@ public class EnemyWeapon : MonoBehaviour
 
     public GameObject bulletPrefab;
     public Transform firePoint;
+    public float bulletLife = 3f;
     public float fireForce = 1f;
 
     public void Fire(Transform target) 
@@ -15,6 +16,8 @@ public class EnemyWeapon : MonoBehaviour
             AnalyticsTracker.totalEnemyBullets += 1;
             
             GameObject bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
+            Bullet mc = bullet.GetComponent<Bullet>();
+            mc.lifeTime = bulletLife;
 
             Vector2 direction = (target.position - bullet.transform.position).normalized;
 

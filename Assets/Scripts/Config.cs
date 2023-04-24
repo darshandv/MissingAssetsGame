@@ -50,18 +50,16 @@ public static class Config
         "LevelTraining1",//1
         "LevelTraining2",//2
         "Level6",//3
-        "MiniBoss",
-        "Level2",//4
-        "Level3",//5
-        "Level4",//6
-        "Level9",//7    
-        "BossEnemy0",//10
-        "Level17",//8
-        "Level5",//9
-        "Level7",//11
-        "Level17",//12
-        "Level9",//13
-        "BossEnemy3",//14
+        "MiniBoss", //4
+        "Level2",//5
+        "Level3",//6
+        "Level4",//7
+        "Level9",//8    
+        "BossEnemy0",//9
+        "Level17",//10
+        "Level5",//11
+        "Level7",//12
+        "BossEnemy3",//13
 
         // "Scenes/LandingScreen", // Just for testing purposes
     };
