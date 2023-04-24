@@ -68,7 +68,7 @@ public static class Config
     public static Dictionary<string, int> levelCollectibles = new Dictionary<string, int>(){
         {"LevelTraining1",1},
         {"LevelTraining2",3},
-        {"BossEnemy0",0},
+        {"BossEnemy0",1},
         {"Level2",6},
         {"Level3",6},
         {"Level4",6},

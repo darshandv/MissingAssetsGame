@@ -3024,6 +3024,7 @@ MonoBehaviour:
   followLowerBound: 2.5
   followUpperBound: 20
   enableShooting: 1
+  bulletLife: 3
   numBulletsToDie: 5
 --- !u!212 &762306089
 SpriteRenderer:
@@ -3270,6 +3271,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletPrefab: {fileID: 6215409759271257246, guid: e248496eab8676b4689c899dec13870f, type: 3}
   firePoint: {fileID: 1553087388}
+  bulletLife: 3
   fireForce: 20
 --- !u!212 &962149970
 SpriteRenderer:
@@ -4402,6 +4404,10 @@ PrefabInstance:
     - target: {fileID: 902022957682496494, guid: 7dec13b18e6cc43cdb0b83455ecce1c1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1052704605356897599, guid: 7dec13b18e6cc43cdb0b83455ecce1c1, type: 3}
+      propertyPath: m_Text
+      value: ': 0/1'
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7dec13b18e6cc43cdb0b83455ecce1c1, type: 3}
