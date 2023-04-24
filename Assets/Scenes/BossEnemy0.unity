@@ -2483,7 +2483,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca2910debf72ed8459274f7e9b51e76a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  force_of_push: 11
+  force_of_push: 3
   isBlackHole: 0
   eventHorizon: 10
   enableTrap: 0
@@ -4007,7 +4007,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca2910debf72ed8459274f7e9b51e76a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  force_of_push: 12
+  force_of_push: 3
   isBlackHole: 0
   eventHorizon: 10
   enableTrap: 0
@@ -10654,7 +10654,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca2910debf72ed8459274f7e9b51e76a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  force_of_push: 4
+  force_of_push: 3
   isBlackHole: 0
   eventHorizon: 10
   enableTrap: 0

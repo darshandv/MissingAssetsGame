@@ -831,9 +831,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca2910debf72ed8459274f7e9b51e76a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  force_of_push: 4
+  force_of_push: 3
   isBlackHole: 0
   eventHorizon: 10
+  enableTrap: 1
 --- !u!212 &265978139
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1469,9 +1470,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca2910debf72ed8459274f7e9b51e76a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  force_of_push: 4
+  force_of_push: 3
   isBlackHole: 0
   eventHorizon: 10
+  enableTrap: 1
 --- !u!212 &309071404
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -6875,9 +6877,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca2910debf72ed8459274f7e9b51e76a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  force_of_push: 4
+  force_of_push: 3
   isBlackHole: 0
   eventHorizon: 10
+  enableTrap: 1
 --- !u!212 &1191802406
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -8794,9 +8797,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca2910debf72ed8459274f7e9b51e76a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  force_of_push: 4
+  force_of_push: 3
   isBlackHole: 0
   eventHorizon: 10
+  enableTrap: 1
 --- !u!212 &1505881709
 SpriteRenderer:
   m_ObjectHideFlags: 0
