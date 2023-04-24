@@ -16,10 +16,10 @@ public class WindowPointer : MonoBehaviour
     private Sprite cross;
     private Vector3 targetPosition;
     public Transform pointerRectTransform;
-    public Transform goalPlanet;
+    public Transform goalCollectible;
     public Transform player;
     private Image pointerImage;
-    public List<Transform> backupGoals;
+    public List<Transform> backupCollectibleGoals;
 
     // private void Awake()
     // {
@@ -30,9 +30,9 @@ public class WindowPointer : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (goalPlanet)
+        if (goalCollectible)
         {
-            targetPosition = goalPlanet.position;
+            targetPosition = goalCollectible.position;
             pointerImage = transform.Find("Pointer").GetComponent<Image>();
         }
     }
@@ -57,7 +57,7 @@ public class WindowPointer : MonoBehaviour
                 || targetPositionScreenPoint.y <= borderSize
                 || targetPositionScreenPoint.y >= Screen.height - borderSize;
             //Debug.Log("IsOffScreen "+isOffScreen);
-            if (goalPlanet != null)
+            if (goalCollectible != null)
             {
                 if (isOffScreen)
                 {
@@ -103,14 +103,14 @@ public class WindowPointer : MonoBehaviour
             }
             else
             {
-                if (backupGoals.Count > 0)
+                if (backupCollectibleGoals.Count > 0)
                 {
-                    if (backupGoals[0] != null)
+                    if (backupCollectibleGoals[0] != null)
                     {
-                        goalPlanet = backupGoals[0];
-                        targetPosition = backupGoals[0].position;
+                        goalCollectible = backupCollectibleGoals[0];
+                        targetPosition = backupCollectibleGoals[0].position;
                     }
-                    backupGoals.RemoveAt(0);
+                    backupCollectibleGoals.RemoveAt(0);
                 }
                 else
                 {
