@@ -35,14 +35,18 @@ public class PlayerMovement : MonoBehaviour
 
     public int missileDamage = 10;
 
-    public static void resetHealth()
+    public static void resetHealth(bool isNextLevel)
     {
         string currentScene = SceneManager.GetActiveScene().name;
         int levelNumber = Array.IndexOf(Config.levels,currentScene);
-        if (levelNumber == 14) {
-            levelNumber = 13;
+        string newScene = "";
+
+        if (isNextLevel) {
+            newScene = Config.levels[++levelNumber];
+        } else {
+            newScene = Config.levels[levelNumber];
         }
-        string newScene = Config.levels[++levelNumber];
+        
 		health = Config.maxHealth[newScene];
     }
 
@@ -157,7 +161,7 @@ public class PlayerMovement : MonoBehaviour
     public void restart()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-        resetHealth();
+        resetHealth(false);
         healthBar.SetHealth(50);
     }
 

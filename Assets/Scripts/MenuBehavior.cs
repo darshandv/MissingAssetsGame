@@ -21,9 +21,9 @@ public class MenuBehavior : MonoBehaviour
         Camera mainCamera = Camera.main;
     }
 
-    private void LoadingNewScene()
+    private void LoadingNewScene(bool isNextLevel)
     {
-        PlayerMovement.resetHealth();
+        PlayerMovement.resetHealth(isNextLevel);
         CollectibleComponent.CollectedComponents = 0;
         PlayerMovement.numberOfEnemiesKilled = 0;
         Config.ResetAllVariables();
@@ -64,7 +64,7 @@ public class MenuBehavior : MonoBehaviour
     public void RestartGame()
     {
         ResetGame();
-        LoadingNewScene();
+        LoadingNewScene(false);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
@@ -82,7 +82,7 @@ public class MenuBehavior : MonoBehaviour
         AnalyticsTracker.sendMetric10();
 
         ResetGame();
-        LoadingNewScene();
+        LoadingNewScene(true);
         SceneManager.LoadScene(nextLevel);
         nextLevel = "";
 
@@ -98,7 +98,7 @@ public class MenuBehavior : MonoBehaviour
     public void MainMenu()
     {
         ResetGame();
-        LoadingNewScene();
+        LoadingNewScene(false);
         SceneManager.LoadScene("LandingScreen");
     }
 
