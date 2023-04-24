@@ -25,6 +25,7 @@ public class EnemyController : MonoBehaviour
     public float followLowerBound = 2.5f;
     public float followUpperBound = 20.0f;
     public bool enableShooting = true;
+    public float bulletLife = 3.0f;
 
     public int numBulletsToDie = 5;
     int damagePerBullet ;
@@ -43,7 +44,8 @@ public class EnemyController : MonoBehaviour
     void Shoot()
     {
         if (weapon && target && enableShooting)
-        {
+        {   
+            weapon.bulletLife = bulletLife;
             weapon.Fire(target);
         }
     }
