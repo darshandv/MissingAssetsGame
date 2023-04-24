@@ -39,6 +39,9 @@ public class PlayerMovement : MonoBehaviour
     {
         string currentScene = SceneManager.GetActiveScene().name;
         int levelNumber = Array.IndexOf(Config.levels,currentScene);
+        if (levelNumber == 14) {
+            levelNumber = 13;
+        }
         string newScene = Config.levels[++levelNumber];
 		health = Config.maxHealth[newScene];
     }
