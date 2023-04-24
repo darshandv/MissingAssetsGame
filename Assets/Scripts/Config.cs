@@ -35,7 +35,7 @@ public static class Config
         {"Level3",50},
         {"Level4",50},
         {"BossEnemy1",50},
-        {"Level5",50},
+        {"Level5",150},
         {"Level6",50},
         {"BossEnemy2",200},
         {"Level7",50},
