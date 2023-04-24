@@ -50,7 +50,7 @@ public static class Config
         "LevelTraining1",//1
         "LevelTraining2",//2
         "Level6",//3
-        // "MiniBoss",
+        "MiniBoss",
         "Level2",//4
         "Level3",//5
         "Level4",//6
