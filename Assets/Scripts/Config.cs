@@ -79,7 +79,7 @@ public static class Config
         {"Level7",8},
         {"Level17",4},
         {"Level9",4},
-        {"BossEnemy3",4},
+        {"BossEnemy3",1},
         {"MiniBoss", 1 }
     };
     
