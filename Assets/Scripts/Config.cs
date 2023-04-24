@@ -41,7 +41,8 @@ public static class Config
         {"Level7",50},
         {"Level17",50},
         {"Level9",50},
-        {"BossEnemy3",50}
+        {"BossEnemy3",50},
+        { "MiniBoss", 50}
     };
     //Levels
     public static string[] levels =
@@ -49,6 +50,7 @@ public static class Config
         "LevelTraining1",//1
         "LevelTraining2",//2
         "Level6",//3
+        "MiniBoss",
         "Level2",//4
         "Level3",//5
         "Level4",//6
@@ -79,7 +81,8 @@ public static class Config
         {"Level7",2},
         {"Level17",4},
         {"Level9",4},
-        {"BossEnemy3",4}
+        {"BossEnemy3",4},
+        {"MiniBoss", 1 }
     };
     
     // { 1, 3, 4, 6, 6, 6, 4, 7, 4, 4, 2, 3, 3, 4, };
