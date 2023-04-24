@@ -42,7 +42,7 @@ public static class Config
         {"Level17",50},
         {"Level9",50},
         {"BossEnemy3",50},
-        { "MiniBoss", 50}
+        { "MiniBoss", 200}
     };
     //Levels
     public static string[] levels =
