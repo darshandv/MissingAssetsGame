@@ -9117,7 +9117,7 @@ MonoBehaviour:
   rb: {fileID: 603210631}
   weapon: {fileID: 952091278}
   enemyHealthBarBehavior: {fileID: 0}
-  target: {fileID: 0}
+  target: {fileID: 1762540031}
   startInterval: 2
   deltaInterval: 2
   range: 0.00001
@@ -15345,7 +15345,7 @@ MonoBehaviour:
   rb: {fileID: 1020808879}
   weapon: {fileID: 1193006212}
   enemyHealthBarBehavior: {fileID: 0}
-  target: {fileID: 0}
+  target: {fileID: 1762540031}
   startInterval: 2
   deltaInterval: 2
   range: 0.00001
@@ -25408,7 +25408,7 @@ MonoBehaviour:
   rb: {fileID: 1510958115}
   weapon: {fileID: 1882747730}
   enemyHealthBarBehavior: {fileID: 0}
-  target: {fileID: 0}
+  target: {fileID: 1762540031}
   startInterval: 2
   deltaInterval: 2
   range: 0.00001
@@ -34379,7 +34379,7 @@ PrefabInstance:
     - target: {fileID: 1081155281587241831, guid: 739bf3b395daa4deeb1e008b2490b26a, type: 3}
       propertyPath: target
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1762540031}
     - target: {fileID: 1081155281587241831, guid: 739bf3b395daa4deeb1e008b2490b26a, type: 3}
       propertyPath: enemyHealthBarBehavior
       value: 
