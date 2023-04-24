@@ -3304,6 +3304,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7686516549917837765, guid: a99b563bfd4434cd388dc39572e18ce8, type: 3}
+      propertyPath: m_Color.r
+      value: 0.7647059
+      objectReference: {fileID: 0}
     - target: {fileID: 7686516549917837766, guid: a99b563bfd4434cd388dc39572e18ce8, type: 3}
       propertyPath: m_Name
       value: Squared-paper-texture

@@ -60,6 +60,7 @@ public class BossEnemy : MonoBehaviour
     public float initialMissileSpeed = 5.0f;
     public float initialBulletSpeed = 5.0f;
     public float initialRocketSpeed = 5.0f;
+    public int initialDamage = 10;
 
     // private float nextFireTime = 0.0f;
 
@@ -239,7 +240,9 @@ public class BossEnemy : MonoBehaviour
             spawnPoint.position, // add an offset to the spawn position
             spawnPoint.rotation * Quaternion.Euler(0f, 0f, 180f) // add 180 degree rotation
         );
-
+        MissileController mc = missile.GetComponent<MissileController>();
+        mc.speed = initialMissileSpeed;
+        mc.damage = initialDamage;
         Rigidbody2D missileRigidbody = missile.GetComponent<Rigidbody2D>();
         missileRigidbody.velocity =
             (target.position - missile.transform.position).normalized * initialMissileSpeed;

@@ -8,6 +8,8 @@ public class Planet : MonoBehaviour
     public float force_of_push;
     public bool isBlackHole = false;
     public float eventHorizon = 10f;
+
+    public bool enableTrap = true;
     // private void OnTriggerEnter2D(Collider2D collider2D) {
     //     if (collider2D.gameObject.name != "Triangle") return;
     //     StartCoroutine(ExecuteEffect(collider2D));
@@ -83,12 +85,12 @@ public class Planet : MonoBehaviour
         }
         
         if(withinCollider(ship)) {
-            if(ship.name.Contains("FollowEnemy") || ship.name.Contains("Moving Enemy")) {
+            if(enableTrap && ship.name.Contains("FollowEnemy") || ship.name.Contains("Moving Enemy")) {
                 EnemyController ec = ship.GetComponent<EnemyController>();
                 ec.movementType = MovementType.None;
                 ec.enableShooting = false;
             }
-            else if (ship.name.Contains("BossEnemy")) {
+            else if (enableTrap && ship.name.Contains("BossEnemy")) {
                 BossEnemy be = ship.GetComponent<BossEnemy>();
                 be.enableShooting = false;
                 be.enableFollow = false;

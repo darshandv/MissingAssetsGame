@@ -30,7 +30,7 @@ public static class Config
     public static Dictionary<string,int> maxHealth =  new Dictionary<string, int>(){
         {"LevelTraining1",50},
         {"LevelTraining2",50},
-        {"BossEnemy0",50},
+        {"BossEnemy0",150},
         {"Level2",50},
         {"Level3",50},
         {"Level4",50},
@@ -54,10 +54,10 @@ public static class Config
         "Level2",//4
         "Level3",//5
         "Level4",//6
-        "Level17",//7
-        "Level9",//8
-        "Level5",//9
+        "Level9",//7    
         "BossEnemy0",//10
+        "Level17",//8
+        "Level5",//9
         "Level7",//11
         "Level17",//12
         "Level9",//13
@@ -70,7 +70,7 @@ public static class Config
     public static Dictionary<string, int> levelCollectibles = new Dictionary<string, int>(){
         {"LevelTraining1",1},
         {"LevelTraining2",3},
-        {"BossEnemy0",4},
+        {"BossEnemy0",0},
         {"Level2",6},
         {"Level3",6},
         {"Level4",6},
