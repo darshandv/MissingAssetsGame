@@ -188,7 +188,8 @@ public class PlayerMovement : MonoBehaviour
     }
 
     private void allowLimitedThrust()
-    {
+    {   
+        bool condition;
         // Now you can continuously press W key and keep applying force to
         // change direction and movement. After every second the thrust reduces
         // if you long press W
@@ -199,7 +200,15 @@ public class PlayerMovement : MonoBehaviour
                 AnalyticsTracker.thrustZeroCounter++;
                 thrustZero = false;
             }
-            if (Input.GetKeyDown(KeyCode.W))
+            float latestSensorValue = SensorInputManager.GetLatestSensorValue();
+            if (Config.isUseEmbedded){
+                condition = (latestSensorValue < Config.maxSensorDistance);
+            }
+            else{
+                condition = Input.GetKey(KeyCode.W);
+            }
+            
+            if (condition)
             {
                 // Reduce thrust instantly
                 if (tc.getThrust() > 0.1)
@@ -216,7 +225,7 @@ public class PlayerMovement : MonoBehaviour
                 );
                 isThrustKeyReleased = false;
             }
-            else if (Input.GetKey(KeyCode.W))
+            else if (condition)
             {
                 // Reduce thrust continuously if key is held down
                 if (tc.getThrust() > 0.1)

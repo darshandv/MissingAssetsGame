@@ -25,6 +25,9 @@ public static class Config
     public static float thrustReductionAmountLevel3 = 5f;
     public static float thrustIncrementAmountLevel3 = 1 / 32;
 
+    public static bool isUseEmbedded = true;
+    public static float maxSensorDistance = 15f;
+
     public static bool bossEnemyDead = true;
     // public static int[] maxHealth =  { 50,50,50,50,50,50,50,50,50,50,50,50,50,50 };
     public static Dictionary<string,int> maxHealth =  new Dictionary<string, int>(){
