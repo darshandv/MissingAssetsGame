@@ -34,6 +34,9 @@ public class PlayerMovement : MonoBehaviour
     public bool thrustZero = false;
 
     public int missileDamage = 10;
+    private bool isDebounced = true;
+    private float debouncedTime = 0.2f;
+    private float lastPressedTime = 0f;
 
     public static void resetHealth(bool isNextLevel)
     {
@@ -310,6 +313,7 @@ public class PlayerMovement : MonoBehaviour
         AnalyticsTracker.timeStampRecord = new DateTimeOffset(
             DateTime.UtcNow
         ).ToUnixTimeMilliseconds(); // To record first level time
+        
     }
 
     // Update is called once per frame
@@ -365,22 +369,23 @@ public class PlayerMovement : MonoBehaviour
             //     player_rigid_body.AddForce(force);
             //     // StatisticsManager.buildAnaltyicsDataObjAndPush(level:0, type:"ThrustPress")
             // }
-            bool isDebounced = true;
-            float debouncedTime = 0.2f;
-            float lastPressedTime = 0f;
+
+            
             if (Config.isUseEmbedded){
-                float sensorValue = SensorInputManager.GetLatestButtonState();
+                int sensorValue = SensorInputManager.GetLatestButtonState();
                 if (
-                    sensorValue <= 0.0001f && isDebounced
+                    sensorValue == 0 && isDebounced
                 )
                 {   
-                    Debug.Log("FIRE");
+                    
                     float currentTime = Time.time;
+                    Debug.Log("time debug "+currentTime+" "+lastPressedTime);
                     if (currentTime - lastPressedTime > debouncedTime)
                     {
                         lastPressedTime = currentTime;
                         isDebounced = false;
                         weapon.Fire();
+                        Debug.Log("FIRE");
                     }
                     // weapon.Fire();
                 }

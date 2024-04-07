@@ -9,7 +9,7 @@ public class Bullet : MonoBehaviour
 
    private void Start() {
       initialPosition = transform.position;
-      Debug.Log("bullet started");
+      Debug.Log("bullet started now");
       Destroy(gameObject, lifeTime);
    }
 

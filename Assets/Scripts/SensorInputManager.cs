@@ -109,7 +109,7 @@ public class SensorInputManager : MonoBehaviour
     {
         // lock (queueLock)
         {
-            return sensorValues.Count > 0 ? sensorValues.Last().buttonState : 0;  // Assuming 0 is the default (unpressed) state
+            return sensorValues.Count > 0 ? sensorValues.Last().buttonState : 1;  // Assuming 0 is the default (unpressed) state
         }
     }
 }
