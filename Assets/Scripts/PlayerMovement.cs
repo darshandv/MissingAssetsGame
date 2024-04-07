@@ -142,20 +142,47 @@ public class PlayerMovement : MonoBehaviour
 
     void enableRotation()
     {
-        // Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        Vector2 mousePosition = Camera.main.ScreenToWorldPoint(
-            Input.mousePosition / (Screen.width / Screen.height)
-        );
+        if (Config.isUseEmbedded){
+            float xStagnant = 505f;
+            float yStagnant = 521f;
+            float MaxValue = 1024f;
+            float deadZoneThreshold = 0.1f;
 
-        Vector2 aimDirection = mousePosition - player_rigid_body.position;
-        float aimAngle = Mathf.Atan2(aimDirection.y, aimDirection.x) * Mathf.Rad2Deg - 90f;
-        player_rigid_body.rotation = aimAngle;
 
-        Vector2 dir = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
-        float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
-        Quaternion rotation = Quaternion.AngleAxis(angle - 90, Vector3.forward);
-        transform.rotation = rotation;
-        orientation = aimAngle;
+            float normalizedX = ((SensorInputManager.GetLatestXValue() - xStagnant)/(MaxValue/2)) * -1;
+            float normalizedY = ((SensorInputManager.GetLatestYValue() - yStagnant)/(MaxValue/2)) * -1;
+
+            float magnitude = Mathf.Sqrt(normalizedX * normalizedX + normalizedY * normalizedY);
+
+            if (magnitude > deadZoneThreshold)
+            {
+                Vector2 aimDirection = new Vector2(normalizedX, normalizedY).normalized;
+                float aimAngle = Mathf.Atan2(aimDirection.y, aimDirection.x) * Mathf.Rad2Deg - 90f;
+                player_rigid_body.rotation = aimAngle;
+                Quaternion rotation = Quaternion.AngleAxis(aimAngle, Vector3.forward);
+                transform.rotation = rotation;
+                orientation = aimAngle;
+            }
+
+            
+        }
+        else {
+            // Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            Vector2 mousePosition = Camera.main.ScreenToWorldPoint(
+                Input.mousePosition / (Screen.width / Screen.height)
+            );
+
+            Vector2 aimDirection = mousePosition - player_rigid_body.position;
+            float aimAngle = Mathf.Atan2(aimDirection.y, aimDirection.x) * Mathf.Rad2Deg - 90f;
+            player_rigid_body.rotation = aimAngle;
+
+            Vector2 dir = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
+            float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
+            Quaternion rotation = Quaternion.AngleAxis(angle - 90, Vector3.forward);
+            transform.rotation = rotation;
+            orientation = aimAngle;
+        }
+        
     }
 
     public void restart()
@@ -200,7 +227,7 @@ public class PlayerMovement : MonoBehaviour
                 AnalyticsTracker.thrustZeroCounter++;
                 thrustZero = false;
             }
-            float latestSensorValue = SensorInputManager.GetLatestSensorValue();
+            float latestSensorValue = SensorInputManager.GetLatestDistance();
             if (Config.isUseEmbedded){
                 condition = (latestSensorValue < Config.maxSensorDistance);
             }
@@ -338,15 +365,42 @@ public class PlayerMovement : MonoBehaviour
             //     player_rigid_body.AddForce(force);
             //     // StatisticsManager.buildAnaltyicsDataObjAndPush(level:0, type:"ThrustPress")
             // }
-
-            if (
-                (Input.GetKeyDown(KeyCode.Space))
-                || (Input.GetKeyDown(KeyCode.E))
-                || (Input.GetKeyDown(KeyCode.Mouse0))
-            )
-            {
-                weapon.Fire();
+            bool isDebounced = true;
+            float debouncedTime = 0.2f;
+            float lastPressedTime = 0f;
+            if (Config.isUseEmbedded){
+                float sensorValue = SensorInputManager.GetLatestButtonState();
+                if (
+                    sensorValue <= 0.0001f && isDebounced
+                )
+                {   
+                    Debug.Log("FIRE");
+                    float currentTime = Time.time;
+                    if (currentTime - lastPressedTime > debouncedTime)
+                    {
+                        lastPressedTime = currentTime;
+                        isDebounced = false;
+                        weapon.Fire();
+                    }
+                    // weapon.Fire();
+                }
+                else
+                {
+                    isDebounced = true;
+                
+                }
             }
+            else {
+                if (
+                    (Input.GetKeyDown(KeyCode.Space))
+                    || (Input.GetKeyDown(KeyCode.E))
+                    || (Input.GetKeyDown(KeyCode.Mouse0))
+                )
+                {
+                    weapon.Fire();
+                }
+            }
+            
 
             if (player_rigid_body.velocity.magnitude > playerSpeed)
             {

@@ -8,12 +8,20 @@ using UnityEngine;
 
 public class SensorInputManager : MonoBehaviour
 {
-    public static Queue<float> sensorValues = new Queue<float>();
+    public struct SensorData
+    {
+        public float xValue;
+        public float yValue;
+        public int buttonState;
+        public float distance;
+    }
+
+    private static Queue<SensorData> sensorValues = new Queue<SensorData>();
     private static readonly object queueLock = new object();
     private const int queueSize = 5;
-    Thread receiveThread;
-    UdpClient client;
-    int port = 5005;  // Port should match the one used by the Python server
+    private Thread receiveThread;
+    private UdpClient client;
+    private int port = 5005;
 
     // Use this for initialization
     void Start()
@@ -36,64 +44,72 @@ public class SensorInputManager : MonoBehaviour
         {
             try
             {
-                // IPEndPoint anyIP = new IPEndPoint(IPAddress.Any, 0);
                 byte[] data = client.Receive(ref anyIP);
-                // Debug.Log("Received data");
                 string text = System.Text.Encoding.UTF8.GetString(data);
-                // float distance = float.Parse(text);
-                if (float.TryParse(text, out float distance))
+                string[] parts = text.Split(',');
+                if (parts.Length == 4)
                 {
-                    lock (queueLock)
+                    SensorData sensorData = new SensorData
+                    {
+                        xValue = float.Parse(parts[0]),
+                        yValue = float.Parse(parts[1]),
+                        buttonState = int.Parse(parts[2]),
+                        distance = float.Parse(parts[3])
+                    };
+
+                    // lock (queueLock)
                     {
                         if (sensorValues.Count >= queueSize)
                         {
-                            sensorValues.Dequeue();  // Remove the oldest value
+                            sensorValues.Dequeue();
                         }
-                        sensorValues.Enqueue(distance);  // Add the new value
+                        sensorValues.Enqueue(sensorData);
                     }
-                }
-
-                // Here, you can call any method to handle the distance data,
-                // such as applying thrust if distance < 100 cm.
-                Debug.Log("Received distance: " + distance);
-                
-                if (distance < 100)
-                {
-                    // Apply thrust
-                    // Note: Make sure to call Unity functions from the main thread.
                 }
             }
             catch (Exception err)
             {
-                print(err.ToString());
+                Debug.LogError(err.ToString());
             }
         }
-    }
-
-    private void Update()
-    {
-
     }
 
     void OnDisable()
     {
         if (receiveThread != null) receiveThread.Abort();
-        client.Close();
+        if (client != null) client.Close();
     }
 
-    public static float GetLatestSensorValue()
+    // Separate methods for accessing individual sensor values
+    public static float GetLatestDistance()
     {
-        lock (queueLock)
+        // lock (queueLock)
         {
-            if (sensorValues.Count > 0)
-            {
-                // Access the last element in the queue
-                return sensorValues.ElementAt(sensorValues.Count - 1);
-            }
-            else
-            {
-                return float.MaxValue; // Or any other default indicating no value
-            }
+            return sensorValues.Count > 0 ? sensorValues.Last().distance : float.MaxValue;
+        }
+    }
+
+    public static float GetLatestXValue()
+    {
+        // lock (queueLock)
+        {
+            return sensorValues.Count > 0 ? sensorValues.Last().xValue : 0f;
+        }
+    }
+
+    public static float GetLatestYValue()
+    {
+        // lock (queueLock)
+        {
+            return sensorValues.Count > 0 ? sensorValues.Last().yValue : 0f;
+        }
+    }
+
+    public static int GetLatestButtonState()
+    {
+        // lock (queueLock)
+        {
+            return sensorValues.Count > 0 ? sensorValues.Last().buttonState : 0;  // Assuming 0 is the default (unpressed) state
         }
     }
 }
