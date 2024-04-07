@@ -51,18 +51,18 @@ public static class Config
     public static string[] levels =
     {
         "LevelTraining1",//1
-        "LevelTraining2",//2
-        "Level6",//3
+        // "LevelTraining2",//2
+        // "Level6",//3
         "MiniBoss", //4
         "Level2",//5
         "Level3",//6
-        "Level4",//7
-        "Level9",//8    
-        "BossEnemy0",//9
-        "Level17",//10
-        "Level5",//11
-        "Level7",//12
-        "BossEnemy3",//13
+        // "Level4",//7
+        // "Level9",//8    
+        // "BossEnemy0",//9
+        // "Level17",//10
+        // "Level5",//11
+        // "Level7",//12
+        // "BossEnemy3",//13
 
         // "Scenes/LandingScreen", // Just for testing purposes
     };
