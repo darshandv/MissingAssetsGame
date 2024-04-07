@@ -10,7 +10,7 @@ public class ThrustController
     {
         if (thrust >= 0f)
         {
-            if ((thrust - reduceValue) == 0)
+            if ((thrust - reduceValue) <= 0)
             {
                 thrust = 0;
             }

@@ -279,7 +279,7 @@ public class PlayerMovement : MonoBehaviour
         player_rigid_body = this.GetComponent<Rigidbody2D>();
         // player_rigid_body.velocity = Vector3.right * 2;
         tc = new ThrustController();
-        thrustPower = 0.12f; // 0.05f for local testing, build yet to be decided
+        thrustPower = 0.012f; // 0.05f for local testing, build yet to be decided
         AnalyticsTracker.timeStampRecord = new DateTimeOffset(
             DateTime.UtcNow
         ).ToUnixTimeMilliseconds(); // To record first level time

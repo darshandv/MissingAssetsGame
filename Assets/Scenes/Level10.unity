@@ -575,6 +575,7 @@ MonoBehaviour:
   followLowerBound: 2.5
   followUpperBound: 20
   enableShooting: 1
+  bulletLife: 3
   numBulletsToDie: 5
 --- !u!212 &222184168
 SpriteRenderer:
@@ -836,6 +837,7 @@ MonoBehaviour:
   force_of_push: 8
   isBlackHole: 1
   eventHorizon: 5
+  enableTrap: 1
 --- !u!212 &347289974
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -966,6 +968,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletPrefab: {fileID: 6215409759271257246, guid: e248496eab8676b4689c899dec13870f, type: 3}
   firePoint: {fileID: 781561653}
+  bulletLife: 3
   fireForce: 20
 --- !u!4 &368299747
 Transform:
@@ -1129,6 +1132,7 @@ MonoBehaviour:
   followLowerBound: 2.5
   followUpperBound: 20
   enableShooting: 1
+  bulletLife: 3
   numBulletsToDie: 5
 --- !u!212 &374040984
 SpriteRenderer:
@@ -1427,6 +1431,7 @@ MonoBehaviour:
   followLowerBound: 2.5
   followUpperBound: 20
   enableShooting: 1
+  bulletLife: 3
   numBulletsToDie: 5
 --- !u!212 &389995765
 SpriteRenderer:
@@ -1865,6 +1870,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletPrefab: {fileID: 6215409759271257246, guid: e248496eab8676b4689c899dec13870f, type: 3}
   firePoint: {fileID: 742017886}
+  bulletLife: 3
   fireForce: 20
 --- !u!4 &487901504
 Transform:
@@ -2050,6 +2056,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletPrefab: {fileID: 6215409759271257246, guid: e248496eab8676b4689c899dec13870f, type: 3}
   firePoint: {fileID: 354719847}
+  bulletLife: 3
   fireForce: 20
 --- !u!4 &506190055
 Transform:
@@ -2375,6 +2382,7 @@ MonoBehaviour:
   followLowerBound: 2.5
   followUpperBound: 20
   enableShooting: 1
+  bulletLife: 3
   numBulletsToDie: 5
 --- !u!212 &666951352
 SpriteRenderer:
@@ -2538,6 +2546,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletPrefab: {fileID: 6215409759271257246, guid: e248496eab8676b4689c899dec13870f, type: 3}
   firePoint: {fileID: 1418470965}
+  bulletLife: 3
   fireForce: 20
 --- !u!4 &681100186
 Transform:
@@ -2818,6 +2827,7 @@ GameObject:
   - component: {fileID: 763549533}
   - component: {fileID: 763549532}
   - component: {fileID: 763549531}
+  - component: {fileID: 763549535}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -2909,6 +2919,18 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &763549535
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 763549530}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0589ee2ea9e9d436e8ad5858a94ef537, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &781561652
 GameObject:
   m_ObjectHideFlags: 0
@@ -3194,6 +3216,7 @@ MonoBehaviour:
   followLowerBound: 2.5
   followUpperBound: 20
   enableShooting: 1
+  bulletLife: 3
   numBulletsToDie: 5
 --- !u!212 &932695083
 SpriteRenderer:
@@ -3429,6 +3452,7 @@ MonoBehaviour:
   force_of_push: 10
   isBlackHole: 0
   eventHorizon: 10
+  enableTrap: 1
 --- !u!212 &951431132
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -4092,6 +4116,7 @@ MonoBehaviour:
   force_of_push: 10
   isBlackHole: 0
   eventHorizon: 10
+  enableTrap: 1
 --- !u!212 &1119940699
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -4670,6 +4695,7 @@ MonoBehaviour:
   followLowerBound: 2.5
   followUpperBound: 20
   enableShooting: 1
+  bulletLife: 3
   numBulletsToDie: 5
 --- !u!212 &1351313119
 SpriteRenderer:
@@ -5112,6 +5138,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletPrefab: {fileID: 6215409759271257246, guid: e248496eab8676b4689c899dec13870f, type: 3}
   firePoint: {fileID: 943089906}
+  bulletLife: 3
   fireForce: 20
 --- !u!4 &1448929390
 Transform:
@@ -5763,6 +5790,7 @@ MonoBehaviour:
   force_of_push: 10
   isBlackHole: 0
   eventHorizon: 10
+  enableTrap: 1
 --- !u!212 &1649880407
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -7149,6 +7177,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletPrefab: {fileID: 6215409759271257246, guid: e248496eab8676b4689c899dec13870f, type: 3}
   firePoint: {fileID: 1042000998}
+  bulletLife: 3
   fireForce: 20
 --- !u!4 &1993426732
 Transform:
@@ -7556,6 +7585,7 @@ MonoBehaviour:
   force_of_push: 10
   isBlackHole: 0
   eventHorizon: 10
+  enableTrap: 1
 --- !u!212 &2087247529
 SpriteRenderer:
   m_ObjectHideFlags: 0

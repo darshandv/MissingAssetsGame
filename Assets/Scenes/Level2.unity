@@ -3945,6 +3945,7 @@ MonoBehaviour:
   force_of_push: 3
   isBlackHole: 0
   eventHorizon: 10
+  enableTrap: 1
 --- !u!212 &1349229943
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -4903,6 +4904,7 @@ GameObject:
   - component: {fileID: 1771127790}
   - component: {fileID: 1771127789}
   - component: {fileID: 1771127788}
+  - component: {fileID: 1771127792}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -4995,6 +4997,18 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &1771127792
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1771127787}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0589ee2ea9e9d436e8ad5858a94ef537, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1774767505
 PrefabInstance:
   m_ObjectHideFlags: 0

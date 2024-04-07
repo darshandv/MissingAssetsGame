@@ -635,6 +635,7 @@ MonoBehaviour:
   followLowerBound: 2.5
   followUpperBound: 20
   enableShooting: 1
+  bulletLife: 3
   numBulletsToDie: 5
 --- !u!212 &44482996
 SpriteRenderer:
@@ -1153,6 +1154,7 @@ MonoBehaviour:
   followLowerBound: 2.5
   followUpperBound: 20
   enableShooting: 1
+  bulletLife: 3
   numBulletsToDie: 5
 --- !u!212 &67203550
 SpriteRenderer:
@@ -3574,6 +3576,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletPrefab: {fileID: 6215409759271257246, guid: e248496eab8676b4689c899dec13870f, type: 3}
   firePoint: {fileID: 710434588}
+  bulletLife: 3
   fireForce: 20
 --- !u!4 &306257559
 Transform:
@@ -4564,6 +4567,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletPrefab: {fileID: 6215409759271257246, guid: e248496eab8676b4689c899dec13870f, type: 3}
   firePoint: {fileID: 1986009669}
+  bulletLife: 3
   fireForce: 20
 --- !u!4 &418035522
 Transform:
@@ -5739,6 +5743,7 @@ MonoBehaviour:
   followLowerBound: 2.5
   followUpperBound: 20
   enableShooting: 1
+  bulletLife: 3
   numBulletsToDie: 5
 --- !u!212 &519764748
 SpriteRenderer:
@@ -6685,6 +6690,7 @@ MonoBehaviour:
   followLowerBound: 2.5
   followUpperBound: 20
   enableShooting: 1
+  bulletLife: 3
   numBulletsToDie: 5
 --- !u!212 &578817195
 SpriteRenderer:
@@ -7153,6 +7159,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletPrefab: {fileID: 6215409759271257246, guid: e248496eab8676b4689c899dec13870f, type: 3}
   firePoint: {fileID: 1423524506}
+  bulletLife: 3
   fireForce: 20
 --- !u!4 &599054939
 Transform:
@@ -8242,6 +8249,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletPrefab: {fileID: 6215409759271257246, guid: e248496eab8676b4689c899dec13870f, type: 3}
   firePoint: {fileID: 1605293671}
+  bulletLife: 3
   fireForce: 20
 --- !u!4 &693813049
 Transform:
@@ -9345,6 +9353,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletPrefab: {fileID: 6215409759271257246, guid: e248496eab8676b4689c899dec13870f, type: 3}
   firePoint: {fileID: 2051953956}
+  bulletLife: 3
   fireForce: 20
 --- !u!4 &752765376
 Transform:
@@ -11185,6 +11194,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletPrefab: {fileID: 6215409759271257246, guid: e248496eab8676b4689c899dec13870f, type: 3}
   firePoint: {fileID: 1262988572}
+  bulletLife: 3
   fireForce: 20
 --- !u!4 &932708421
 Transform:
@@ -13462,6 +13472,7 @@ MonoBehaviour:
   followLowerBound: 2.5
   followUpperBound: 20
   enableShooting: 1
+  bulletLife: 3
   numBulletsToDie: 5
 --- !u!212 &1101097845
 SpriteRenderer:
@@ -16971,6 +16982,7 @@ MonoBehaviour:
   followLowerBound: 2.5
   followUpperBound: 20
   enableShooting: 1
+  bulletLife: 3
   numBulletsToDie: 5
 --- !u!212 &1367014792
 SpriteRenderer:
@@ -17386,6 +17398,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletPrefab: {fileID: 6215409759271257246, guid: e248496eab8676b4689c899dec13870f, type: 3}
   firePoint: {fileID: 512840788}
+  bulletLife: 3
   fireForce: 20
 --- !u!4 &1393336440
 Transform:
@@ -17571,6 +17584,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletPrefab: {fileID: 6215409759271257246, guid: e248496eab8676b4689c899dec13870f, type: 3}
   firePoint: {fileID: 172583819}
+  bulletLife: 3
   fireForce: 20
 --- !u!4 &1409564870
 Transform:
@@ -19179,6 +19193,7 @@ MonoBehaviour:
   followLowerBound: 2.5
   followUpperBound: 20
   enableShooting: 1
+  bulletLife: 3
   numBulletsToDie: 5
 --- !u!212 &1570113377
 SpriteRenderer:
@@ -19934,6 +19949,7 @@ MonoBehaviour:
   followLowerBound: 2.5
   followUpperBound: 20
   enableShooting: 1
+  bulletLife: 3
   numBulletsToDie: 5
 --- !u!212 &1651727065
 SpriteRenderer:
@@ -21253,6 +21269,7 @@ MonoBehaviour:
   followLowerBound: 2.5
   followUpperBound: 20
   enableShooting: 1
+  bulletLife: 3
   numBulletsToDie: 5
 --- !u!212 &1750450475
 SpriteRenderer:
@@ -21492,6 +21509,7 @@ GameObject:
   - component: {fileID: 1771127790}
   - component: {fileID: 1771127789}
   - component: {fileID: 1771127788}
+  - component: {fileID: 1771127792}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -21585,6 +21603,18 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &1771127792
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1771127787}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0589ee2ea9e9d436e8ad5858a94ef537, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1777752888
 GameObject:
   m_ObjectHideFlags: 0
@@ -22716,6 +22746,7 @@ MonoBehaviour:
   followLowerBound: 2.5
   followUpperBound: 20
   enableShooting: 1
+  bulletLife: 3
   numBulletsToDie: 5
 --- !u!212 &1823775650
 SpriteRenderer:
@@ -23974,6 +24005,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletPrefab: {fileID: 6215409759271257246, guid: e248496eab8676b4689c899dec13870f, type: 3}
   firePoint: {fileID: 336275525}
+  bulletLife: 3
   fireForce: 20
 --- !u!4 &1942653849
 Transform:
@@ -25817,6 +25849,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletPrefab: {fileID: 6215409759271257246, guid: e248496eab8676b4689c899dec13870f, type: 3}
   firePoint: {fileID: 1236394865}
+  bulletLife: 3
   fireForce: 20
 --- !u!4 &2139677986
 Transform:

@@ -2050,6 +2050,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletPrefab: {fileID: 6215409759271257246, guid: e248496eab8676b4689c899dec13870f, type: 3}
   firePoint: {fileID: 415193358}
+  bulletLife: 3
   fireForce: 20
 --- !u!212 &524880665
 SpriteRenderer:
@@ -3494,6 +3495,7 @@ MonoBehaviour:
   followLowerBound: 2.5
   followUpperBound: 20
   enableShooting: 1
+  bulletLife: 3
   numBulletsToDie: 5
 --- !u!212 &1273822522
 SpriteRenderer:
@@ -4028,6 +4030,7 @@ GameObject:
   - component: {fileID: 1453686036}
   - component: {fileID: 1453686035}
   - component: {fileID: 1453686034}
+  - component: {fileID: 1453686037}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -4120,6 +4123,18 @@ Canvas:
   m_SortingLayerID: 2134036581
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!114 &1453686037
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1453686032}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0589ee2ea9e9d436e8ad5858a94ef537, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1574332999
 GameObject:
   m_ObjectHideFlags: 0

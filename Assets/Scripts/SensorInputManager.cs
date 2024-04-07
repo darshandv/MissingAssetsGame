@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Net;
 using System.Net.Sockets;
 using System.Threading;
@@ -84,7 +85,15 @@ public class SensorInputManager : MonoBehaviour
     {
         lock (queueLock)
         {
-            return sensorValues.Count > 0 ? sensorValues.Peek() : float.MaxValue;
+            if (sensorValues.Count > 0)
+            {
+                // Access the last element in the queue
+                return sensorValues.ElementAt(sensorValues.Count - 1);
+            }
+            else
+            {
+                return float.MaxValue; // Or any other default indicating no value
+            }
         }
     }
 }

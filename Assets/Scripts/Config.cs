@@ -9,6 +9,9 @@ public enum MovementType {
 
 public static class Config
 {
+    // Embedded related variables
+    public static bool isUseEmbedded = true;
+    public static float maxSensorDistance = 15f;
     public static int numberofEnemies = 0;
     public static bool isDead = false;
     public static MovementType movementType = MovementType.None;
@@ -17,16 +20,13 @@ public static class Config
     // Thrust related variables
     public static bool useThrustControl = true;
     public static float maxThrust = 5f;
-    public static float thrustReductionAmount = 2f;
+    public static float thrustReductionAmount = 0.05f; // 2f
     public static float thrustIncrementAmount = 2f;
     public static float thrustReductionDelay = 1f; // in seconds
 
     public static float maxThrustLevel3 = 20f;
-    public static float thrustReductionAmountLevel3 = 5f;
+    public static float thrustReductionAmountLevel3 = 1.5f; // 5f;
     public static float thrustIncrementAmountLevel3 = 1 / 32;
-
-    public static bool isUseEmbedded = true;
-    public static float maxSensorDistance = 15f;
 
     public static bool bossEnemyDead = true;
     // public static int[] maxHealth =  { 50,50,50,50,50,50,50,50,50,50,50,50,50,50 };
@@ -95,11 +95,11 @@ public static class Config
         movementType = MovementType.None;
         useThrustControl = true;
         maxThrust = 5f;
-        thrustReductionAmount = 2f;
+        thrustReductionAmount = 0.05f; //2f;
         thrustIncrementAmount = 2f;
         thrustReductionDelay = 1f; // in seconds
         maxThrustLevel3 = 20f;
-        thrustReductionAmountLevel3 = 5f;
+        thrustReductionAmountLevel3 = 0.5f; //5f;
         thrustIncrementAmountLevel3 = 1 / 32;
         isInPlanet = false;
         bossEnemyDead = true;
